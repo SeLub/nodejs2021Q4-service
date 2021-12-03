@@ -10,9 +10,9 @@ const fastify = Fastify({ logger: true,  ignoreTrailingSlash: true, caseSensitiv
 
 fastify.register(SwaggerPlugin, 
   {   exposeRoute: true,
-      routePrefix:'/docs_generated',
+      routePrefix:'/api-docs',
       swagger: {
-          info: { title: 'fastify-api'},
+          info: { title: 'REST service'},
       },
   })
 
