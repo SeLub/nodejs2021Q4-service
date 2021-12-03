@@ -1,4 +1,6 @@
 import Fastify from 'fastify'
+import SwaggerPlugin from 'fastify-swagger'
+
 import { PORT } from './common/config.js';
 import userRouter from './resources/users/user.router.js'
 import boardRouter from './resources/boards/board.router.js'
@@ -6,13 +8,13 @@ import taskRouter from './resources/tasks/task.router.js'
 
 const fastify = Fastify({ logger: true,  ignoreTrailingSlash: true, caseSensitive: false })
 
-// astify.register(require('fastify-swagger'), 
-//   {   exposeRoute: true,
-//       routePrefix:'/docs',
-//       swagger: {
-//           info: { title: 'fastify-api'},
-//       },
-//   })
+fastify.register(SwaggerPlugin, 
+  {   exposeRoute: true,
+      routePrefix:'/docs_generated',
+      swagger: {
+          info: { title: 'fastify-api'},
+      },
+  })
 
 fastify.register(userRouter)
 fastify.register(boardRouter)
