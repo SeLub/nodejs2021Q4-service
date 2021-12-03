@@ -1,5 +1,3 @@
-[summaru report](#summary-report)
-
 # __Task 3. REST service__
 
 Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/rest-service.md)
@@ -12,6 +10,7 @@ Self check:
 
 -----------
 
+[Summary report](#summary-report)
 
 ## Базовая реализация
 
