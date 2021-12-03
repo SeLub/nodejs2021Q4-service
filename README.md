@@ -110,3 +110,7 @@ http://localhost:4000/api-docs/static/index.html
 #### **TESTS** - screencast of the tests running
 
 ![Tests running](tests_demo.gif)
+
+#### **Linter** - result of linter
+
+![Tests running](linter.png)
