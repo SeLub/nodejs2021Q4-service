@@ -45,11 +45,10 @@ const getUserOpts = {
           },
 
         response: {
-            200: UserWitoutPassword
+            201: UserWitoutPassword
         }
 
-    },
-    handler: getUser
+    }
 }
 
 // Options to add one item
@@ -67,8 +66,7 @@ const postUserOpts = {
         response: {
             201: User
         }
-    },
-    handler: addUser
+    }
 }
 
 // Options to delete one item
@@ -79,15 +77,20 @@ const deleteUserOpts = {
             id: { type: 'string' },
           },
         response: {
-            204: {
+            404: {
+                type: 'object',
+                properties: {
+                    message: { type: 'string'}
+                }
+            },
+            200: {
                 type: 'object',
                 properties: {
                     message: { type: 'string'}
                 }
             }
         }
-    },
-    handler: deleteUser
+    }
 }
 
 const updateUserOpts = {
@@ -120,11 +123,36 @@ function userRouter(fastify, options, done) {
     // Get all items
     fastify.get('/users', getUsersOpts )
     // Get single item
-    fastify.get('/users/:id', getUserOpts )
+
+    fastify.get('/users/:id', getUserOpts, async (request, reply) => {
+        const item = await getUser(request)
+        const statusCode = item ? 200 : 404 
+        reply
+          .code(statusCode)
+          .header('Content-Type', 'application/json; charset=utf-8')
+          .send(item)
+      })
+
     // Add item
-    fastify.post('/users', postUserOpts )
+    fastify.post('/users', postUserOpts, async (request, reply) => {
+        const newUser = await addUser(request)
+        reply
+          .code(201)
+          .header('Content-Type', 'application/json; charset=utf-8')
+          .send(newUser)
+      })
+
     // Delete item
-    fastify.delete('/users/:id', deleteUserOpts )
+    fastify.delete('/users/:id', deleteUserOpts, async (request, reply) => {
+        const message = await deleteUser(request)
+        reply
+          .code(200)
+          .header('Content-Type', 'application/json; charset=utf-8')
+          .send(message)
+      })
+
+
+
     // Update item
     fastify.put('/users/:id', updateUserOpts )
 

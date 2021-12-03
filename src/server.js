@@ -1,8 +1,10 @@
 import Fastify from 'fastify'
 import { PORT } from './common/config.js';
 import userRouter from './resources/users/user.router.js'
+import boardRouter from './resources/boards/board.router.js'
+import taskRouter from './resources/tasks/task.router.js'
 
-const fastify = Fastify({ logger: true })
+const fastify = Fastify({ logger: true,  ignoreTrailingSlash: true, caseSensitive: false })
 
 // astify.register(require('fastify-swagger'), 
 //   {   exposeRoute: true,
@@ -13,6 +15,8 @@ const fastify = Fastify({ logger: true })
 //   })
 
 fastify.register(userRouter)
+fastify.register(boardRouter)
+fastify.register(taskRouter)
 
 fastify.get('/', (request, reply) => {
   reply.send({ hello: 'world' })
