@@ -10,7 +10,8 @@ Self check:
 
 -----------
 
-[__](#summary-report)
+[summary report](#summary-report)
+
 
 ## Базовая реализация
 
