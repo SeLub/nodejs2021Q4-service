@@ -1,4 +1,4 @@
-# __Task 3. REST service__
+# __Task 4. REST service__
 
 Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/rest-service.md)
 
@@ -9,6 +9,12 @@ Self check:
  TOTAL POINTS - **300**
 
 -----------
+
+[summaru report](#summary-report)
+
+------------
+
+# __Summary Report__
 
 
 ## Базовая реализация
