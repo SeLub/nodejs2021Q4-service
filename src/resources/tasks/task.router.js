@@ -6,7 +6,7 @@ import { getTask, getTasks, addTask, deleteTask, updateTask } from './task.servi
 const Task = {
     type: 'object',
     properties: {
-        id: {type: 'string', nullable: true},
+        id: {type: 'string', nullable: true, format: 'uuid'},
         title: {type: 'string'},
         order: {type: 'number'},
         description: {type: 'string'},
@@ -34,7 +34,7 @@ const getTaskOpts = {
     schema: {
         params:  {
             boardId: { type: 'string', nullable: true },
-            taskId: { type: 'string' },
+            taskId: { type: 'string', format: 'uuid' },
           },
         response: {
             200: Task
@@ -67,8 +67,8 @@ const createTaskOpts = {
 const deleteTaskOpts = {
     schema: {
         params:  {
-            boardId: { type: 'string' },
-            taskId: { type: 'string' },
+            boardId: { type: 'string', format: 'uuid' },
+            taskId: { type: 'string', format: 'uuid' },
           },
         response: {
             404: {
@@ -90,8 +90,8 @@ const deleteTaskOpts = {
 const updateTaskOpts = {
     schema: {
         params:  {
-            boardId: { type: 'string' },
-            taskId: { type: 'string' },
+            boardId: { type: 'string', format: 'uuid' },
+            taskId: { type: 'string', format: 'uuid' },
           },
         body: {
             type: 'object',

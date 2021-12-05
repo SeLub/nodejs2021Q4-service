@@ -5,7 +5,7 @@ import { getBoard, getBoards, addBoard, deleteBoard, updateBoard } from './board
 const Board = {
     type: 'object',
     properties: {
-        id: {type: 'string'},
+        id: {type: 'string', format: 'uuid' },
         title: {type: 'string'},
         columns: {type: 'array'}
     }
@@ -30,7 +30,7 @@ const getBoardsOpts = {
 const getBoardOpts = {
     schema: {
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid'  },
           },
         response: {
             201: Board
@@ -59,7 +59,7 @@ const createBoardOpts = {
 const deleteBoardOpts = {
     schema: {
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid' },
           },
         response: {
             404: {
@@ -81,7 +81,7 @@ const deleteBoardOpts = {
 const updateBoardOpts = {
     schema: {
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid' },
           },
         body: {
             type: 'object',

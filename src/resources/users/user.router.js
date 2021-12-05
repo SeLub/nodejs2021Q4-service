@@ -5,7 +5,7 @@ import { getUser, getUsers, addUser, deleteUser, updateUser } from './user.servi
 const User = {
     type: 'object',
     properties: {
-        id: {type: 'string'},
+        id: {type: 'string', format: 'uuid'},
         name: {type: 'string'},
         login: {type: 'string'},
         password: {type: 'string'},
@@ -16,7 +16,7 @@ const User = {
 const UserWitoutPassword = {
     type: 'object',
     properties: {
-        id: {type: 'string'},
+        id: {type: 'string', format: 'uuid'},
         name: {type: 'string'},
         login: {type: 'string'},
        // password: {type: 'string'},
@@ -41,7 +41,7 @@ const getUserOpts = {
     schema: {
 
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid' },
           },
 
         response: {
@@ -74,7 +74,7 @@ const deleteUserOpts = {
     schema: {
 
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid' },
           },
         response: {
             404: {
@@ -97,7 +97,7 @@ const updateUserOpts = {
     schema: {
 
         params:  {
-            id: { type: 'string' },
+            id: { type: 'string', format: 'uuid' },
           },
 
         body: {

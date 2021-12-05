@@ -1,8 +1,9 @@
 const database = [
-    {id:'1', name:'Item One', login:'Bill', password:'1234'},
-    {id:'2', name:'Item One', login:'Bill', password:'1234'},
-    {id:'3', name:'Item One', login:'Bill', password:'1234'},
-    {id:'4', name:'Item One', login:'Bill', password:'1234'},
+     //    {
+     //    "id": "87ef73a1-d7b8-4941-bd4e-424e58a0b3d5",
+     //    "name": "TEST_USER",
+     //    "login": "test_user"
+    	// }
 ]
 
 export default database
