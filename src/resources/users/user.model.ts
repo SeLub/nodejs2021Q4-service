@@ -1,13 +1,17 @@
 import { randomUUID } from "crypto";
 
-export interface User{
+export interface UserInterface{
   id: string | null;
   name: string;
   login: string;
   password?: string;
 }
 
-export class User implements User {
+export class User {
+    id: string | null;
+    name: string;
+    login: string;
+    password?: string;
   constructor({
         id = randomUUID(),
         name = "TEST_USER",
@@ -18,5 +22,9 @@ export class User implements User {
     this.name = name;
     this.login = login;
     this.password = password;
+  }
+  static toResponse(user: UserInterface): UserInterface {
+    const { id, name, login } = user;
+    return { id, name, login };
   }
 }
