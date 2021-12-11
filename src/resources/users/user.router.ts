@@ -11,16 +11,14 @@ export default async function userRouter(fastify: FastifyInstance) {
 
   // GET /users
   fastify.get("/",  usersOptions.getUsersOpts, async (
-    _request: FastifyRequest, reply: FastifyReply )
-  => {
+    _request: FastifyRequest, reply: FastifyReply ) => {
     const users = await usersService.getUsers()
     reply.code(200).send(users.map(el => User.toResponse(el)))
   })
 
     // GET /users/:id
     fastify.get('/:id', usersOptions.getUserOpts, async (
-      _request: FastifyRequest<idRequest>, reply: FastifyReply ) 
-      => {
+      _request: FastifyRequest<idRequest>, reply: FastifyReply ) => {
       const resault = await usersService.getById(_request.params.id)
       const statusCode = resault ? 200 : 404
       const message = resault ? User.toResponse(resault) : message404
@@ -32,8 +30,7 @@ export default async function userRouter(fastify: FastifyInstance) {
 
    //  Create user POST /users
    fastify.post('/',  usersOptions.postUserOpts,  async (
-    _request: FastifyRequest<userBodyRequest>, reply: FastifyReply ) 
-    => {
+    _request: FastifyRequest<userBodyRequest>, reply: FastifyReply ) => {
     const { name, login, password} = _request.body
     const resault = await usersService.create(name, login, password)
     await reply
@@ -44,8 +41,7 @@ export default async function userRouter(fastify: FastifyInstance) {
     
     //  Update item PUT /users/:id
    fastify.put('/:id',  usersOptions.updateUserOpts,  async (
-    _request: FastifyRequest<fullRequestUser>, reply: FastifyReply ) 
-    => {
+    _request: FastifyRequest<fullRequestUser>, reply: FastifyReply ) => {
     const { name, login, password } = _request.body
     const {id} = _request.params
     const resault = await usersService.update(id, name, login, password)
@@ -59,8 +55,7 @@ export default async function userRouter(fastify: FastifyInstance) {
   } )
   //  Delete item DELETE users/:id
     fastify.delete('/:id', usersOptions.deleteUserOpts,  async (
-      _request: FastifyRequest<idRequest>, reply: FastifyReply ) 
-      => {
+      _request: FastifyRequest<idRequest>, reply: FastifyReply ) => {
         const {id} = _request.params
         const resault = await usersService.remove(id)
         const statusCode = resault ? 200 : 404

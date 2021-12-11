@@ -10,8 +10,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
     
     // Get all boards GET /boards
   fastify.get("/",  boardsOptions.getBoardsOpts, async (
-    _request: FastifyRequest, reply: FastifyReply )
-  => {
+    _request: FastifyRequest, reply: FastifyReply ) => {
     const boards = await boardsService.getAll()
     reply
         .code(200)
@@ -21,8 +20,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
     
     // Get single board
     fastify.get('/:id', boardsOptions.getBoardOpts, async (
-      _request: FastifyRequest<idRequest>, reply: FastifyReply )
-    => {
+      _request: FastifyRequest<idRequest>, reply: FastifyReply ) => {
       const {id} = _request.params
       const item = await boardsService.getById(id)
       if (item) {
@@ -39,8 +37,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
 
    //  Create item POST /boards
    fastify.post('/',  boardsOptions.createBoardOpts,  async (
-    _request: FastifyRequest<boardBodyRequest>, reply: FastifyReply ) 
-    => {
+    _request: FastifyRequest<boardBodyRequest>, reply: FastifyReply ) => {
       const { title, columns } = _request.body
       const newBoard = await boardsService.create({ title, columns })
       await reply
@@ -50,8 +47,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
   })
    //  Update board PUT /boards
   fastify.put('/:id', boardsOptions.updateBoardOpts,  async (
-    _request: FastifyRequest<fullRequestBoard>, reply: FastifyReply ) 
-    => {
+    _request: FastifyRequest<fullRequestBoard>, reply: FastifyReply ) => {
       const {id} = _request.params
       const { title, columns } = _request.body
       const updatedBoard = await boardsService.update(id, {title, columns})
@@ -69,8 +65,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
 })
 
 fastify.delete('/:id', boardsOptions.deleteBoardOpts,  async (
-  _request: FastifyRequest<idRequest>, reply: FastifyReply ) 
-  => {
+  _request: FastifyRequest<idRequest>, reply: FastifyReply ) => {
     const {id} = _request.params
     const resault: boolean = await boardsService.remove(id)
 
