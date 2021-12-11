@@ -1,6 +1,6 @@
 
 // User with password
-export const User = {
+const User = {
       type: 'object',
       properties: {
           id: {type: 'string', format: 'uuid'},
@@ -9,7 +9,8 @@ export const User = {
           password: {type: 'string'},
       }
   }
-  
+
+
   // User without password
   export const UserWitoutPassword = {
       type: 'object',
@@ -21,6 +22,13 @@ export const User = {
       }
   }
   
+const message = {
+    type: 'object',
+    properties: {
+        message: { type: 'string'}
+    }
+}  
+
   // Options to get all users
  export const getUsersOpts = {
       schema: {
@@ -42,7 +50,8 @@ export const User = {
             },
   
           response: {
-              201: UserWitoutPassword
+              201: UserWitoutPassword,
+              404: message
           }
   
       }
@@ -74,29 +83,17 @@ export const User = {
               id: { type: 'string', format: 'uuid' },
             },
           response: {
-              404: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              },
-              200: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              }
+              404: message,
+              200: message
           }
       }
   }
   
   export const updateUserOpts = {
       schema: {
-  
           params:  {
               id: { type: 'string', format: 'uuid' },
             },
-  
           body: {
               type: 'object',
               required: ['name','login','password'],
@@ -107,7 +104,8 @@ export const User = {
               },
           },
           response: {
-              200: User
+              200: User,
+              404: message
           }
       }
   }  

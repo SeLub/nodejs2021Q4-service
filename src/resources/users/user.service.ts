@@ -3,7 +3,7 @@ import {UserInterface} from './user.model.js'
 
 const getUsers = (): Promise<Array<UserInterface>> => userService.getAll()
 const getById = (id: string): Promise<UserInterface|undefined> => userService.getById(id)
-const create = (name: string, login: string, password: string): Promise<UserInterface | undefined> =>userService.create(name, login, password)
+const create = (name: string, login: string, password: string): Promise<UserInterface> =>userService.create(name, login, password)
 const update = (id: string, name: string, login: string, password: string): Promise<UserInterface|undefined> => userService.update(id, name, login, password)
 const remove = (id: string): Promise<boolean> => userService.remove(id)
 

@@ -1,0 +1,115 @@
+// Task scheme
+const Task = {
+      type: 'object',
+      properties: {
+          id: {type: 'string', nullable: true, format: 'uuid'},
+          title: {type: 'string'},
+          order: {type: 'number'},
+          description: {type: 'string'},
+          userId: {type: 'string', nullable: true},
+          boardId: {type: 'string', nullable: true},
+          columnId: {type: 'string', nullable: true}
+      }
+  }
+  
+const message = {
+                type: 'object',
+                properties: {
+                    message: { type: 'string'}
+                }
+}
+  
+  // Options get all tasks
+export const getTasksOpts = {
+      schema: {
+          response: {
+              200: {
+                  type: 'array',
+                  items: Task
+              }
+          }
+      },
+  }
+  
+  // Options get by ID Task
+export const getTaskOpts = {
+      schema: {
+          params:  {
+              boardId: { type: 'string', nullable: true },
+              taskId: { type: 'string', format: 'uuid' },
+            },
+          response: {
+              200: Task,
+              404: message
+          }
+          
+      }
+  }
+  
+  // Options create Task
+export const createTaskOpts = {
+      schema: {
+          body: {
+              type: 'object',
+              required: ['title','order','description','userId'],
+              properties: {
+                  title:   { type: 'string'},
+                  order: { type: 'number'},
+                  description: { type: 'string'},
+                  userId: { type: 'string', nullable: true},
+                  columnId: { type: 'string', nullable: true}
+              },
+          },
+          response: {
+              201: Task
+          }
+      }
+  }
+  
+  // Options to delete one task
+export const deleteTaskOpts = {
+      schema: {
+          params:  {
+              boardId: { type: 'string', format: 'uuid' },
+              taskId: { type: 'string', format: 'uuid' },
+            },
+          response: {
+              404: {
+                  type: 'object',
+                  properties: {
+                      message: { type: 'string'}
+                  }
+              },
+              200: {
+                  type: 'object',
+                  properties: {
+                      message: { type: 'string'}
+                  }
+              }
+          }
+      }
+  }
+  
+export const updateTaskOpts = {
+      schema: {
+          params:  {
+              boardId: { type: 'string', format: 'uuid' },
+              taskId: { type: 'string', format: 'uuid' },
+            },
+          body: {
+              type: 'object',
+              required: ['title','order','description','userId', 'columnId'],
+              properties: {
+                  title:   { type: 'string'},
+                  order: { type: 'number'},
+                  description: { type: 'string'},
+                  userId: { type: 'string', nullable: true},
+                  columnId: { type: 'string', nullable: true}
+              },
+          },
+          response: {
+              200: Task,
+              404: message
+          }
+      }
+  }

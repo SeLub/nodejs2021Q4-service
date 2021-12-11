@@ -1,0 +1,168 @@
+import { PORT } from './common/config.js';
+const ServerPort = PORT || 3000;
+import fastify, {FastifyInstance} from 'fastify'
+import { Server, IncomingMessage, ServerResponse } from 'http';
+//import * as UserProperties from './resources/users/user.model'
+// import SwaggerPlugin from 'fastify-swagger'
+
+
+// import boardRouter from './resources/boards/board.router.js'
+// import taskRouter from './resources/tasks/task.router.js'
+
+const server: FastifyInstance< Server, IncomingMessage, ServerResponse >  = fastify({ logger: true,  ignoreTrailingSlash: true, caseSensitive: false });
+
+import userRouter from './resources/users/user.router.js'
+server.register(userRouter)
+// server.register(SwaggerPlugin, 
+//   {   exposeRoute: true,
+//       routePrefix:'/api-docs',
+//       swagger: {
+//           info: { title: 'REST service'},
+//       },
+//   })
+
+
+// server.register(boardRouter)
+// server.register(taskRouter)
+
+
+  //  interface RequestParams {
+  //    userId?: string;
+  //    boardId?: string;
+  //    taskd?: string;
+  //  }
+    
+//   interface RequestBody {
+//     name?: string;
+//   }
+
+  // const opts: RouteShorthandOptions = {
+  //   schema:{
+  //       params:  {
+  //           userId: { type: 'string' },
+  //           boardId: { type: 'string' },
+  //           taskId: { type: 'string' },
+  //         }, 
+  //   //   body: {
+  //   //     type: 'object',
+  //   //     properties: {
+  //   //       name: {
+  //   //         type: 'string'
+  //   //       }
+  //   //     }
+  //   //   }
+  //   }
+  // };
+  
+
+//   let database: Array<UserProperties.User> = [
+//         {
+//         "id": "87ef73a1-d7b8-4941-bd4e-424e58a0b3d5",
+//         "name": "TEST_USER",
+//         "login": "test_user"
+//         }
+// ]
+
+// const getAllUsers = (): Array<UserProperties.User> => database
+
+// const getUserById = (id: string) =>{
+//   let item = database.find(el => el.id === id)
+//   return item
+// }
+
+
+// // User without password
+// const UserWitoutPassword = {
+//   type: 'object',
+//   properties: {
+//       id: {type: 'string', format: 'uuid'},
+//       name: {type: 'string'},
+//       login: {type: 'string'},
+//      // password: {type: 'string'},
+//   }
+// }
+
+// // Options to get all users
+// const getAllUsersOpts: RouteShorthandOptions  = {
+//   schema: {
+//       response: {
+//           200: {
+//               type: 'array',
+//               items: UserWitoutPassword
+//           }
+//       }
+//   }
+// }
+
+
+// // Options to get one user
+// const getUserOpts: RouteShorthandOptions = {
+//   schema: {
+
+//       params:  {
+//           id: { type: 'string' },
+//         },
+
+//       response: {
+//           201: UserWitoutPassword
+//       }
+
+//   }
+// }
+
+//     // Get all items
+//     server.get('/users', getAllUsersOpts, (request, reply) => {
+//       console.log(request)
+//       let respo = getAllUsers()
+//       reply.send(respo);
+//     } )
+    
+//     server.get<{
+//          Params: RequestParams;
+//        }>('/users/:userId', getUserOpts, async (request, reply) => {
+//         const id: string | undefined = request.params.userId
+//         if (id) {
+//           const statusCode = 200
+//           const item = await getUserById(id)
+//           reply
+//           .code(statusCode)
+//           .header('Content-Type', 'application/json; charset=utf-8')
+//           .send(item)
+//         } else {const statusCode =404
+//           const item = { message: 'id is undefined' }
+//           reply
+//           .code(statusCode)
+//           .send(item)
+//         }
+
+//     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const start = async () => {
+    try{
+        await server.listen(ServerPort)
+        console.log(`Server started successfully on PORT:${ServerPort}`);
+    } catch(error){
+        server.log.error(error)
+        process.exit(1)
+    }
+}
+
+start()

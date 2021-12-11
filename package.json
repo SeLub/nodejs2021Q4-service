@@ -11,7 +11,7 @@
   "scripts": {
     "start": "tsc-watch --project . --outDir ./dist --onSuccess \"nodemon ./dist/server.js\"",
     "lint": "eslint --ext .js,.ts --fix src/",
-    "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
+    "test": "jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
   },
   "keywords": [
@@ -69,6 +69,7 @@
     "nodemon": "2.0.15",
     "prettier": "2.4.1",
     "supertest": "6.1.6",
+    "ts-node": "^10.4.0",
     "tsc-watch": "^4.5.0",
     "typescript": "^4.5.2"
   }
