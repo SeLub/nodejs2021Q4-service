@@ -2,7 +2,7 @@ import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify"
 import * as usersService from './user.service.js'
 import * as usersOptions from './user.options.js'
 import User from './user.model.js'
-import {paramsRequestTask, userBodyRequest, fullRequestUser} from '../../common/interfaces.js'
+import {paramsInRequest, userBodyRequest, fullRequestUser} from '../../common/interfaces.js'
 
 
 export default async function userRouter(fastify: FastifyInstance) {
@@ -18,7 +18,7 @@ export default async function userRouter(fastify: FastifyInstance) {
 
   // GET /users/:userId - get the user by id (remove password from response)
   fastify.get('/:userId', usersOptions.getUserOpts, async (
-    _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+    _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
     const resault = await usersService.getById(_request.params.userId)
     const statusCode = resault ? 200 : 404
     const message = resault ? User.toResponse(resault) : message404
@@ -46,7 +46,7 @@ export default async function userRouter(fastify: FastifyInstance) {
 
   // DELETE /users/:userId - delete user
     fastify.delete('/:userId', usersOptions.deleteUserOpts,  async (
-      _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+      _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
         const {userId} = _request.params
         const resault = await usersService.remove(userId)
         const statusCode = resault ? 200 : 404

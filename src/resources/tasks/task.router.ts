@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify"
 import * as tasksService from './task.service.js'
 import * as tasksOptions from './task.options.js'
-import {paramsRequestTask, fullRequestTask} from '../../common/interfaces.js'
+import {paramsInRequest, fullRequestTask} from '../../common/interfaces.js'
 
 export default async function taskRouter(fastify: FastifyInstance) {
 
@@ -9,7 +9,7 @@ export default async function taskRouter(fastify: FastifyInstance) {
 
     // GET boards/:boardId/tasks - get all tasks
     fastify.get("/boards/:boardId/tasks",  tasksOptions.getTasksOpts, async (
-      _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+      _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
       const tasks = await tasksService.getTasks(boardId)
       await reply.code(200).header('Content-Type', 'application/json charset=utf-8').send(tasks)
@@ -17,7 +17,7 @@ export default async function taskRouter(fastify: FastifyInstance) {
 
     // GET boards/:boardId/tasks/:taskId - get the task by id
     fastify.get("/boards/:boardId/tasks/:taskId",  tasksOptions.getTaskOpts, async (
-          _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+          _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
           const { boardId, taskId } =  _request.params
           const tasks = await tasksService.getTask(boardId, taskId)
           if (tasks) {
@@ -50,7 +50,7 @@ export default async function taskRouter(fastify: FastifyInstance) {
 
     // DELETE boards/:boardId/tasks/:taskId - delete task
     fastify.delete("/boards/:boardId/tasks/:taskId",  tasksOptions.deleteTaskOpts, async (
-      _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+      _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId, taskId} = _request.params
       const resault: boolean = await tasksService.deleteTask(boardId, taskId)
       const statusCode = resault ? 200 : 404

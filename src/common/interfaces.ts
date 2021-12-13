@@ -2,7 +2,7 @@ import { RequestGenericInterface } from "fastify";
 import { ColumnsType } from "../resources/boards/board.model.js";
 
 export interface idRequest extends RequestGenericInterface {
-      Params: { id: string };
+      Params: { userId: string };
     }
     
 export interface userBodyRequest extends RequestGenericInterface {
@@ -25,19 +25,14 @@ export interface fullRequestUser extends RequestGenericInterface {
         login: string,
         password: string, 
       };
-      Params: { id: string };
+      Params: { userId: string };
     }
 export interface fullRequestBoard extends RequestGenericInterface {
       Body: {   
             title: string,
             columns: Array<ColumnsType>,
           };
-      Params: { id: string };
-    }
-export interface paramsRequestTask extends RequestGenericInterface {
-      Params: { boardId: string;
-                taskId: string;
-               };
+      Params: { boardId: string };
     }
 export interface fullRequestTask extends RequestGenericInterface {
       Params: { boardId: string;
@@ -50,4 +45,10 @@ export interface fullRequestTask extends RequestGenericInterface {
             userId: string|null,
             columnId: string|null
     }
+    }
+export interface paramsInRequest extends RequestGenericInterface {
+      Params: { boardId: string;
+                taskId: string;
+                userId: string;
+               };
     }

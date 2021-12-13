@@ -19,7 +19,7 @@ export class Board {
         columns = [
           { title: 'Backlog', order: 1 },
           { title: 'Sprint', order: 2 }
-        ] } = {})
+        ] } = {} as Board)
         {
               this.id = id
               this.title = title

@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply} from "fastify";
 import * as boardsService from './board.service.js'
 import * as boardsOptions from './board.options.js'
-import {paramsRequestTask, boardBodyRequest, fullRequestBoard} from '../../common/interfaces.js'
+import {paramsInRequest, boardBodyRequest, fullRequestBoard} from '../../common/interfaces.js'
 
 export default async function boardRouter(fastify: FastifyInstance) {
 
@@ -16,7 +16,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
     
   // GET /boards/:boardId - get the board by id
   fastify.get('/:boardId', boardsOptions.getBoardOpts, async (
-      _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+      _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
       const item = await boardsService.getById(boardId)
       if (item) {
@@ -48,7 +48,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
 })
   // DELETE /boards/:boardId - delete board
   fastify.delete('/:boardId', boardsOptions.deleteBoardOpts,  async (
-    _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
+    _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
       const resault: boolean = await boardsService.remove(boardId)
       const statusCode = resault ? 200 : 404
