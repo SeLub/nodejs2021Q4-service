@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto"
 
 export type ColumnsType = {
-  id?: string
+  id: string | null
   title: string
   order: number
 }
@@ -16,8 +16,8 @@ export class Board {
   constructor({
         title = "Autotest board",
         columns = [
-          { title: 'Backlog', order: 1 },
-          { title: 'Sprint', order: 2 }
+          { id:null, title: 'Backlog', order: 1 },
+          { id:null, title: 'Sprint', order: 2 }
         ] } = {} as Board)
         {
               this.id = randomUUID()
