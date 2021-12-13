@@ -30,7 +30,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
   fastify.post('/',  boardsOptions.createBoardOpts,  async (
     _request: FastifyRequest<boardBodyRequest>, reply: FastifyReply ) => {
       const { title, columns } = _request.body
-      const newBoard = await boardsService.create({ title, columns })
+      const newBoard = await boardsService.create({ id:null, title, columns })
       await reply.code(201).header('Content-Type', 'application/json; charset=utf-8').send(newBoard)
   })
   // PUT /boards/:boardId - update board
@@ -38,7 +38,7 @@ export default async function boardRouter(fastify: FastifyInstance) {
     _request: FastifyRequest<fullRequestBoard>, reply: FastifyReply ) => {
       const {boardId} = _request.params
       const { title, columns } = _request.body
-      const updatedBoard = await boardsService.update(boardId, {title, columns})
+      const updatedBoard = await boardsService.update({id:boardId, title, columns})
       if (updatedBoard){
         await reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(updatedBoard)
       } else {

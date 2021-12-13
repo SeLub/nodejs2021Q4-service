@@ -41,8 +41,8 @@ const removeUser = (userId: string): boolean => {
 
 const getAllBoards = (): Array<Board> => boardDB
 
-const getBoardById = (id: string): Board | undefined  => {
-  const resault = boardDB.find(board => board.id === id)
+const getBoardById = (boardId: string): Board | undefined  => {
+  const resault = boardDB.find(board => board.id === boardId)
   return resault
 }
       
@@ -52,8 +52,8 @@ const createBoard = (board: Board): Board =>{
     return newBoard
 }
 
-const updateBoard = (id: string, boardIn: Board): Board | undefined => {
-  const oldBoard = boardDB.find((board) => board.id === id)
+const updateBoard = (boardIn: Board): Board | undefined => {
+  const oldBoard = boardDB.find((board) => board.id === boardIn.id)
   if (!oldBoard) {return undefined}
   const index = boardDB.indexOf(oldBoard)
   const newBoard = {...oldBoard, ...boardIn}

@@ -2,7 +2,7 @@
 const Board = {
       type: 'object',
       properties: {
-          boardId: {type: 'string', format: 'uuid', nullable: true },
+          id: {type: 'string', format: 'uuid', nullable: true },
           title: {type: 'string'},
           columns: {type: 'array'}
       }

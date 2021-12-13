@@ -7,21 +7,20 @@ export type ColumnsType = {
 }
 
 export class Board {
-  title: string
+  id: string | null
 
-  id?: string
+  title: string
 
   columns: ColumnsType[]
 
   constructor({
-        id =randomUUID(),
         title = "Autotest board",
         columns = [
           { title: 'Backlog', order: 1 },
           { title: 'Sprint', order: 2 }
         ] } = {} as Board)
         {
-              this.id = id
+              this.id = randomUUID()
               this.title = title
               this.columns = columns
         }
