@@ -1,10 +1,10 @@
 import * as db from '../../inmamoryDB.js'
-import { UserInterface } from './user.model.js'
+import User from './user.model.js'
 
-const getAll = async (): Promise<Array<UserInterface>> => db.getAllUsers()
-const getById = async (id: string): Promise<UserInterface|undefined> => db.getUserById(id)
-const create = async (name: string, login: string, password: string): Promise<UserInterface> => db.createUser(name, login, password)
-const update = async (id: string, name: string, login: string, password: string): Promise<UserInterface|undefined> => db.updateUser(id, name, login, password)
-const remove = async (id: string): Promise<boolean> => db.removeUser(id)
+const getAll = async (): Promise<Array<User>> => db.getAllUsers()
+const getById = async (userId: string): Promise<User|undefined> => db.getUserById(userId)
+const create = async (user: User): Promise<User> => db.createUser(user)
+const update = async (userId: string, user: User): Promise<User|undefined> => db.updateUser(userId, user)
+const remove = async (userId: string): Promise<boolean> => db.removeUser(userId)
 
 export { getAll, getById, create, update, remove }
