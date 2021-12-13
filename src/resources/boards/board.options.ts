@@ -2,7 +2,7 @@
 const Board = {
       type: 'object',
       properties: {
-          id: {type: 'string', format: 'uuid' },
+          boardId: {type: 'string', format: 'uuid', nullable: true },
           title: {type: 'string'},
           columns: {type: 'array'}
       }
@@ -31,7 +31,7 @@ export const getBoardsOpts = {
 export const getBoardOpts = {
       schema: {
           params:  {
-              id: { type: 'string', format: 'uuid'  },
+            boardId: { type: 'string', format: 'uuid' }
             },
           response: {
               200: Board,
@@ -61,7 +61,7 @@ export const createBoardOpts = {
 export const deleteBoardOpts = {
       schema: {
           params:  {
-              id: { type: 'string', format: 'uuid' },
+            boardId: { type: 'string', format: 'uuid' },
             },
           response: {
               404: message,
@@ -73,7 +73,7 @@ export const deleteBoardOpts = {
 export const updateBoardOpts = {
       schema: {
           params:  {
-              id: { type: 'string', format: 'uuid' },
+            boardId: { type: 'string', format: 'uuid' },
             },
           body: {
               type: 'object',
