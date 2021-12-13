@@ -63,6 +63,7 @@
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
     "husky": "^4.3.8",
     "jest": "27.3.1",
     "lint-staged": "12.0.3",
@@ -71,6 +72,7 @@
     "supertest": "6.1.6",
     "ts-node": "^10.4.0",
     "tsc-watch": "^4.5.0",
+    "typedoc": "^0.22.10",
     "typescript": "^4.5.2"
   }
 }

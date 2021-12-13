@@ -102,6 +102,11 @@
     "node_modules/"
 ],
 "include": [
-    "./src/**/*.ts"
-, "src/resources/users/user.model.ts", "src/resources/users/Users.ts"]
+    "./src/**/*.ts"],
+"typedocOptions": {
+        "entryPoints": ["src/app.ts"],
+        "out": "docs",
+        "readme": "none"
+    }
+
 }

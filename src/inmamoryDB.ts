@@ -11,6 +11,13 @@ let  taskDB = tasksDatabase
 
 /* ------------------ Users -----------------------------------*/
 
+/**
+* Get all users
+* @returns Array of User`s instancies.
+* Exemple:
+ */
+
+
 const getAllUsers = (): Array<UserInterface> => userDB
 
 const getUserById = (id: string): UserInterface | undefined =>{
