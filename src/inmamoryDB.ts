@@ -24,9 +24,9 @@ const createUser = (user: User): User =>{
     return newUser
 }
 
-const updateUser = (userId: string, user: User): User | undefined => {
-  userDB = userDB.map(el => el.id === userId ? { ...el,...user } : el)
-  const updatedUser = userDB.find(el => el.id === userId)
+const updateUser = (user: User): User | undefined => {
+  userDB = userDB.map(el => el.id === user.id ? { ...el,...user } : el)
+  const updatedUser = userDB.find(el => el.id === user.id)
   return updatedUser
 }
 
@@ -87,8 +87,8 @@ const createTask = (task: Task): Task => {
   return newTask
 }
 
-const updateTask = (boardId: string, taskId: string, taskIn: Task): Task|undefined => {
-  const oldTask = taskDB.find( task => task.boardId === boardId && task.id ===taskId)
+const updateTask = (taskIn: Task): Task|undefined => {
+  const oldTask = taskDB.find( task => task.boardId === taskIn.boardId && task.id ===taskIn.id)
   if (!oldTask) {return undefined}
   const index = taskDB.indexOf(oldTask)
   const newTask = {...oldTask, ...taskIn}

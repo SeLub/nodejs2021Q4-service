@@ -29,7 +29,7 @@ export default async function userRouter(fastify: FastifyInstance) {
   fastify.post('/',  usersOptions.postUserOpts,  async (
     _request: FastifyRequest<userBodyRequest>, reply: FastifyReply ) => {
     const { name, login, password} = _request.body
-    const resault = await usersService.create({name, login, password})
+    const resault = await usersService.create({id:null, name, login, password})
     await reply.code(201).header('Content-Type', 'application/json; charset=utf-8').send(User.toResponse(resault))
   })
     
@@ -38,7 +38,7 @@ export default async function userRouter(fastify: FastifyInstance) {
     _request: FastifyRequest<fullRequestUser>, reply: FastifyReply ) => {
     const { name, login, password } = _request.body
     const {userId} = _request.params
-    const resault = await usersService.update(userId, {name, login, password})
+    const resault = await usersService.update({id:userId, name, login, password})
     const statusCode = resault ? 200 : 404
     const meassge = resault || message404
     await reply.code(statusCode).header('Content-Type', 'application/json; charset=utf-8').send(meassge)
