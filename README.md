@@ -2,11 +2,11 @@
 
 Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/typescript-basics.md)
 
-Task due date / deadline date - 05.11.21 / 05.11.21 23:59(GMT+3)
+Task due date / deadline date - 15.11.21 / 19.11.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - **300**
+ TOTAL POINTS - **330**
 
 -----------
 
@@ -83,7 +83,7 @@ When server is running, you can run tests. Open new window in terminal.
 
 **Note. Check you are in the root application directory.**
 
-May be yoy need next command.
+May be you. need next command.
 ```
 cd nodejs2021Q4-service
 
