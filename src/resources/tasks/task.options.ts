@@ -77,18 +77,8 @@ export const deleteTaskOpts = {
               taskId: { type: 'string', format: 'uuid' },
             },
           response: {
-              404: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              },
-              200: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              }
+              404: message,
+              200: message
           }
       }
   }

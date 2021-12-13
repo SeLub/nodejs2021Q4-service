@@ -5,8 +5,8 @@ import {paramsRequestTask, fullRequestTask} from '../../common/interfaces.js'
 
 export default async function taskRouter(fastify: FastifyInstance) {
 
-    const message404 = { meassge: 'Not found'}
-  
+  const message404 = { message: 'Not found'}
+
     // GET boards/:boardId/tasks - get all tasks
     fastify.get("/boards/:boardId/tasks",  tasksOptions.getTasksOpts, async (
       _request: FastifyRequest<paramsRequestTask>, reply: FastifyReply ) => {
