@@ -1,8 +1,6 @@
-import { UserInterface } from './user.model.js'
+import User from './user.model.js'
 
-
-
-const database: Array<UserInterface> = [
+const database: Array<User> = [
      {
      "id": "87ef73a1-d7b8-4941-bd4e-424e58a0b3d5",
      "name": "TEST_USER",

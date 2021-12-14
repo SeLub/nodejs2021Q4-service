@@ -1,9 +1,8 @@
-
 // User with password
 const User = {
       type: 'object',
       properties: {
-          id: {type: 'string', format: 'uuid'},
+          id: {type: 'string', format: 'uuid', nullable: true},
           name: {type: 'string'},
           login: {type: 'string'},
           password: {type: 'string'},
@@ -15,10 +14,9 @@ const User = {
   export const UserWitoutPassword = {
       type: 'object',
       properties: {
-          id: {type: 'string', format: 'uuid'},
+          id: {type: 'string', format: 'uuid', nullable: true},
           name: {type: 'string'},
           login: {type: 'string'},
-         // password: {type: 'string'},
       }
   }
   
@@ -44,20 +42,17 @@ const message = {
   // Options to get one user
   export const getUserOpts = {
       schema: {
-  
           params:  {
-              id: { type: 'string', format: 'uuid' },
+              userId: { type: 'string', format: 'uuid' },
             },
-  
           response: {
               201: UserWitoutPassword,
               404: message
           }
-  
       }
   }
   
-  // Options to add one item
+  // Options to add one user
   export const postUserOpts = {
       schema: {
           body: {
@@ -75,12 +70,11 @@ const message = {
       }
   }
   
-  // Options to delete one item
+  // Options to delete one user
   export const deleteUserOpts = {
       schema: {
-  
           params:  {
-              id: { type: 'string', format: 'uuid' },
+              userId: { type: 'string', format: 'uuid' },
             },
           response: {
               404: message,
@@ -92,7 +86,7 @@ const message = {
   export const updateUserOpts = {
       schema: {
           params:  {
-              id: { type: 'string', format: 'uuid' },
+              userId: { type: 'string', format: 'uuid' },
             },
           body: {
               type: 'object',

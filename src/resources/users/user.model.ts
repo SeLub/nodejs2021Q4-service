@@ -1,23 +1,6 @@
 import { randomUUID } from "crypto"
 
-/**
- * A class representing a User
- * @interface  UserInterface
- */
-
-export interface UserInterface{
-  id: string | null
-  name: string
-  login: string
-  password?: string
-}
-
-/**
- * A class representing a User
- * @class  User
- */
-
-export class User {
+export default class User {
     id: string | null
 
     name: string
@@ -33,28 +16,17 @@ export class User {
    */
 
   constructor({
-     /**
-     * The id of User. It is geterated automatically upon creation of User/ 
-     * @name  id
-     * @type {uuid}
-     */
-        id = randomUUID(),
-        name = "TEST_USER",
-        login = "test_user",
-        password = "T35t_P@55w0rd"} = {}) 
+    name = "TEST_USER",
+    login = "test_user",
+    password = "T35t_P@55w0rd"} = {} as User) 
   {  
-    this.id = id
+    this.id = randomUUID()
     this.name = name
     this.login = login
     this.password = password
   }
 
-   /**
-   * Return User, without password.
-   * @param user - User created.
-   */
-
-  static toResponse(user: UserInterface): UserInterface {
+  static toResponse(user: User): User {
     const { id, name, login } = user
     return { id, name, login }
   }

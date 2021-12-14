@@ -6,9 +6,9 @@ const Task = {
           title: {type: 'string'},
           order: {type: 'number'},
           description: {type: 'string'},
-          userId: {type: 'string', nullable: true},
-          boardId: {type: 'string', nullable: true},
-          columnId: {type: 'string', nullable: true}
+          userId: {type: 'string', nullable: true, format: 'uuid'},
+          boardId: {type: 'string', nullable: true, format: 'uuid'},
+          columnId: {type: 'string', nullable: true, format: 'uuid'}
       }
   }
   
@@ -35,7 +35,7 @@ export const getTasksOpts = {
 export const getTaskOpts = {
       schema: {
           params:  {
-              boardId: { type: 'string', nullable: true },
+              boardId: { type: 'string', format: 'uuid' },
               taskId: { type: 'string', format: 'uuid' },
             },
           response: {
@@ -49,6 +49,9 @@ export const getTaskOpts = {
   // Options create Task
 export const createTaskOpts = {
       schema: {
+        params:  {
+            boardId: { type: 'string', format: 'uuid' }
+          },
           body: {
               type: 'object',
               required: ['title','order','description','userId'],
@@ -56,8 +59,8 @@ export const createTaskOpts = {
                   title:   { type: 'string'},
                   order: { type: 'number'},
                   description: { type: 'string'},
-                  userId: { type: 'string', nullable: true},
-                  columnId: { type: 'string', nullable: true}
+                  userId: { type: 'string', nullable: true, format: 'uuid' },
+                  columnId: { type: 'string', nullable: true, format: 'uuid' }
               },
           },
           response: {
@@ -74,18 +77,8 @@ export const deleteTaskOpts = {
               taskId: { type: 'string', format: 'uuid' },
             },
           response: {
-              404: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              },
-              200: {
-                  type: 'object',
-                  properties: {
-                      message: { type: 'string'}
-                  }
-              }
+              404: message,
+              200: message
           }
       }
   }
@@ -103,8 +96,8 @@ export const updateTaskOpts = {
                   title:   { type: 'string'},
                   order: { type: 'number'},
                   description: { type: 'string'},
-                  userId: { type: 'string', nullable: true},
-                  columnId: { type: 'string', nullable: true}
+                  userId: { type: 'string', nullable: true, format: 'uuid'},
+                  columnId: { type: 'string', nullable: true, format: 'uuid'}
               },
           },
           response: {

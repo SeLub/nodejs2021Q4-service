@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto"
 
 export default class Task{
-  id?: string | null
+  id: string | null
 
   title: string
 
@@ -16,7 +16,6 @@ export default class Task{
   columnId: string | null
 
   constructor({ 
-        id = randomUUID(),
         title = "Autotest task",
         order = 0,
         description = "Lorem ipsum",
@@ -24,7 +23,7 @@ export default class Task{
         boardId = null,
         columnId = null, } = {} as Task)
   {
-      this.id = id
+      this.id =  randomUUID()
       this.title = title
       this.order = order
       this.description = description
