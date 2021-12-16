@@ -102,11 +102,32 @@
     "node_modules/"
 ],
 "include": [
-    "./src/**/*.ts"],
+    "src"],
 "typedocOptions": {
-        "entryPoints": ["src/app.ts"],
+        "entryPoints": [
+          "src/server.ts",
+          "src/router.ts",
+          "src/resources/users/user.router.ts",
+          "src/resources/boards/board.router.ts",
+          "src/resources/tasks/task.router.ts",
+          "src/resources/users/user.service.ts",
+          "src/resources/boards/board.service.ts",
+          "src/resources/tasks/task.service.ts",
+          "src/resources/users/user.memory.repository.ts",
+          "src/resources/boards/board.memory.repository.ts",
+          "src/resources/tasks/task.memory.repository.ts",
+          "src/inmamoryDB.ts",
+          "src/resources/users/user.model.ts",
+          "src/resources/boards/board.model.ts",
+          "src/resources/tasks/task.model.ts"
+
+
+        ],
         "out": "docs",
-        "readme": "none"
+        "readme": "doc/README.md",
+        "name": "REST service with Fastifly & TypeScript",
+        "categorizeByGroup": true,
+        "categoryOrder": ["Server", "Service", "Repository", "Database"]
     }
 
 }

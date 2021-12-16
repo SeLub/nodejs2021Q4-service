@@ -1,3 +1,8 @@
+/**
+ * This is the doc comment for inmammoryDB.ts
+ * Specify this is a module comment and rename it to my-module:
+ * @module Task_Database
+ */
 import Task from './task.model.js'
 
 const database: Array<Task> = [

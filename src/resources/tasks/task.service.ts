@@ -1,3 +1,9 @@
+/**
+ * This module is implementation of Service Layer (Business Logic) of application for {@link Task} handling
+ * This module gets data from {@link TaskRepository}, handle them and send to {@link TaskRouter}
+ * @module TaskService
+ * @category Service
+*/
 import  Task from './task.model.js'
 import * as taskService from './task.memory.repository.js'
 
