@@ -38,7 +38,6 @@
  
  server.register(MainRouter)
 
-
 const start = async () => {
       try{
           await server.listen(FASTIFY_PORT)

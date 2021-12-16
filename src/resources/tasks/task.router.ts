@@ -5,6 +5,7 @@
  * - Request methods: GET, POST, PUT, DELETE requests
  * - Part of the __Server Layer__
  * - Get data from: {@link TaskService}
+ * - Get data from: {@link TaskOptions}
  * - Send Data to: {@link MainRouter}
  * 
  * @module TaskRouter
@@ -13,8 +14,10 @@
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify"
 import * as TaskService from './task.service.js'
-import * as tasksOptions from './task.options.js'
+import * as TaskOptions from './task.options.js'
 import {paramsInRequest, fullRequestTask} from '../../common/interfaces.js'
+// import * as fs from 'fs';
+
 
 /**
 * Router for tasks.
@@ -37,8 +40,15 @@ export default async function TaskRouter(fastify: FastifyInstance) {
 * @category Task
 */
 
+    // GET /docs - get docs
+    // fastify.get('/docs' ,function (_request, reply) {
+    //   const bufferIndexHtml = fs.readFileSync('docs/index.html')
+    //   reply.code(200).header('Content-Type', 'text/html charset=utf-8').send(bufferIndexHtml)
+    // })
+
+
     // GET boards/:boardId/tasks - get all tasks
-    fastify.get("/boards/:boardId/tasks",  tasksOptions.getTasksOpts, async (
+    fastify.get("/boards/:boardId/tasks",  TaskOptions.getTasksOpts, async (
       _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
       const tasks = await TaskService.getTasks(boardId)
@@ -46,7 +56,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     })
 
     // GET boards/:boardId/tasks/:taskId - get the task by id
-    fastify.get("/boards/:boardId/tasks/:taskId",  tasksOptions.getTaskOpts, async (
+    fastify.get("/boards/:boardId/tasks/:taskId",  TaskOptions.getTaskOpts, async (
           _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
           const { boardId, taskId } =  _request.params
           const tasks = await TaskService.getTask(boardId, taskId)
@@ -58,7 +68,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
         })
 
     // POST boards/:boardId/tasks - create task
-    fastify.post("/boards/:boardId/tasks",  tasksOptions.createTaskOpts, async (
+    fastify.post("/boards/:boardId/tasks",  TaskOptions.createTaskOpts, async (
           _request: FastifyRequest<fullRequestTask>, reply: FastifyReply ) => {
           const newTask = {..._request.body, boardId: _request.params.boardId, id:null}
           const task = await TaskService.addTask(newTask)
@@ -66,7 +76,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
         })
 
     // PUT boards/:boardId/tasks/:taskId - update task
-    fastify.put("/boards/:boardId/tasks/:taskId",  tasksOptions.updateTaskOpts, async (
+    fastify.put("/boards/:boardId/tasks/:taskId",  TaskOptions.updateTaskOpts, async (
       _request: FastifyRequest<fullRequestTask>, reply: FastifyReply ) => {
       const { boardId, taskId } =  _request.params
       const newTask = {..._request.body, boardId, id:taskId}
@@ -79,7 +89,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     })
 
     // DELETE boards/:boardId/tasks/:taskId - delete task
-    fastify.delete("/boards/:boardId/tasks/:taskId",  tasksOptions.deleteTaskOpts, async (
+    fastify.delete("/boards/:boardId/tasks/:taskId",  TaskOptions.deleteTaskOpts, async (
       _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId, taskId} = _request.params
       const resault: boolean = await TaskService.deleteTask(boardId, taskId)

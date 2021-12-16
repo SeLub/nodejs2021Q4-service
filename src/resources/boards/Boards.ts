@@ -1,3 +1,8 @@
+/**
+ * This is database for {@link Board} instancies.
+ * @module BoardDatabase
+ * @category Database
+ */
 import  {Board} from './board.model.js'
 
 const database: Array<Board> = [

@@ -1,3 +1,8 @@
+/**
+ * This is database for {@link User} instancies.
+ * @module UserDatabase
+ * @category Database
+ */
 import User from './user.model.js'
 
 const database: Array<User> = [

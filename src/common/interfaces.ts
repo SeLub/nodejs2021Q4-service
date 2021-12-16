@@ -1,3 +1,8 @@
+/**
+ * Typing for server requests.
+ * @module Interfacies
+ * @category Server
+ */
 import { RequestGenericInterface } from "fastify";
 import { ColumnsType } from "../resources/boards/board.model.js";
 

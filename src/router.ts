@@ -11,6 +11,9 @@
  */
 
 import { FastifyInstance } from "fastify"
+import fastifyStatic from "fastify-static"
+import path from "path"
+import { fileURLToPath } from 'url'
 import UserRouter from "./resources/users/user.router.js"
 import BoardRouter from "./resources/boards/board.router.js"
 import TaskRouter from "./resources/tasks/task.router.js"
@@ -23,6 +26,20 @@ import TaskRouter from "./resources/tasks/task.router.js"
 */
 
 export default async function MainRouter(fastify: FastifyInstance) {
+ 
+  const __dirname = path.dirname(fileURLToPath(import.meta.url))
+  fastify.register(fastifyStatic, {
+    root: path.join(__dirname, '/doc'),
+    prefix: '/static'
+  })
+
+  // second plugin
+fastify.register(fastifyStatic, {
+  root: path.join(__dirname, '../docs'),
+  prefix: '/docs',
+  decorateReply: false // the reply decorator has been added by the first plugin registration
+})
+
   /** Regiter Task Router
    * @param taskRouter - module Task Router
    */

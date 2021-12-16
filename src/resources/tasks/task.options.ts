@@ -1,3 +1,9 @@
+/**
+ * This module describes data scheme to validate routes from {@link TaskRouter} and serialize outputs.
+ * 
+ * @module TaskOptions
+ */
+
 // Task scheme
 const Task = {
       type: 'object',

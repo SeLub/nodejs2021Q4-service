@@ -1,7 +1,7 @@
 /**
- * This is the doc comment for inmammoryDB.ts
- * Specify this is a module comment and rename it to my-module:
- * @module Task_Database
+ * This is database for {@link Task} instancies.
+ * @module TaskDatabase
+ * @category Database
  */
 import Task from './task.model.js'
 

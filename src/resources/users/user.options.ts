@@ -1,3 +1,9 @@
+/**
+ * This module describes data scheme to validate routes from {@link UserRouter} and serialize outputs.
+ * 
+ * @module UserOptions
+ */
+
 // User with password
 const User = {
       type: 'object',

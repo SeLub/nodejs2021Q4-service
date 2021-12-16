@@ -1,3 +1,9 @@
+/**
+ * This module describes data scheme to validate routes from {@link BoardRouter} and serialize outputs.
+ * 
+ * @module BoardOptions
+ */
+
 // Board scheme
 const Board = {
       type: 'object',
