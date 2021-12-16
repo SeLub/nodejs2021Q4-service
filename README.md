@@ -83,7 +83,7 @@ When server is running, you can run tests. Open new window in terminal.
 
 **Note. Check you are in the root application directory.**
 
-May be you. need next command.
+May be you need next command:
 ```
 cd nodejs2021Q4-service
 
@@ -95,6 +95,15 @@ Copy command below and past it to the terminal.
 npm run test
 
 ```
+## Run lint
+
+Run next command:
+
+```
+npm run lint
+
+```
+
 ## Server management
 
 № | Command | Description 
