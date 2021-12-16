@@ -1,12 +1,12 @@
-# __Task 4. REST service__
+# __Task 5. Typescript basics__
 
-Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/rest-service.md)
+Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/typescript-basics.md)
 
-Task due date / deadline date - 05.11.21 / 05.11.21 23:59(GMT+3)
+Task due date / deadline date - 15.11.21 / 19.11.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - **300**
+ TOTAL POINTS - **330**
 
 -----------
 
@@ -17,24 +17,24 @@ Self check:
 # __Summary Report__
 
 
-## Базовая реализация
+## Оценка миграции (максимум **260 баллов**)
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | Каждый успешный тест при выполнении скрипта `npm run test` | +10 | +170
-2 | Код приложения, работающий с сущностью `user` разделен по модулям в соответствии с его назначением (к примеру: работа с запросом и ответом в `*.router.js`, бизнес-логика в `*.service.js`, работа с хранилищем данных в `*.repository.js` и т.п.) | +10 | +10
-3 | Аналогично пункту 2 для `boards` | +10 | +10
-4 | Аналогично пункту 2 для `tasks` | +10 | +10
-5 | **TOTAL POINTS** |   | **+200**
+1 | За каждый успешно пройденный тест | +10 | +170
+2 | В проекте настроен ESLint и имеется правило `no-explicit-any` | +20 | +20
+3 | В проекте имеется `tsconfig` и в нем `noImplicitAny: true` | +20 | +20
+4 | В проекте имеется `tsconfig` и в нем включена опция [strict](https://www.typescriptlang.org/tsconfig#strict) и при этом strict-related опции не перезаписаны в `false` | +50 | +50
+5 | **TOTAL POINTS** |   | **+260**
 
 -----
 
-## Продвинутая реализация
+## Оценка TSDoc (максимум **70 баллов**)
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | REST сервис построен на базе фреймворка/библиотеки, отличной от Express и Nest.js, либо на чистом Node.js | +100 | +100
-5 | **TOTAL POINTS** |   | **+100**
+1 | Total done  |   +70  |   +70
+5 | **TOTAL POINTS** |   | **+70**
 
 -----
 
@@ -43,14 +43,15 @@ Self check:
 № | Description | Points | Penalty 
 --|-------------|--------|--------
 1 | Наличие изменений в тестах либо в workflow | -150 | 0
-2 | Полная ссылка на репозиторий с решением отличается от `https://github.com/%your-gihub-id%/nodejs2021Q4-service` | -100 | 0
-3 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в `Readme.md` и другую документацию) | -90 | 0
-4 | За отсутствие отдельной ветки для разработки | -20 | 0
-5 | За отсутствие `Pull Request` | -20 | 0
-6 | За неполную информацию в описании `Pull Request` (отсутствует либо некорректен один из 3 обязательных пунктов) | -20 | 0
-7 | За **каждую** ошибку линтера при запуске `npm run lint` на основе **локального конфига** (именно `errors`, не `warnings`) | -5 | 0
-7 | Меньше 3 коммитов (не считая коммиты, вносящие изменения только в `Readme.md` и другие вспомогательные файлы) | -20 | 0
-5 | **TOTAL PENALTY** |   | **0**
+2 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в Readme.md и вспомогательные файлы | -99 | 0
+3 | Не все файлы с кодом в папке src имеют расширение .ts | -50 | 0
+4 | За **каждую** ошибку линтера при запуске `npm run lint` на основе **локального конфига** (именно `errors`, не `warnings`) | -10 | 0
+5 | Имеется явно указанный тип `any`, за каждое использование | -20 | 0
+6 | За отсутствие отдельной ветки для разработки | -20 | 0
+7 | За отсутствие `Pull Request` | -20 | 0
+8 | За неполную информацию в описании `Pull Request` (отсутствует либо некорректен один из 3 обязательных пунктов) | -20 | 0
+9 | Меньше 3 коммитов в ветке разработки, не считая коммиты, вносящие изменения только в `Readme.md`, либо другие вспомогательные файлы | -20 | 0
+= | **TOTAL PENALTY** |   | **0**
 
 -----
 
@@ -66,7 +67,7 @@ git clone https://github.com/SeLub/nodejs2021Q4-service.git
 
 cd nodejs2021Q4-service
 
-git checkout dev
+git checkout task-5
 
 npm install
 
@@ -82,12 +83,27 @@ When server is running, you can run tests. Open new window in terminal.
 
 **Note. Check you are in the root application directory.**
 
+May be you need next command:
+```
+cd nodejs2021Q4-service
+
+```
+
 Copy command below and past it to the terminal. 
 
 ```
 npm run test
 
 ```
+## Run lint
+
+Run next command:
+
+```
+npm run lint
+
+```
+
 ## Server management
 
 № | Command | Description 
@@ -95,6 +111,21 @@ npm run test
 1 | npm run start | Start server
 2 | npm run test | Run tests
 3 | npm run lint | Run linter
+
+## TypeDoc documentation
+
+Yo can check generated TSdocs here:
+
+http://localhost:4000/docs/index.html
+
+   **Note. This will work only when server is RUNNING**
+
+To regenerate TSDocs use:
+
+```
+npm run build-docs
+
+```
 
 ## Swagger documentation
 
@@ -109,14 +140,6 @@ http://localhost:4000/api-docs/static/index.html
 
 ------------
 
-#### **Swagger UI API documentation**
+#### **Recommended checking process**
 
-![Swagger UI API documentation](swagger.png)
-
-#### **TESTS** - screencast of the tests running
-
-![Tests running](tests_demo.gif)
-
-#### **Linter** - result of linter
-
-![Tests running](linter.png)
+![Recommended checking process](checkout.gif)

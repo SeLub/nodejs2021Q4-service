@@ -7,12 +7,13 @@
   },
   "type": "module",
   "description": "REST service starter for RS School",
-  "main": "src/server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "tsc-watch --project . --outDir ./dist --onSuccess \"nodemon ./dist/server.js\"",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
-    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
+    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "build-docs": "typedoc --entryPointStrategy expand src/"
   },
   "keywords": [
     "rs",
@@ -38,18 +39,23 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "src/**/*.ts": [
       "npm run lint"
     ]
   },
   "dependencies": {
     "dotenv": "^10.0.0",
     "fastify": "^3.24.1",
+    "fastify-static": "^4.5.0",
     "fastify-swagger": "^4.12.6",
-    "path": "^0.12.7",
-    "uuid": "^8.3.2"
+    "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/node": "^16.11.12",
+    "@types/uuid": "^8.3.3",
+    "@types/yamljs": "^0.2.31",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
     "chai": "4.3.4",
     "debug": "4.3.2",
     "dirty-chai": "2.0.1",
@@ -59,11 +65,19 @@
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
     "husky": "^4.3.8",
     "jest": "27.3.1",
     "lint-staged": "12.0.3",
     "nodemon": "2.0.15",
     "prettier": "2.4.1",
-    "supertest": "6.1.6"
+    "supertest": "6.1.6",
+    "ts-node": "^10.4.0",
+    "tsc-watch": "^4.5.0",
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-mdn-links": "^1.0.4",
+    "typedoc-plugin-missing-exports": "^0.22.6",
+    "typedoc-plugin-rename-defaults": "^0.4.0",
+    "typescript": "^4.5.2"
   }
 }

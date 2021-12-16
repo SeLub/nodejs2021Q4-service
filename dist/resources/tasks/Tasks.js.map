@@ -1,0 +1,1 @@
+{"version":3,"file":"Tasks.js","sourceRoot":"","sources":["../../../src/resources/tasks/Tasks.ts"],"names":[],"mappings":"AAOA,MAAM,QAAQ,GAAgB;IAC1B;QACI,IAAI,EAAE,sCAAsC;QAC5C,OAAO,EAAE,gBAAgB;QACzB,OAAO,EAAE,CAAC;QACV,aAAa,EAAE,uBAAuB;QACtC,QAAQ,EAAE,sCAAsC;QAChD,SAAS,EAAE,sCAAsC;QACjD,UAAU,EAAE,GAAG;KAClB;CACJ,CAAA;AAED,eAAe,QAAQ,CAAA"}
