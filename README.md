@@ -33,7 +33,7 @@ Self check:
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | xxxx | +70
+1 | Total done  |   +70  |   +70
 5 | **TOTAL POINTS** |   | **+70**
 
 -----
@@ -140,14 +140,6 @@ http://localhost:4000/api-docs/static/index.html
 
 ------------
 
-#### **Swagger UI API documentation**
+#### **Recommended checking process**
 
-![Swagger UI API documentation](swagger.png)
-
-#### **TESTS** - screencast of the tests running
-
-![Tests running](tests_demo.gif)
-
-#### **Linter** - result of linter
-
-![Tests running](linter.png)
+![Recommended checking process](checkout.gif)
