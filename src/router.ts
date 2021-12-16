@@ -29,7 +29,7 @@ export default async function MainRouter(fastify: FastifyInstance) {
  
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   fastify.register(fastifyStatic, {
-    root: path.join(__dirname, '/doc'),
+    root: path.join(__dirname, '../doc'),
     prefix: '/static'
   })
 
