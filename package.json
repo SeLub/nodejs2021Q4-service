@@ -44,17 +44,17 @@
     ]
   },
   "dependencies": {
-    "@mgcrea/fastify-request-logger": "^0.5.2",
-    "@mgcrea/pino-pretty-compact": "^0.5.0",
     "dotenv": "^10.0.0",
     "fastify": "^3.24.1",
     "fastify-static": "^4.5.0",
     "fastify-swagger": "^4.12.6",
     "path": "^0.12.7",
+    "pino": "^7.6.1",
     "pino-pretty": "^7.3.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.12",
+    "@types/pino": "^7.0.5",
     "@types/uuid": "^8.3.3",
     "@types/yamljs": "^0.2.31",
     "@typescript-eslint/eslint-plugin": "^5.6.0",

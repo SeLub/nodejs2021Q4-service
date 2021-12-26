@@ -8,14 +8,12 @@
  */
  import fastify, { FastifyRequest, FastifyReply } from 'fastify'
  // import createFastify, { FastifyInstance, FastifyServerOptions, FastifyRequest, FastifyReply } from 'fastify' 
- // import fastifyRequestLogger from '@mgcrea/fastify-request-logger'
- // import prettifier from '@mgcrea/pino-pretty-compact'
  import SwaggerPlugin from 'fastify-swagger'
- import { PORT, LOG_LEVEL } from './common/config.js'
+ import { PORT } from './common/config.js'
  import MainRouter from './router.js'
-
  import { handleExit, handleUncaughtErrors } from './common/fatal.js';
- 
+ import {logger} from './logger.js'
+
  const FASTIFY_PORT = Number(PORT) || 3000
 
  const SwaggerOpt = {  exposeRoute: true,
@@ -28,26 +26,10 @@
           }
 }
 
-// const createServer = (options: FastifyServerOptions = {}): FastifyInstance => {
-//   const server = createFastify({
-//     logger: {
-//       prettyPrint: true, 
-//       prettifier },
-//     disableRequestLogging: false,
-//     ...options,
-//   })
-//   return server
-// }
-// const server = createServer({
-//   ignoreTrailingSlash: true,
-// })
 const server = fastify({
   ignoreTrailingSlash: true,
-  logger: {
-    prettyPrint: true,
-    level: LOG_LEVEL,
-  },
-});
+  logger
+})
 
 
 
@@ -73,8 +55,6 @@ server.addHook("onResponse", (req:FastifyRequest, reply:FastifyReply, done) => {
   done()
 })
 
-
-
 // server.register(fastifyRequestLogger)
 /**
 * Register Swagger Plugin 
@@ -94,7 +74,6 @@ const start = async () => {
       try{
         handleExit();
         handleUncaughtErrors();
-
  
         // Для проверки пункта 3 расскомментируйте здесь: 
         // throw Error('Oops!')

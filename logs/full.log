@@ -1,0 +1,39 @@
+{"level":50,"time":1640544023553,"pid":60325,"hostname":"pop-os","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:43:15)\n    at file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:51:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
+{"level":30,"time":1640544055805,"pid":60455,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640544064170,"pid":60455,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52238},"msg":"incoming request"}
+{"level":30,"time":1640544064181,"pid":60455,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640544064200,"pid":60455,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1640544064200,"pid":60455,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":29.35955500230193,"msg":"request completed"}
+{"level":30,"time":1640544119313,"pid":60455,"hostname":"pop-os","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52240},"msg":"incoming request"}
+{"level":30,"time":1640544119317,"pid":60455,"hostname":"pop-os","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640544119322,"pid":60455,"hostname":"pop-os","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1640544119322,"pid":60455,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":201},"responseTime":9.287561003118753,"msg":"request completed"}
+{"level":30,"time":1640544587775,"pid":61969,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640544596619,"pid":62052,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640544611509,"pid":62161,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640545307851,"pid":63212,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640545322388,"pid":63212,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52242},"msg":"incoming request"}
+{"level":30,"time":1640545322400,"pid":63212,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640545322411,"pid":63212,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1640545322411,"pid":63212,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":22.047487996518612,"msg":"request completed"}
+{"level":30,"time":1640546022702,"pid":64569,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640546183315,"pid":65440,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640546198103,"pid":65440,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52244},"msg":"incoming request"}
+{"level":30,"time":1640546198121,"pid":65440,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640546198128,"pid":65440,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1640546198128,"pid":65440,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":19.27104300260544,"msg":"request completed"}
+{"level":30,"time":1640546229554,"pid":65440,"hostname":"pop-os","reqId":"req-2","req":{"method":"GET","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52246},"msg":"incoming request"}
+{"level":30,"time":1640546229559,"pid":65440,"hostname":"pop-os","reqId":"req-2","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","id":"req-2","params":{"userId":"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640546229565,"pid":65440,"hostname":"pop-os","reqId":"req-2","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1640546229565,"pid":65440,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":200},"responseTime":11.641230002045631,"msg":"request completed"}
+{"level":30,"time":1640546268234,"pid":65440,"hostname":"pop-os","reqId":"req-3","req":{"method":"GET","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52248},"msg":"incoming request"}
+{"level":30,"time":1640546268236,"pid":65440,"hostname":"pop-os","reqId":"req-3","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","id":"req-3","params":{"userId":"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"},"query":{"":"1"},"body":null,"msg":"received request"}
+{"level":30,"time":1640546268237,"pid":65440,"hostname":"pop-os","reqId":"req-3","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1640546268237,"pid":65440,"hostname":"pop-os","reqId":"req-3","res":{"statusCode":200},"responseTime":2.6862480007112026,"msg":"request completed"}
+{"level":30,"time":1640546317407,"pid":65440,"hostname":"pop-os","reqId":"req-4","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52250},"msg":"incoming request"}
+{"level":30,"time":1640546317409,"pid":65440,"hostname":"pop-os","reqId":"req-4","url":"/users","id":"req-4","params":{},"query":{},"body":null,"msg":"received request"}
+{"level":30,"time":1640546317453,"pid":65440,"hostname":"pop-os","reqId":"req-4","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1640546317453,"pid":65440,"hostname":"pop-os","reqId":"req-4","res":{"statusCode":201},"responseTime":45.38815499842167,"msg":"request completed"}
+{"level":30,"time":1640546437636,"pid":65916,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640546448355,"pid":66012,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640546455773,"pid":66098,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
