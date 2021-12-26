@@ -7,7 +7,6 @@
  * @category Server
  */
  import fastify, { FastifyRequest, FastifyReply } from 'fastify'
- // import createFastify, { FastifyInstance, FastifyServerOptions, FastifyRequest, FastifyReply } from 'fastify' 
  import SwaggerPlugin from 'fastify-swagger'
  import { PORT } from './common/config.js'
  import MainRouter from './router.js'

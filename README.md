@@ -6,7 +6,7 @@ Task due date / deadline date - 26.12.21 / 26.12.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - **XXX**
+ TOTAL POINTS - **130**
 
 -----------
 

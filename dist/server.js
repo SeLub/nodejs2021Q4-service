@@ -18,7 +18,7 @@ const server = fastify({
     ignoreTrailingSlash: true,
     logger
 });
-server.addHook('preHandler', function (req, reply, done) {
+server.addHook('preHandler', (req, reply, done) => {
     console.log(reply);
     if (req.body) {
         req.log.info({ body: req.body }, 'parsed body');
