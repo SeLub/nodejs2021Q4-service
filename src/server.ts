@@ -31,15 +31,22 @@ const server = fastify({
   logger
 })
 
+server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) => {
+  console.log(reply)
+  if (req.body) {
+    req.log.info({ body: req.body }, 'parsed body')
+  }
+  done()
+})
 
 
 server.addHook("onRequest", (req:FastifyRequest, reply:FastifyReply, done) => {
   console.log(reply)
+  
   req.log.info({  url: req.raw.url,
                   id: req.id,
                   params: req.params,
-                  query: req.query,
-                  body: req.body }
+                  query: req.query }
                   , "received request")
   done()
 })

@@ -16,15 +16,21 @@ const SwaggerOpt = { exposeRoute: true,
 };
 const server = fastify({
     ignoreTrailingSlash: true,
-    logger: logger
+    logger
+});
+server.addHook('preHandler', function (req, reply, done) {
+    console.log(reply);
+    if (req.body) {
+        req.log.info({ body: req.body }, 'parsed body');
+    }
+    done();
 });
 server.addHook("onRequest", (req, reply, done) => {
     console.log(reply);
     req.log.info({ url: req.raw.url,
         id: req.id,
         params: req.params,
-        query: req.query,
-        body: req.body }, "received request");
+        query: req.query }, "received request");
     done();
 });
 server.addHook("onResponse", (req, reply, done) => {
