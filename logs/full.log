@@ -362,3 +362,9 @@
 {"level":30,"time":1640551814800,"pid":77012,"hostname":"pop-os","reqId":"req-1","body":{"title":"Created board 1","columns":[{"title":"Title 1","order":1},{"title":"First","order":2}]},"msg":"parsed body"}
 {"level":30,"time":1640551814813,"pid":77012,"hostname":"pop-os","reqId":"req-1","url":"/boards","statusCode":201,"msg":"request completed"}
 {"level":30,"time":1640551814813,"pid":77012,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":38.586146995425224,"msg":"request completed"}
+{"level":30,"time":1640553433027,"pid":80407,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
+{"level":30,"time":1640553470952,"pid":80407,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52418},"msg":"incoming request"}
+{"level":30,"time":1640553470961,"pid":80407,"hostname":"pop-os","reqId":"req-1","url":"/boards","id":"req-1","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1640553470976,"pid":80407,"hostname":"pop-os","reqId":"req-1","body":{"title":"Created board 1","columns":[{"title":"Title 1","order":1},{"title":"First","order":2}]},"msg":"parsed body"}
+{"level":30,"time":1640553470982,"pid":80407,"hostname":"pop-os","reqId":"req-1","url":"/boards","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1640553470982,"pid":80407,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":29.19852500408888,"msg":"request completed"}
