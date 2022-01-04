@@ -7,7 +7,7 @@ import TaskRouter from "./resources/tasks/task.router.js";
 export default async function MainRouter(fastify) {
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
     fastify.register(fastifyStatic, {
-        root: path.join(__dirname, '/doc'),
+        root: path.join(__dirname, '../doc'),
         prefix: '/static'
     });
     fastify.register(fastifyStatic, {
