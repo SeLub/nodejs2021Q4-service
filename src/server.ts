@@ -86,9 +86,14 @@ const start = async () => {
 
         // Для проверки пункта 4 расскомментируйте здесь: 
         // Promise.reject(Error('Oops!'))
+        server.listen(FASTIFY_PORT, '0.0.0.0', (err, address) => {
+          if (err) {
+            server.log.error(err)
+            process.exit(1)
+          }
+          server.log.info(`🚀  Fastify server running on ${address}`)
+        })
 
-          await server.listen(FASTIFY_PORT)
-         // console.log(`🚀  Fastify server running on PORT:${FASTIFY_PORT}`)
       } catch(error){
           server.log.error(error)
           process.exit(1)
