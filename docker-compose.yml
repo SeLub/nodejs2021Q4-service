@@ -11,6 +11,7 @@ services:
     volumes:
       - ./logs:/app/logs
       - ./src:/app/src
+    restart: unless-stopped
 volumes:
   src:
   logs:
