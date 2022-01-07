@@ -1,0 +1,21 @@
+# compiled output
+/dist
+/node_modules
+
+# swagger, tsdocs, logs, tests
+/doc
+/docs
+/test
+
+ project settings
+ .git
+ .github
+ .vscode
+# .eslintignore
+# .eslintrc.json
+# .gitignore
+# .prettierrc
+
+# documentation files
+README.md 
+checkout.gif

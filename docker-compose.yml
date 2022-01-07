@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+    networks:
+      - server-side
+    ports:
+      - ${PORT-4000}:${PORT-4000}
+    volumes:
+      - ./logs:/app/logs
+      - ./src:/app/src
+volumes:
+  src:
+  logs:
+networks:
+  server-side:
