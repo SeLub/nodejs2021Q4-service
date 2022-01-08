@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+    networks:
+      - rsschool-network
+    ports:
+      - ${PORT-4000}:${PORT-4000}
+    volumes:
+      - ./logs:/app/logs
+      - ./src:/app/src
+    restart: unless-stopped
+    environment:
+      PORT: ${PORT}
+    depends_on:
+      - db
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-database
+    networks:
+      - rsschool-network
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+volumes:
+  db_data:
+  src:
+  logs:
+networks:
+  rsschool-network:
+    driver: bridge

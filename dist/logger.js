@@ -1,6 +1,6 @@
 import { pino } from 'pino';
 import { LOG_LEVEL } from './common/config.js';
-const logLevel = LOG_LEVEL ? LOG_LEVEL : 'info';
+const logLevel = LOG_LEVEL || 'info';
 const transport = pino.transport({
     targets: [
         { level: logLevel, target: 'pino/file', options: { destination: 2, translateTime: 'SYS:standard' } },
