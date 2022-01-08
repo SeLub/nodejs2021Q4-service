@@ -59,7 +59,7 @@ Self check:
 
 ## Docker resources
 
-
+```
 .
 ├── .env <- Dockerfiles and docker-compose get ENV
 ├── ...
@@ -72,7 +72,7 @@ Self check:
 ├── docker-compose.yml <- Dockerfile for multicontainer app
 ├── ...
 └── README.md <- Documentation and description
-
+```
 
 [_docker-compose.yml_](docker-compose.yml)
 ```
