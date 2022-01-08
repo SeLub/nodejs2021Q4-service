@@ -59,9 +59,9 @@ Self check:
 
 ## Docker resources
 
-```
+
 .
-├── .env <- Dockerfiles and docker-compose took PORTs from here
+├── .env <- Dockerfiles and docker-compose get ENV
 ├── ...
 ├── logs <- Server in Docker Container writes logs in error.log and full.log
 ├── db_data <- Database Postgres in Docker Container stores data files here
@@ -72,7 +72,7 @@ Self check:
 ├── docker-compose.yml <- Dockerfile for multicontainer app
 ├── ...
 └── README.md <- Documentation and description
-```
+
 
 [_docker-compose.yml_](docker-compose.yml)
 ```

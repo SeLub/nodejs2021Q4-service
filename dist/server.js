@@ -46,7 +46,13 @@ const start = async () => {
     try {
         handleExit();
         handleUncaughtErrors();
-        await server.listen(FASTIFY_PORT);
+        server.listen(FASTIFY_PORT, '0.0.0.0', (err, address) => {
+            if (err) {
+                server.log.error(err);
+                process.exit(1);
+            }
+            server.log.info(`🚀  Fastify server running on ${address}`);
+        });
     }
     catch (error) {
         server.log.error(error);

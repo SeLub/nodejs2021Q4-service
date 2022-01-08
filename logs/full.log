@@ -1,370 +1,118 @@
-{"level":50,"time":1640544023553,"pid":60325,"hostname":"pop-os","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:43:15)\n    at file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:51:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
-{"level":30,"time":1640544055805,"pid":60455,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640544064170,"pid":60455,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52238},"msg":"incoming request"}
-{"level":30,"time":1640544064181,"pid":60455,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640544064200,"pid":60455,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640544064200,"pid":60455,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":29.35955500230193,"msg":"request completed"}
-{"level":30,"time":1640544119313,"pid":60455,"hostname":"pop-os","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52240},"msg":"incoming request"}
-{"level":30,"time":1640544119317,"pid":60455,"hostname":"pop-os","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640544119322,"pid":60455,"hostname":"pop-os","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640544119322,"pid":60455,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":201},"responseTime":9.287561003118753,"msg":"request completed"}
-{"level":30,"time":1640544587775,"pid":61969,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640544596619,"pid":62052,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640544611509,"pid":62161,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640545307851,"pid":63212,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640545322388,"pid":63212,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52242},"msg":"incoming request"}
-{"level":30,"time":1640545322400,"pid":63212,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640545322411,"pid":63212,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640545322411,"pid":63212,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":22.047487996518612,"msg":"request completed"}
-{"level":30,"time":1640546022702,"pid":64569,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640546183315,"pid":65440,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640546198103,"pid":65440,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52244},"msg":"incoming request"}
-{"level":30,"time":1640546198121,"pid":65440,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640546198128,"pid":65440,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640546198128,"pid":65440,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":19.27104300260544,"msg":"request completed"}
-{"level":30,"time":1640546229554,"pid":65440,"hostname":"pop-os","reqId":"req-2","req":{"method":"GET","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52246},"msg":"incoming request"}
-{"level":30,"time":1640546229559,"pid":65440,"hostname":"pop-os","reqId":"req-2","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","id":"req-2","params":{"userId":"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640546229565,"pid":65440,"hostname":"pop-os","reqId":"req-2","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640546229565,"pid":65440,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":200},"responseTime":11.641230002045631,"msg":"request completed"}
-{"level":30,"time":1640546268234,"pid":65440,"hostname":"pop-os","reqId":"req-3","req":{"method":"GET","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52248},"msg":"incoming request"}
-{"level":30,"time":1640546268236,"pid":65440,"hostname":"pop-os","reqId":"req-3","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","id":"req-3","params":{"userId":"87ef73a1-d7b8-4941-bd4e-424e58a0b3d5"},"query":{"":"1"},"body":null,"msg":"received request"}
-{"level":30,"time":1640546268237,"pid":65440,"hostname":"pop-os","reqId":"req-3","url":"/users/87ef73a1-d7b8-4941-bd4e-424e58a0b3d5/?=1","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640546268237,"pid":65440,"hostname":"pop-os","reqId":"req-3","res":{"statusCode":200},"responseTime":2.6862480007112026,"msg":"request completed"}
-{"level":30,"time":1640546317407,"pid":65440,"hostname":"pop-os","reqId":"req-4","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52250},"msg":"incoming request"}
-{"level":30,"time":1640546317409,"pid":65440,"hostname":"pop-os","reqId":"req-4","url":"/users","id":"req-4","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640546317453,"pid":65440,"hostname":"pop-os","reqId":"req-4","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640546317453,"pid":65440,"hostname":"pop-os","reqId":"req-4","res":{"statusCode":201},"responseTime":45.38815499842167,"msg":"request completed"}
-{"level":30,"time":1640546437636,"pid":65916,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640546448355,"pid":66012,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640546455773,"pid":66098,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640548850960,"pid":70470,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640548868714,"pid":70470,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52252},"msg":"incoming request"}
-{"level":30,"time":1640548868723,"pid":70470,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"body":null,"msg":"received request"}
-{"level":30,"time":1640548868739,"pid":70470,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640548868739,"pid":70470,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":24.48259899765253,"msg":"request completed"}
-{"level":30,"time":1640548980088,"pid":70683,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640549016569,"pid":70683,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52254},"msg":"incoming request"}
-{"level":30,"time":1640549016580,"pid":70683,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549016591,"pid":70683,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549016591,"pid":70683,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":21.359523002058268,"msg":"request completed"}
-{"level":30,"time":1640549176191,"pid":70683,"hostname":"pop-os","reqId":"req-2","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52256},"msg":"incoming request"}
-{"level":30,"time":1640549176194,"pid":70683,"hostname":"pop-os","reqId":"req-2","url":"/boards","id":"req-2","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549176196,"pid":70683,"hostname":"pop-os","reqId":"req-2","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549176196,"pid":70683,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":201},"responseTime":4.531300999224186,"msg":"request completed"}
-{"level":30,"time":1640549380065,"pid":71465,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640549523952,"pid":71913,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640549539197,"pid":71913,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52258},"msg":"incoming request"}
-{"level":30,"time":1640549539213,"pid":71913,"hostname":"pop-os","reqId":"req-1","url":"/boards","id":"req-1","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549539224,"pid":71913,"hostname":"pop-os","reqId":"req-1","body":{"title":"Created board 1","columns":[{"title":"Title 1","order":1},{"title":"First","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549539230,"pid":71913,"hostname":"pop-os","reqId":"req-1","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549539230,"pid":71913,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":32.43994100019336,"msg":"request completed"}
-{"level":30,"time":1640549691006,"pid":73049,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640549692183,"pid":73049,"hostname":"pop-os","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52280},"msg":"incoming request"}
-{"level":30,"time":1640549692198,"pid":73049,"hostname":"pop-os","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692212,"pid":73049,"hostname":"pop-os","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549692212,"pid":73049,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":200},"responseTime":28.03743999823928,"msg":"request completed"}
-{"level":30,"time":1640549692226,"pid":73049,"hostname":"pop-os","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52282},"msg":"incoming request"}
-{"level":30,"time":1640549692228,"pid":73049,"hostname":"pop-os","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692234,"pid":73049,"hostname":"pop-os","reqId":"req-2","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1640549692238,"pid":73049,"hostname":"pop-os","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549692238,"pid":73049,"hostname":"pop-os","reqId":"req-2","res":{"statusCode":201},"responseTime":11.260001000016928,"msg":"request completed"}
-{"level":30,"time":1640549692241,"pid":73049,"hostname":"pop-os","reqId":"req-3","req":{"method":"GET","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52284},"msg":"incoming request"}
-{"level":30,"time":1640549692243,"pid":73049,"hostname":"pop-os","reqId":"req-3","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","id":"req-3","params":{"userId":"6aae602d-f660-49dc-9f1b-d12f7fd52a6d"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692246,"pid":73049,"hostname":"pop-os","reqId":"req-3","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549692246,"pid":73049,"hostname":"pop-os","reqId":"req-3","res":{"statusCode":200},"responseTime":4.835015997290611,"msg":"request completed"}
-{"level":30,"time":1640549692250,"pid":73049,"hostname":"pop-os","reqId":"req-4","req":{"method":"DELETE","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52286},"msg":"incoming request"}
-{"level":30,"time":1640549692259,"pid":73049,"hostname":"pop-os","reqId":"req-4","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","id":"req-4","params":{"userId":"6aae602d-f660-49dc-9f1b-d12f7fd52a6d"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692273,"pid":73049,"hostname":"pop-os","reqId":"req-4","url":"/users/6aae602d-f660-49dc-9f1b-d12f7fd52a6d","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549692273,"pid":73049,"hostname":"pop-os","reqId":"req-4","res":{"statusCode":200},"responseTime":22.674451999366283,"msg":"request completed"}
-{"level":30,"time":1640549692300,"pid":73049,"hostname":"pop-os","reqId":"req-5","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52288},"msg":"incoming request"}
-{"level":30,"time":1640549692305,"pid":73049,"hostname":"pop-os","reqId":"req-5","url":"/users","id":"req-5","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692316,"pid":73049,"hostname":"pop-os","reqId":"req-5","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1640549692321,"pid":73049,"hostname":"pop-os","reqId":"req-5","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549692321,"pid":73049,"hostname":"pop-os","reqId":"req-5","res":{"statusCode":201},"responseTime":20.508636999875307,"msg":"request completed"}
-{"level":30,"time":1640549692324,"pid":73049,"hostname":"pop-os","reqId":"req-6","req":{"method":"DELETE","url":"/users/25de5cb4-be86-4613-a691-ca4df6fbc3c0","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52290},"msg":"incoming request"}
-{"level":30,"time":1640549692326,"pid":73049,"hostname":"pop-os","reqId":"req-6","url":"/users/25de5cb4-be86-4613-a691-ca4df6fbc3c0","id":"req-6","params":{"userId":"25de5cb4-be86-4613-a691-ca4df6fbc3c0"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692328,"pid":73049,"hostname":"pop-os","reqId":"req-6","url":"/users/25de5cb4-be86-4613-a691-ca4df6fbc3c0","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549692328,"pid":73049,"hostname":"pop-os","reqId":"req-6","res":{"statusCode":200},"responseTime":3.790692999958992,"msg":"request completed"}
-{"level":30,"time":1640549692333,"pid":73049,"hostname":"pop-os","reqId":"req-7","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52292},"msg":"incoming request"}
-{"level":30,"time":1640549692335,"pid":73049,"hostname":"pop-os","reqId":"req-7","url":"/users","id":"req-7","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549692380,"pid":73049,"hostname":"pop-os","reqId":"req-7","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1640549692381,"pid":73049,"hostname":"pop-os","reqId":"req-7","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549692381,"pid":73049,"hostname":"pop-os","reqId":"req-7","res":{"statusCode":201},"responseTime":48.326632998883724,"msg":"request completed"}
-{"level":30,"time":1640549692387,"pid":73049,"hostname":"pop-os","reqId":"req-8","req":{"method":"PUT","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52294},"msg":"incoming request"}
-{"level":30,"time":1640549692476,"pid":73049,"hostname":"pop-os","reqId":"req-8","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","id":"req-8","params":{"userId":"015c9b8c-9369-4f96-81cd-55b99e8881f4"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693443,"pid":73049,"hostname":"pop-os","reqId":"req-8","body":{"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"015c9b8c-9369-4f96-81cd-55b99e8881f4"},"msg":"parsed body"}
-{"level":30,"time":1640549693445,"pid":73049,"hostname":"pop-os","reqId":"req-8","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549693445,"pid":73049,"hostname":"pop-os","reqId":"req-8","res":{"statusCode":200},"responseTime":1057.3969039991498,"msg":"request completed"}
-{"level":30,"time":1640549693450,"pid":73049,"hostname":"pop-os","reqId":"req-9","req":{"method":"GET","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52296},"msg":"incoming request"}
-{"level":30,"time":1640549693777,"pid":73049,"hostname":"pop-os","reqId":"req-9","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","id":"req-9","params":{"userId":"015c9b8c-9369-4f96-81cd-55b99e8881f4"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693782,"pid":73049,"hostname":"pop-os","reqId":"req-9","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549693785,"pid":73049,"hostname":"pop-os","reqId":"req-9","res":{"statusCode":200},"responseTime":331.6791150011122,"msg":"request completed"}
-{"level":30,"time":1640549693787,"pid":73049,"hostname":"pop-os","reqId":"req-a","req":{"method":"DELETE","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52298},"msg":"incoming request"}
-{"level":30,"time":1640549693809,"pid":73049,"hostname":"pop-os","reqId":"req-a","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","id":"req-a","params":{"userId":"015c9b8c-9369-4f96-81cd-55b99e8881f4"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693833,"pid":73049,"hostname":"pop-os","reqId":"req-a","url":"/users/015c9b8c-9369-4f96-81cd-55b99e8881f4","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549693833,"pid":73049,"hostname":"pop-os","reqId":"req-a","res":{"statusCode":200},"responseTime":45.38611199706793,"msg":"request completed"}
-{"level":30,"time":1640549693857,"pid":73049,"hostname":"pop-os","reqId":"req-b","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52300},"msg":"incoming request"}
-{"level":30,"time":1640549693860,"pid":73049,"hostname":"pop-os","reqId":"req-b","url":"/users","id":"req-b","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693868,"pid":73049,"hostname":"pop-os","reqId":"req-b","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1640549693872,"pid":73049,"hostname":"pop-os","reqId":"req-b","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549693872,"pid":73049,"hostname":"pop-os","reqId":"req-b","res":{"statusCode":201},"responseTime":14.148563001304865,"msg":"request completed"}
-{"level":30,"time":1640549693879,"pid":73049,"hostname":"pop-os","reqId":"req-c","req":{"method":"DELETE","url":"/users/044598df-16d0-4dc7-acf8-e3b7f3044c59","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52302},"msg":"incoming request"}
-{"level":30,"time":1640549693883,"pid":73049,"hostname":"pop-os","reqId":"req-c","url":"/users/044598df-16d0-4dc7-acf8-e3b7f3044c59","id":"req-c","params":{"userId":"044598df-16d0-4dc7-acf8-e3b7f3044c59"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693889,"pid":73049,"hostname":"pop-os","reqId":"req-c","url":"/users/044598df-16d0-4dc7-acf8-e3b7f3044c59","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549693889,"pid":73049,"hostname":"pop-os","reqId":"req-c","res":{"statusCode":200},"responseTime":10.3457089997828,"msg":"request completed"}
-{"level":30,"time":1640549693893,"pid":73049,"hostname":"pop-os","reqId":"req-d","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52304},"msg":"incoming request"}
-{"level":30,"time":1640549693897,"pid":73049,"hostname":"pop-os","reqId":"req-d","url":"/users","id":"req-d","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549693901,"pid":73049,"hostname":"pop-os","reqId":"req-d","body":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"msg":"parsed body"}
-{"level":30,"time":1640549693905,"pid":73049,"hostname":"pop-os","reqId":"req-d","url":"/users","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549693905,"pid":73049,"hostname":"pop-os","reqId":"req-d","res":{"statusCode":201},"responseTime":11.762361001223326,"msg":"request completed"}
-{"level":30,"time":1640549693906,"pid":73049,"hostname":"pop-os","reqId":"req-e","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52306},"msg":"incoming request"}
-{"level":30,"time":1640549693912,"pid":73049,"hostname":"pop-os","reqId":"req-e","url":"/boards","id":"req-e","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694164,"pid":73049,"hostname":"pop-os","reqId":"req-e","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549694166,"pid":73049,"hostname":"pop-os","reqId":"req-e","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549694166,"pid":73049,"hostname":"pop-os","reqId":"req-e","res":{"statusCode":201},"responseTime":259.18998600170016,"msg":"request completed"}
-{"level":30,"time":1640549694171,"pid":73049,"hostname":"pop-os","reqId":"req-f","req":{"method":"POST","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52308},"msg":"incoming request"}
-{"level":30,"time":1640549694173,"pid":73049,"hostname":"pop-os","reqId":"req-f","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","id":"req-f","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694182,"pid":73049,"hostname":"pop-os","reqId":"req-f","body":{"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e","boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b"},"msg":"parsed body"}
-{"level":30,"time":1640549694184,"pid":73049,"hostname":"pop-os","reqId":"req-f","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549694184,"pid":73049,"hostname":"pop-os","reqId":"req-f","res":{"statusCode":201},"responseTime":12.359813999384642,"msg":"request completed"}
-{"level":30,"time":1640549694184,"pid":73049,"hostname":"pop-os","reqId":"req-g","req":{"method":"POST","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52310},"msg":"incoming request"}
-{"level":30,"time":1640549694193,"pid":73049,"hostname":"pop-os","reqId":"req-g","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","id":"req-g","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694195,"pid":73049,"hostname":"pop-os","reqId":"req-g","body":{"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e","boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b"},"msg":"parsed body"}
-{"level":30,"time":1640549694196,"pid":73049,"hostname":"pop-os","reqId":"req-g","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549694196,"pid":73049,"hostname":"pop-os","reqId":"req-g","res":{"statusCode":201},"responseTime":11.913839999586344,"msg":"request completed"}
-{"level":30,"time":1640549694199,"pid":73049,"hostname":"pop-os","reqId":"req-h","req":{"method":"DELETE","url":"/users/3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52312},"msg":"incoming request"}
-{"level":30,"time":1640549694207,"pid":73049,"hostname":"pop-os","reqId":"req-h","url":"/users/3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e","id":"req-h","params":{"userId":"3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694218,"pid":73049,"hostname":"pop-os","reqId":"req-h","url":"/users/3fed81a3-c1ca-4e0b-8ed7-84ac15b1ce6e","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694218,"pid":73049,"hostname":"pop-os","reqId":"req-h","res":{"statusCode":200},"responseTime":19.50934199988842,"msg":"request completed"}
-{"level":30,"time":1640549694222,"pid":73049,"hostname":"pop-os","reqId":"req-i","req":{"method":"GET","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52314},"msg":"incoming request"}
-{"level":30,"time":1640549694224,"pid":73049,"hostname":"pop-os","reqId":"req-i","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","id":"req-i","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","taskId":"61f9e0b7-c200-469a-8556-27bb3e4ab2c1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694228,"pid":73049,"hostname":"pop-os","reqId":"req-i","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694228,"pid":73049,"hostname":"pop-os","reqId":"req-i","res":{"statusCode":200},"responseTime":5.782078001648188,"msg":"request completed"}
-{"level":30,"time":1640549694231,"pid":73049,"hostname":"pop-os","reqId":"req-j","req":{"method":"GET","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52316},"msg":"incoming request"}
-{"level":30,"time":1640549694233,"pid":73049,"hostname":"pop-os","reqId":"req-j","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","id":"req-j","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","taskId":"30bbce62-f1bf-40c7-b8e8-d374683bc112"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694434,"pid":73049,"hostname":"pop-os","reqId":"req-j","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694434,"pid":73049,"hostname":"pop-os","reqId":"req-j","res":{"statusCode":200},"responseTime":202.64026600122452,"msg":"request completed"}
-{"level":30,"time":1640549694438,"pid":73049,"hostname":"pop-os","reqId":"req-k","req":{"method":"DELETE","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52318},"msg":"incoming request"}
-{"level":30,"time":1640549694440,"pid":73049,"hostname":"pop-os","reqId":"req-k","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","id":"req-k","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","taskId":"61f9e0b7-c200-469a-8556-27bb3e4ab2c1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694446,"pid":73049,"hostname":"pop-os","reqId":"req-k","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/61f9e0b7-c200-469a-8556-27bb3e4ab2c1","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694446,"pid":73049,"hostname":"pop-os","reqId":"req-k","res":{"statusCode":200},"responseTime":7.31564399972558,"msg":"request completed"}
-{"level":30,"time":1640549694446,"pid":73049,"hostname":"pop-os","reqId":"req-l","req":{"method":"DELETE","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52320},"msg":"incoming request"}
-{"level":30,"time":1640549694447,"pid":73049,"hostname":"pop-os","reqId":"req-l","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","id":"req-l","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","taskId":"30bbce62-f1bf-40c7-b8e8-d374683bc112"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694450,"pid":73049,"hostname":"pop-os","reqId":"req-l","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b/tasks/30bbce62-f1bf-40c7-b8e8-d374683bc112","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694450,"pid":73049,"hostname":"pop-os","reqId":"req-l","res":{"statusCode":200},"responseTime":4.234312001615763,"msg":"request completed"}
-{"level":30,"time":1640549694454,"pid":73049,"hostname":"pop-os","reqId":"req-m","req":{"method":"DELETE","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52324},"msg":"incoming request"}
-{"level":30,"time":1640549694456,"pid":73049,"hostname":"pop-os","reqId":"req-m","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","id":"req-m","params":{"boardId":"b5a3c112-bdaa-4a4b-8c65-935b91a0de7b"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694474,"pid":73049,"hostname":"pop-os","reqId":"req-m","url":"/boards/b5a3c112-bdaa-4a4b-8c65-935b91a0de7b","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694474,"pid":73049,"hostname":"pop-os","reqId":"req-m","res":{"statusCode":200},"responseTime":20.08017000183463,"msg":"request completed"}
-{"level":30,"time":1640549694847,"pid":73049,"hostname":"pop-os","reqId":"req-n","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52326},"msg":"incoming request"}
-{"level":30,"time":1640549694849,"pid":73049,"hostname":"pop-os","reqId":"req-n","url":"/boards","id":"req-n","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694850,"pid":73049,"hostname":"pop-os","reqId":"req-n","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549694851,"pid":73049,"hostname":"pop-os","reqId":"req-n","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549694851,"pid":73049,"hostname":"pop-os","reqId":"req-n","res":{"statusCode":201},"responseTime":3.8891009986400604,"msg":"request completed"}
-{"level":30,"time":1640549694882,"pid":73049,"hostname":"pop-os","reqId":"req-o","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52328},"msg":"incoming request"}
-{"level":30,"time":1640549694884,"pid":73049,"hostname":"pop-os","reqId":"req-o","url":"/boards","id":"req-o","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694955,"pid":73049,"hostname":"pop-os","reqId":"req-o","url":"/boards","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694955,"pid":73049,"hostname":"pop-os","reqId":"req-o","res":{"statusCode":200},"responseTime":72.10885100066662,"msg":"request completed"}
-{"level":30,"time":1640549694963,"pid":73049,"hostname":"pop-os","reqId":"req-p","req":{"method":"GET","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52330},"msg":"incoming request"}
-{"level":30,"time":1640549694964,"pid":73049,"hostname":"pop-os","reqId":"req-p","url":"/boards","id":"req-p","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694971,"pid":73049,"hostname":"pop-os","reqId":"req-p","url":"/boards","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694971,"pid":73049,"hostname":"pop-os","reqId":"req-p","res":{"statusCode":200},"responseTime":8.403808001428843,"msg":"request completed"}
-{"level":30,"time":1640549694979,"pid":73049,"hostname":"pop-os","reqId":"req-q","req":{"method":"GET","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52332},"msg":"incoming request"}
-{"level":30,"time":1640549694982,"pid":73049,"hostname":"pop-os","reqId":"req-q","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","id":"req-q","params":{"boardId":"42899976-86b4-4b5f-a0c1-ca3a7e471848"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694985,"pid":73049,"hostname":"pop-os","reqId":"req-q","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549694985,"pid":73049,"hostname":"pop-os","reqId":"req-q","res":{"statusCode":200},"responseTime":5.798097997903824,"msg":"request completed"}
-{"level":30,"time":1640549694991,"pid":73049,"hostname":"pop-os","reqId":"req-r","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52334},"msg":"incoming request"}
-{"level":30,"time":1640549694996,"pid":73049,"hostname":"pop-os","reqId":"req-r","url":"/boards","id":"req-r","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549694999,"pid":73049,"hostname":"pop-os","reqId":"req-r","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549695004,"pid":73049,"hostname":"pop-os","reqId":"req-r","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695004,"pid":73049,"hostname":"pop-os","reqId":"req-r","res":{"statusCode":201},"responseTime":12.69557400047779,"msg":"request completed"}
-{"level":30,"time":1640549695009,"pid":73049,"hostname":"pop-os","reqId":"req-s","req":{"method":"DELETE","url":"/boards/4cf3ab50-0666-4994-8795-afab22951e3d","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52336},"msg":"incoming request"}
-{"level":30,"time":1640549695017,"pid":73049,"hostname":"pop-os","reqId":"req-s","url":"/boards/4cf3ab50-0666-4994-8795-afab22951e3d","id":"req-s","params":{"boardId":"4cf3ab50-0666-4994-8795-afab22951e3d"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695021,"pid":73049,"hostname":"pop-os","reqId":"req-s","url":"/boards/4cf3ab50-0666-4994-8795-afab22951e3d","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695021,"pid":73049,"hostname":"pop-os","reqId":"req-s","res":{"statusCode":200},"responseTime":11.589141000062227,"msg":"request completed"}
-{"level":30,"time":1640549695026,"pid":73049,"hostname":"pop-os","reqId":"req-t","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52338},"msg":"incoming request"}
-{"level":30,"time":1640549695027,"pid":73049,"hostname":"pop-os","reqId":"req-t","url":"/boards","id":"req-t","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695172,"pid":73049,"hostname":"pop-os","reqId":"req-t","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549695172,"pid":73049,"hostname":"pop-os","reqId":"req-t","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695172,"pid":73049,"hostname":"pop-os","reqId":"req-t","res":{"statusCode":201},"responseTime":146.5285140015185,"msg":"request completed"}
-{"level":30,"time":1640549695176,"pid":73049,"hostname":"pop-os","reqId":"req-u","req":{"method":"PUT","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52340},"msg":"incoming request"}
-{"level":30,"time":1640549695178,"pid":73049,"hostname":"pop-os","reqId":"req-u","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","id":"req-u","params":{"boardId":"eb406b5b-6223-4517-a818-5d6f8b38f1be"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695181,"pid":73049,"hostname":"pop-os","reqId":"req-u","body":{"id":"eb406b5b-6223-4517-a818-5d6f8b38f1be","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549695182,"pid":73049,"hostname":"pop-os","reqId":"req-u","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695182,"pid":73049,"hostname":"pop-os","reqId":"req-u","res":{"statusCode":200},"responseTime":5.29712799936533,"msg":"request completed"}
-{"level":30,"time":1640549695184,"pid":73049,"hostname":"pop-os","reqId":"req-v","req":{"method":"GET","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52342},"msg":"incoming request"}
-{"level":30,"time":1640549695186,"pid":73049,"hostname":"pop-os","reqId":"req-v","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","id":"req-v","params":{"boardId":"eb406b5b-6223-4517-a818-5d6f8b38f1be"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695188,"pid":73049,"hostname":"pop-os","reqId":"req-v","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695188,"pid":73049,"hostname":"pop-os","reqId":"req-v","res":{"statusCode":200},"responseTime":3.769341003149748,"msg":"request completed"}
-{"level":30,"time":1640549695191,"pid":73049,"hostname":"pop-os","reqId":"req-w","req":{"method":"DELETE","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52344},"msg":"incoming request"}
-{"level":30,"time":1640549695196,"pid":73049,"hostname":"pop-os","reqId":"req-w","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","id":"req-w","params":{"boardId":"eb406b5b-6223-4517-a818-5d6f8b38f1be"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695200,"pid":73049,"hostname":"pop-os","reqId":"req-w","url":"/boards/eb406b5b-6223-4517-a818-5d6f8b38f1be","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695200,"pid":73049,"hostname":"pop-os","reqId":"req-w","res":{"statusCode":200},"responseTime":8.930126998573542,"msg":"request completed"}
-{"level":30,"time":1640549695205,"pid":73049,"hostname":"pop-os","reqId":"req-x","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52346},"msg":"incoming request"}
-{"level":30,"time":1640549695207,"pid":73049,"hostname":"pop-os","reqId":"req-x","url":"/boards","id":"req-x","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695209,"pid":73049,"hostname":"pop-os","reqId":"req-x","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549695210,"pid":73049,"hostname":"pop-os","reqId":"req-x","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695210,"pid":73049,"hostname":"pop-os","reqId":"req-x","res":{"statusCode":201},"responseTime":4.965516999363899,"msg":"request completed"}
-{"level":30,"time":1640549695211,"pid":73049,"hostname":"pop-os","reqId":"req-y","req":{"method":"DELETE","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52348},"msg":"incoming request"}
-{"level":30,"time":1640549695213,"pid":73049,"hostname":"pop-os","reqId":"req-y","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","id":"req-y","params":{"boardId":"e7dfccf6-0476-4769-8fb1-4c4b9695336e"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695214,"pid":73049,"hostname":"pop-os","reqId":"req-y","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695214,"pid":73049,"hostname":"pop-os","reqId":"req-y","res":{"statusCode":200},"responseTime":2.9351629987359047,"msg":"request completed"}
-{"level":30,"time":1640549695217,"pid":73049,"hostname":"pop-os","reqId":"req-z","req":{"method":"GET","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52350},"msg":"incoming request"}
-{"level":30,"time":1640549695365,"pid":73049,"hostname":"pop-os","reqId":"req-z","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","id":"req-z","params":{"boardId":"e7dfccf6-0476-4769-8fb1-4c4b9695336e"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695373,"pid":73049,"hostname":"pop-os","reqId":"req-z","url":"/boards/e7dfccf6-0476-4769-8fb1-4c4b9695336e","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695373,"pid":73049,"hostname":"pop-os","reqId":"req-z","res":{"statusCode":404},"responseTime":156.1323189996183,"msg":"request completed"}
-{"level":30,"time":1640549695377,"pid":73049,"hostname":"pop-os","reqId":"req-10","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52352},"msg":"incoming request"}
-{"level":30,"time":1640549695379,"pid":73049,"hostname":"pop-os","reqId":"req-10","url":"/boards","id":"req-10","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695381,"pid":73049,"hostname":"pop-os","reqId":"req-10","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549695381,"pid":73049,"hostname":"pop-os","reqId":"req-10","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695381,"pid":73049,"hostname":"pop-os","reqId":"req-10","res":{"statusCode":201},"responseTime":4.430225998163223,"msg":"request completed"}
-{"level":30,"time":1640549695401,"pid":73049,"hostname":"pop-os","reqId":"req-11","req":{"method":"POST","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52354},"msg":"incoming request"}
-{"level":30,"time":1640549695403,"pid":73049,"hostname":"pop-os","reqId":"req-11","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","id":"req-11","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695405,"pid":73049,"hostname":"pop-os","reqId":"req-11","body":{"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549695408,"pid":73049,"hostname":"pop-os","reqId":"req-11","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695408,"pid":73049,"hostname":"pop-os","reqId":"req-11","res":{"statusCode":201},"responseTime":6.780933000147343,"msg":"request completed"}
-{"level":30,"time":1640549695408,"pid":73049,"hostname":"pop-os","reqId":"req-12","req":{"method":"POST","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52356},"msg":"incoming request"}
-{"level":30,"time":1640549695410,"pid":73049,"hostname":"pop-os","reqId":"req-12","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","id":"req-12","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695421,"pid":73049,"hostname":"pop-os","reqId":"req-12","body":{"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549695422,"pid":73049,"hostname":"pop-os","reqId":"req-12","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695422,"pid":73049,"hostname":"pop-os","reqId":"req-12","res":{"statusCode":201},"responseTime":13.734353002160788,"msg":"request completed"}
-{"level":30,"time":1640549695423,"pid":73049,"hostname":"pop-os","reqId":"req-13","req":{"method":"POST","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52358},"msg":"incoming request"}
-{"level":30,"time":1640549695424,"pid":73049,"hostname":"pop-os","reqId":"req-13","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","id":"req-13","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695524,"pid":73049,"hostname":"pop-os","reqId":"req-13","body":{"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549695525,"pid":73049,"hostname":"pop-os","reqId":"req-13","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695525,"pid":73049,"hostname":"pop-os","reqId":"req-13","res":{"statusCode":201},"responseTime":102.0458599999547,"msg":"request completed"}
-{"level":30,"time":1640549695525,"pid":73049,"hostname":"pop-os","reqId":"req-14","req":{"method":"POST","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52360},"msg":"incoming request"}
-{"level":30,"time":1640549695527,"pid":73049,"hostname":"pop-os","reqId":"req-14","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","id":"req-14","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695529,"pid":73049,"hostname":"pop-os","reqId":"req-14","body":{"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549695529,"pid":73049,"hostname":"pop-os","reqId":"req-14","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695529,"pid":73049,"hostname":"pop-os","reqId":"req-14","res":{"statusCode":201},"responseTime":4.379478000104427,"msg":"request completed"}
-{"level":30,"time":1640549695530,"pid":73049,"hostname":"pop-os","reqId":"req-15","req":{"method":"POST","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52362},"msg":"incoming request"}
-{"level":30,"time":1640549695531,"pid":73049,"hostname":"pop-os","reqId":"req-15","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","id":"req-15","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695537,"pid":73049,"hostname":"pop-os","reqId":"req-15","body":{"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","userId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549695538,"pid":73049,"hostname":"pop-os","reqId":"req-15","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549695538,"pid":73049,"hostname":"pop-os","reqId":"req-15","res":{"statusCode":201},"responseTime":8.518618002533913,"msg":"request completed"}
-{"level":30,"time":1640549695546,"pid":73049,"hostname":"pop-os","reqId":"req-16","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52364},"msg":"incoming request"}
-{"level":30,"time":1640549695547,"pid":73049,"hostname":"pop-os","reqId":"req-16","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","id":"req-16","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"99c79723-dcd4-4af5-bbbb-13da07eab6ef"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695549,"pid":73049,"hostname":"pop-os","reqId":"req-16","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695549,"pid":73049,"hostname":"pop-os","reqId":"req-16","res":{"statusCode":200},"responseTime":2.85130700096488,"msg":"request completed"}
-{"level":30,"time":1640549695549,"pid":73049,"hostname":"pop-os","reqId":"req-17","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52366},"msg":"incoming request"}
-{"level":30,"time":1640549695550,"pid":73049,"hostname":"pop-os","reqId":"req-17","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","id":"req-17","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"4aae59b4-a07a-4f7f-ad16-063adfb6955f"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695552,"pid":73049,"hostname":"pop-os","reqId":"req-17","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695552,"pid":73049,"hostname":"pop-os","reqId":"req-17","res":{"statusCode":200},"responseTime":2.931311998516321,"msg":"request completed"}
-{"level":30,"time":1640549695552,"pid":73049,"hostname":"pop-os","reqId":"req-18","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52368},"msg":"incoming request"}
-{"level":30,"time":1640549695554,"pid":73049,"hostname":"pop-os","reqId":"req-18","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","id":"req-18","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"20bddd9e-a4b9-4f69-b049-59b1c59ba1cf"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695555,"pid":73049,"hostname":"pop-os","reqId":"req-18","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695555,"pid":73049,"hostname":"pop-os","reqId":"req-18","res":{"statusCode":200},"responseTime":3.0316369980573654,"msg":"request completed"}
-{"level":30,"time":1640549695556,"pid":73049,"hostname":"pop-os","reqId":"req-19","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52370},"msg":"incoming request"}
-{"level":30,"time":1640549695677,"pid":73049,"hostname":"pop-os","reqId":"req-19","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","id":"req-19","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695679,"pid":73049,"hostname":"pop-os","reqId":"req-19","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695679,"pid":73049,"hostname":"pop-os","reqId":"req-19","res":{"statusCode":200},"responseTime":123.05356399714947,"msg":"request completed"}
-{"level":30,"time":1640549695679,"pid":73049,"hostname":"pop-os","reqId":"req-1a","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52372},"msg":"incoming request"}
-{"level":30,"time":1640549695680,"pid":73049,"hostname":"pop-os","reqId":"req-1a","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","id":"req-1a","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"89d39643-bf6b-4fa4-9eda-042524fd1cc1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695682,"pid":73049,"hostname":"pop-os","reqId":"req-1a","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695682,"pid":73049,"hostname":"pop-os","reqId":"req-1a","res":{"statusCode":200},"responseTime":2.9205109998583794,"msg":"request completed"}
-{"level":30,"time":1640549695684,"pid":73049,"hostname":"pop-os","reqId":"req-1b","req":{"method":"DELETE","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52374},"msg":"incoming request"}
-{"level":30,"time":1640549695688,"pid":73049,"hostname":"pop-os","reqId":"req-1b","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","id":"req-1b","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695690,"pid":73049,"hostname":"pop-os","reqId":"req-1b","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695691,"pid":73049,"hostname":"pop-os","reqId":"req-1b","res":{"statusCode":200},"responseTime":6.160777997225523,"msg":"request completed"}
-{"level":30,"time":1640549695697,"pid":73049,"hostname":"pop-os","reqId":"req-1c","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52376},"msg":"incoming request"}
-{"level":30,"time":1640549695701,"pid":73049,"hostname":"pop-os","reqId":"req-1c","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","id":"req-1c","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"99c79723-dcd4-4af5-bbbb-13da07eab6ef"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695715,"pid":73049,"hostname":"pop-os","reqId":"req-1c","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/99c79723-dcd4-4af5-bbbb-13da07eab6ef","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695715,"pid":73049,"hostname":"pop-os","reqId":"req-1c","res":{"statusCode":404},"responseTime":18.05358200147748,"msg":"request completed"}
-{"level":30,"time":1640549695715,"pid":73049,"hostname":"pop-os","reqId":"req-1d","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52378},"msg":"incoming request"}
-{"level":30,"time":1640549695716,"pid":73049,"hostname":"pop-os","reqId":"req-1d","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","id":"req-1d","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"4aae59b4-a07a-4f7f-ad16-063adfb6955f"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695755,"pid":73049,"hostname":"pop-os","reqId":"req-1d","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/4aae59b4-a07a-4f7f-ad16-063adfb6955f","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695755,"pid":73049,"hostname":"pop-os","reqId":"req-1d","res":{"statusCode":404},"responseTime":40.22952200099826,"msg":"request completed"}
-{"level":30,"time":1640549695756,"pid":73049,"hostname":"pop-os","reqId":"req-1e","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52380},"msg":"incoming request"}
-{"level":30,"time":1640549695757,"pid":73049,"hostname":"pop-os","reqId":"req-1e","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","id":"req-1e","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"20bddd9e-a4b9-4f69-b049-59b1c59ba1cf"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695777,"pid":73049,"hostname":"pop-os","reqId":"req-1e","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/20bddd9e-a4b9-4f69-b049-59b1c59ba1cf","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695777,"pid":73049,"hostname":"pop-os","reqId":"req-1e","res":{"statusCode":404},"responseTime":20.968295000493526,"msg":"request completed"}
-{"level":30,"time":1640549695778,"pid":73049,"hostname":"pop-os","reqId":"req-1f","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52382},"msg":"incoming request"}
-{"level":30,"time":1640549695785,"pid":73049,"hostname":"pop-os","reqId":"req-1f","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","id":"req-1f","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695787,"pid":73049,"hostname":"pop-os","reqId":"req-1f","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/70d8fbf9-bdb8-4d4f-bb70-3d9d821f4389","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695787,"pid":73049,"hostname":"pop-os","reqId":"req-1f","res":{"statusCode":404},"responseTime":9.151030000299215,"msg":"request completed"}
-{"level":30,"time":1640549695787,"pid":73049,"hostname":"pop-os","reqId":"req-1g","req":{"method":"GET","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52384},"msg":"incoming request"}
-{"level":30,"time":1640549695795,"pid":73049,"hostname":"pop-os","reqId":"req-1g","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","id":"req-1g","params":{"boardId":"adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3","taskId":"89d39643-bf6b-4fa4-9eda-042524fd1cc1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695798,"pid":73049,"hostname":"pop-os","reqId":"req-1g","url":"/boards/adb6fe3c-a8c6-432e-8dc5-d54ae573cbe3/tasks/89d39643-bf6b-4fa4-9eda-042524fd1cc1","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549695798,"pid":73049,"hostname":"pop-os","reqId":"req-1g","res":{"statusCode":404},"responseTime":10.692910999059677,"msg":"request completed"}
-{"level":30,"time":1640549695801,"pid":73049,"hostname":"pop-os","reqId":"req-1h","req":{"method":"DELETE","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52386},"msg":"incoming request"}
-{"level":30,"time":1640549695806,"pid":73049,"hostname":"pop-os","reqId":"req-1h","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","id":"req-1h","params":{"boardId":"42899976-86b4-4b5f-a0c1-ca3a7e471848"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549695826,"pid":73049,"hostname":"pop-os","reqId":"req-1h","url":"/boards/42899976-86b4-4b5f-a0c1-ca3a7e471848","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549695826,"pid":73049,"hostname":"pop-os","reqId":"req-1h","res":{"statusCode":200},"responseTime":24.807002000510693,"msg":"request completed"}
-{"level":30,"time":1640549696183,"pid":73049,"hostname":"pop-os","reqId":"req-1i","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52388},"msg":"incoming request"}
-{"level":30,"time":1640549696186,"pid":73049,"hostname":"pop-os","reqId":"req-1i","url":"/boards","id":"req-1i","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696187,"pid":73049,"hostname":"pop-os","reqId":"req-1i","body":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640549696188,"pid":73049,"hostname":"pop-os","reqId":"req-1i","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549696188,"pid":73049,"hostname":"pop-os","reqId":"req-1i","res":{"statusCode":201},"responseTime":4.969833999872208,"msg":"request completed"}
-{"level":30,"time":1640549696193,"pid":73049,"hostname":"pop-os","reqId":"req-1j","req":{"method":"POST","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52390},"msg":"incoming request"}
-{"level":30,"time":1640549696199,"pid":73049,"hostname":"pop-os","reqId":"req-1j","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","id":"req-1j","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696200,"pid":73049,"hostname":"pop-os","reqId":"req-1j","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549696201,"pid":73049,"hostname":"pop-os","reqId":"req-1j","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549696201,"pid":73049,"hostname":"pop-os","reqId":"req-1j","res":{"statusCode":201},"responseTime":7.522547997534275,"msg":"request completed"}
-{"level":30,"time":1640549696226,"pid":73049,"hostname":"pop-os","reqId":"req-1k","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52392},"msg":"incoming request"}
-{"level":30,"time":1640549696227,"pid":73049,"hostname":"pop-os","reqId":"req-1k","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","id":"req-1k","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696232,"pid":73049,"hostname":"pop-os","reqId":"req-1k","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696232,"pid":73049,"hostname":"pop-os","reqId":"req-1k","res":{"statusCode":200},"responseTime":6.305266998708248,"msg":"request completed"}
-{"level":30,"time":1640549696255,"pid":73049,"hostname":"pop-os","reqId":"req-1l","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52394},"msg":"incoming request"}
-{"level":30,"time":1640549696257,"pid":73049,"hostname":"pop-os","reqId":"req-1l","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","id":"req-1l","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696258,"pid":73049,"hostname":"pop-os","reqId":"req-1l","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696258,"pid":73049,"hostname":"pop-os","reqId":"req-1l","res":{"statusCode":200},"responseTime":2.9720509983599186,"msg":"request completed"}
-{"level":30,"time":1640549696264,"pid":73049,"hostname":"pop-os","reqId":"req-1m","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52396},"msg":"incoming request"}
-{"level":30,"time":1640549696265,"pid":73049,"hostname":"pop-os","reqId":"req-1m","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","id":"req-1m","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"178a0641-e8db-4500-a49b-a339c86409d3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696269,"pid":73049,"hostname":"pop-os","reqId":"req-1m","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696269,"pid":73049,"hostname":"pop-os","reqId":"req-1m","res":{"statusCode":200},"responseTime":5.492800999432802,"msg":"request completed"}
-{"level":30,"time":1640549696277,"pid":73049,"hostname":"pop-os","reqId":"req-1n","req":{"method":"POST","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52398},"msg":"incoming request"}
-{"level":30,"time":1640549696280,"pid":73049,"hostname":"pop-os","reqId":"req-1n","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","id":"req-1n","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696281,"pid":73049,"hostname":"pop-os","reqId":"req-1n","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549696282,"pid":73049,"hostname":"pop-os","reqId":"req-1n","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549696282,"pid":73049,"hostname":"pop-os","reqId":"req-1n","res":{"statusCode":201},"responseTime":4.745310999453068,"msg":"request completed"}
-{"level":30,"time":1640549696285,"pid":73049,"hostname":"pop-os","reqId":"req-1o","req":{"method":"DELETE","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/58dfefbc-2f80-4f4c-b696-9043c2efe81f","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52400},"msg":"incoming request"}
-{"level":30,"time":1640549696286,"pid":73049,"hostname":"pop-os","reqId":"req-1o","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/58dfefbc-2f80-4f4c-b696-9043c2efe81f","id":"req-1o","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"58dfefbc-2f80-4f4c-b696-9043c2efe81f"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696289,"pid":73049,"hostname":"pop-os","reqId":"req-1o","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/58dfefbc-2f80-4f4c-b696-9043c2efe81f","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696289,"pid":73049,"hostname":"pop-os","reqId":"req-1o","res":{"statusCode":200},"responseTime":3.9676259979605675,"msg":"request completed"}
-{"level":30,"time":1640549696292,"pid":73049,"hostname":"pop-os","reqId":"req-1p","req":{"method":"POST","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52402},"msg":"incoming request"}
-{"level":30,"time":1640549696293,"pid":73049,"hostname":"pop-os","reqId":"req-1p","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","id":"req-1p","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696295,"pid":73049,"hostname":"pop-os","reqId":"req-1p","body":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549696295,"pid":73049,"hostname":"pop-os","reqId":"req-1p","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640549696295,"pid":73049,"hostname":"pop-os","reqId":"req-1p","res":{"statusCode":201},"responseTime":3.193682998418808,"msg":"request completed"}
-{"level":30,"time":1640549696299,"pid":73049,"hostname":"pop-os","reqId":"req-1q","req":{"method":"PUT","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52404},"msg":"incoming request"}
-{"level":30,"time":1640549696301,"pid":73049,"hostname":"pop-os","reqId":"req-1q","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","id":"req-1q","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"9ff337c4-69d7-4cfd-9bd9-8d5f994e4805"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696350,"pid":73049,"hostname":"pop-os","reqId":"req-1q","body":{"id":"9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","columnId":null},"msg":"parsed body"}
-{"level":30,"time":1640549696350,"pid":73049,"hostname":"pop-os","reqId":"req-1q","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696350,"pid":73049,"hostname":"pop-os","reqId":"req-1q","res":{"statusCode":200},"responseTime":51.3642120026052,"msg":"request completed"}
-{"level":30,"time":1640549696354,"pid":73049,"hostname":"pop-os","reqId":"req-1r","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52406},"msg":"incoming request"}
-{"level":30,"time":1640549696360,"pid":73049,"hostname":"pop-os","reqId":"req-1r","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","id":"req-1r","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"9ff337c4-69d7-4cfd-9bd9-8d5f994e4805"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696362,"pid":73049,"hostname":"pop-os","reqId":"req-1r","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/9ff337c4-69d7-4cfd-9bd9-8d5f994e4805","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696362,"pid":73049,"hostname":"pop-os","reqId":"req-1r","res":{"statusCode":200},"responseTime":7.954601999372244,"msg":"request completed"}
-{"level":30,"time":1640549696367,"pid":73049,"hostname":"pop-os","reqId":"req-1s","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52408},"msg":"incoming request"}
-{"level":30,"time":1640549696370,"pid":73049,"hostname":"pop-os","reqId":"req-1s","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","id":"req-1s","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"178a0641-e8db-4500-a49b-a339c86409d3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696372,"pid":73049,"hostname":"pop-os","reqId":"req-1s","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696372,"pid":73049,"hostname":"pop-os","reqId":"req-1s","res":{"statusCode":200},"responseTime":4.773961000144482,"msg":"request completed"}
-{"level":30,"time":1640549696376,"pid":73049,"hostname":"pop-os","reqId":"req-1t","req":{"method":"DELETE","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52410},"msg":"incoming request"}
-{"level":30,"time":1640549696377,"pid":73049,"hostname":"pop-os","reqId":"req-1t","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","id":"req-1t","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"178a0641-e8db-4500-a49b-a339c86409d3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696382,"pid":73049,"hostname":"pop-os","reqId":"req-1t","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696382,"pid":73049,"hostname":"pop-os","reqId":"req-1t","res":{"statusCode":200},"responseTime":5.629348002374172,"msg":"request completed"}
-{"level":30,"time":1640549696385,"pid":73049,"hostname":"pop-os","reqId":"req-1u","req":{"method":"GET","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52412},"msg":"incoming request"}
-{"level":30,"time":1640549696387,"pid":73049,"hostname":"pop-os","reqId":"req-1u","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","id":"req-1u","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1","taskId":"178a0641-e8db-4500-a49b-a339c86409d3"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696393,"pid":73049,"hostname":"pop-os","reqId":"req-1u","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1/tasks/178a0641-e8db-4500-a49b-a339c86409d3","statusCode":404,"msg":"request completed"}
-{"level":30,"time":1640549696393,"pid":73049,"hostname":"pop-os","reqId":"req-1u","res":{"statusCode":404},"responseTime":7.8211320005357265,"msg":"request completed"}
-{"level":30,"time":1640549696398,"pid":73049,"hostname":"pop-os","reqId":"req-1v","req":{"method":"DELETE","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52414},"msg":"incoming request"}
-{"level":30,"time":1640549696582,"pid":73049,"hostname":"pop-os","reqId":"req-1v","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1","id":"req-1v","params":{"boardId":"916b6775-3fce-4461-b428-8d9005fa4ec1"},"query":{},"msg":"received request"}
-{"level":30,"time":1640549696590,"pid":73049,"hostname":"pop-os","reqId":"req-1v","url":"/boards/916b6775-3fce-4461-b428-8d9005fa4ec1","statusCode":200,"msg":"request completed"}
-{"level":30,"time":1640549696590,"pid":73049,"hostname":"pop-os","reqId":"req-1v","res":{"statusCode":200},"responseTime":191.96715500205755,"msg":"request completed"}
-{"level":50,"time":1640549960444,"pid":73783,"hostname":"pop-os","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:49:24)\n    at file:///home/sergeylubimov/Documents/progs/nodejs2021Q4-service/dist/server.js:57:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Error occurred in REST Service Fastify server!"}
-{"level":30,"time":1640549960455,"pid":73783,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640550033298,"pid":73907,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640551245258,"pid":75905,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640551743071,"pid":77012,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640551814773,"pid":77012,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52416},"msg":"incoming request"}
-{"level":30,"time":1640551814784,"pid":77012,"hostname":"pop-os","reqId":"req-1","url":"/boards","id":"req-1","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640551814800,"pid":77012,"hostname":"pop-os","reqId":"req-1","body":{"title":"Created board 1","columns":[{"title":"Title 1","order":1},{"title":"First","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640551814813,"pid":77012,"hostname":"pop-os","reqId":"req-1","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640551814813,"pid":77012,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":38.586146995425224,"msg":"request completed"}
-{"level":30,"time":1640553433027,"pid":80407,"hostname":"pop-os","msg":"Server listening at http://127.0.0.1:4000"}
-{"level":30,"time":1640553470952,"pid":80407,"hostname":"pop-os","reqId":"req-1","req":{"method":"POST","url":"/boards","hostname":"localhost:4000","remoteAddress":"127.0.0.1","remotePort":52418},"msg":"incoming request"}
-{"level":30,"time":1640553470961,"pid":80407,"hostname":"pop-os","reqId":"req-1","url":"/boards","id":"req-1","params":{},"query":{},"msg":"received request"}
-{"level":30,"time":1640553470976,"pid":80407,"hostname":"pop-os","reqId":"req-1","body":{"title":"Created board 1","columns":[{"title":"Title 1","order":1},{"title":"First","order":2}]},"msg":"parsed body"}
-{"level":30,"time":1640553470982,"pid":80407,"hostname":"pop-os","reqId":"req-1","url":"/boards","statusCode":201,"msg":"request completed"}
-{"level":30,"time":1640553470982,"pid":80407,"hostname":"pop-os","reqId":"req-1","res":{"statusCode":201},"responseTime":29.19852500408888,"msg":"request completed"}
+{"level":40,"time":1641550977813,"pid":49,"hostname":"4368405dedef","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641550977818,"pid":49,"hostname":"4368405dedef","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641550978144,"pid":49,"hostname":"4368405dedef","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641550978145,"pid":49,"hostname":"4368405dedef","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":30,"time":1641551003856,"pid":49,"hostname":"4368405dedef","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.23.0.1","remotePort":54978},"msg":"incoming request"}
+{"level":30,"time":1641551003888,"pid":49,"hostname":"4368405dedef","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641551003916,"pid":49,"hostname":"4368405dedef","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641551003917,"pid":49,"hostname":"4368405dedef","reqId":"req-1","res":{"statusCode":200},"responseTime":58.23298299964517,"msg":"request completed"}
+{"level":30,"time":1641551009410,"pid":49,"hostname":"4368405dedef","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.23.0.1","remotePort":54982},"msg":"incoming request"}
+{"level":30,"time":1641551009413,"pid":49,"hostname":"4368405dedef","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641551009430,"pid":49,"hostname":"4368405dedef","reqId":"req-2","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
+{"level":30,"time":1641551009441,"pid":49,"hostname":"4368405dedef","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1641551009441,"pid":49,"hostname":"4368405dedef","reqId":"req-2","res":{"statusCode":201},"responseTime":30.17228199960664,"msg":"request completed"}
+{"level":50,"time":1641551057185,"pid":79,"hostname":"4368405dedef","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///app/dist/server.js:49:15)\n    at file:///app/dist/server.js:63:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
+{"level":40,"time":1641551292721,"pid":107,"hostname":"4368405dedef","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641551292727,"pid":107,"hostname":"4368405dedef","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641551293357,"pid":107,"hostname":"4368405dedef","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641551293357,"pid":107,"hostname":"4368405dedef","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641551418877,"pid":137,"hostname":"4368405dedef","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641551418882,"pid":137,"hostname":"4368405dedef","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641551419164,"pid":137,"hostname":"4368405dedef","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641551419164,"pid":137,"hostname":"4368405dedef","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":50,"time":1641551419165,"pid":137,"hostname":"4368405dedef","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///app/dist/server.js:49:24)\n    at file:///app/dist/server.js:63:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:185:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:281:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Error occurred in REST Service Fastify server!"}
+{"level":40,"time":1641551468699,"pid":166,"hostname":"4368405dedef","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641551468717,"pid":166,"hostname":"4368405dedef","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641551469387,"pid":166,"hostname":"4368405dedef","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641551469393,"pid":166,"hostname":"4368405dedef","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641552850823,"pid":49,"hostname":"4eccc819a00f","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641552850829,"pid":49,"hostname":"4eccc819a00f","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641552851095,"pid":49,"hostname":"4eccc819a00f","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641552851096,"pid":49,"hostname":"4eccc819a00f","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641553484838,"pid":49,"hostname":"bf29f1b75a6a","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641553484843,"pid":49,"hostname":"bf29f1b75a6a","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641553485200,"pid":49,"hostname":"bf29f1b75a6a","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641553485201,"pid":49,"hostname":"bf29f1b75a6a","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":30,"time":1641569431620,"pid":56560,"hostname":"pop-os","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641569431621,"pid":56560,"hostname":"pop-os","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641569616814,"pid":49,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641569616826,"pid":49,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641569617301,"pid":49,"hostname":"f198a34b9a86","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641569617301,"pid":49,"hostname":"f198a34b9a86","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":30,"time":1641569923907,"pid":49,"hostname":"f198a34b9a86","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.23.0.1","remotePort":54998},"msg":"incoming request"}
+{"level":30,"time":1641569923927,"pid":49,"hostname":"f198a34b9a86","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641569923958,"pid":49,"hostname":"f198a34b9a86","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641569923959,"pid":49,"hostname":"f198a34b9a86","reqId":"req-1","res":{"statusCode":200},"responseTime":48.67113099992275,"msg":"request completed"}
+{"level":30,"time":1641569930602,"pid":49,"hostname":"f198a34b9a86","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.23.0.1","remotePort":55002},"msg":"incoming request"}
+{"level":30,"time":1641569930605,"pid":49,"hostname":"f198a34b9a86","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641569930628,"pid":49,"hostname":"f198a34b9a86","reqId":"req-2","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
+{"level":30,"time":1641569930634,"pid":49,"hostname":"f198a34b9a86","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1641569930634,"pid":49,"hostname":"f198a34b9a86","reqId":"req-2","res":{"statusCode":201},"responseTime":31.797501999884844,"msg":"request completed"}
+{"level":30,"time":1641569936178,"pid":49,"hostname":"f198a34b9a86","reqId":"req-3","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.23.0.1","remotePort":55006},"msg":"incoming request"}
+{"level":30,"time":1641569936185,"pid":49,"hostname":"f198a34b9a86","reqId":"req-3","url":"/users","id":"req-3","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641569936197,"pid":49,"hostname":"f198a34b9a86","reqId":"req-3","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641569936197,"pid":49,"hostname":"f198a34b9a86","reqId":"req-3","res":{"statusCode":200},"responseTime":17.909623999148607,"msg":"request completed"}
+{"level":50,"time":1641570009885,"pid":78,"hostname":"f198a34b9a86","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///app/dist/server.js:49:15)\n    at file:///app/dist/server.js:63:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:331:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
+{"level":40,"time":1641570032456,"pid":106,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641570032468,"pid":106,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641570032954,"pid":106,"hostname":"f198a34b9a86","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641570032954,"pid":106,"hostname":"f198a34b9a86","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":50,"time":1641570067296,"pid":136,"hostname":"f198a34b9a86","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///app/dist/server.js:49:15)\n    at file:///app/dist/server.js:63:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:331:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
+{"level":40,"time":1641570095385,"pid":164,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641570095398,"pid":164,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641570096231,"pid":164,"hostname":"f198a34b9a86","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641570096231,"pid":164,"hostname":"f198a34b9a86","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":50,"time":1641570145412,"pid":193,"hostname":"f198a34b9a86","err":{"type":"Error","message":"Oops!","stack":"Error: Oops!\n    at start (file:///app/dist/server.js:49:15)\n    at file:///app/dist/server.js:63:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)\n    at async Promise.all (index 0)\n    at async ESMLoader.import (node:internal/modules/esm/loader:331:24)\n    at async loadESM (node:internal/process/esm_loader:88:5)\n    at async handleMainPromise (node:internal/modules/run_main:65:12)"},"msg":"Oops!"}
+{"level":40,"time":1641570174156,"pid":221,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641570174168,"pid":221,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641570174794,"pid":221,"hostname":"f198a34b9a86","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641570174795,"pid":221,"hostname":"f198a34b9a86","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641571562886,"pid":48,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641571562892,"pid":48,"hostname":"f198a34b9a86","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641571563287,"pid":48,"hostname":"f198a34b9a86","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641571563287,"pid":48,"hostname":"f198a34b9a86","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641574005596,"pid":48,"hostname":"46b257ecf07a","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641574005602,"pid":48,"hostname":"46b257ecf07a","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641574005917,"pid":48,"hostname":"46b257ecf07a","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641574005917,"pid":48,"hostname":"46b257ecf07a","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641576863092,"pid":48,"hostname":"3c00fd408fbe","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641576863110,"pid":48,"hostname":"3c00fd408fbe","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641576863866,"pid":48,"hostname":"3c00fd408fbe","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641576863866,"pid":48,"hostname":"3c00fd408fbe","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641627709553,"pid":50,"hostname":"3c00fd408fbe","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641627709558,"pid":50,"hostname":"3c00fd408fbe","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641627709822,"pid":50,"hostname":"3c00fd408fbe","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641627709822,"pid":50,"hostname":"3c00fd408fbe","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641633925418,"pid":50,"hostname":"937fc8a11f04","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641633925425,"pid":50,"hostname":"937fc8a11f04","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641633925742,"pid":50,"hostname":"937fc8a11f04","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641633925742,"pid":50,"hostname":"937fc8a11f04","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641635500959,"pid":48,"hostname":"70de911d2875","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641635500968,"pid":48,"hostname":"70de911d2875","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641635501270,"pid":48,"hostname":"70de911d2875","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641635501270,"pid":48,"hostname":"70de911d2875","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641658379706,"pid":49,"hostname":"70de911d2875","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641658379726,"pid":49,"hostname":"70de911d2875","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641658380443,"pid":49,"hostname":"70de911d2875","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641658380443,"pid":49,"hostname":"70de911d2875","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641661491905,"pid":49,"hostname":"70de911d2875","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641661491935,"pid":49,"hostname":"70de911d2875","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641661492694,"pid":49,"hostname":"70de911d2875","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641661492697,"pid":49,"hostname":"70de911d2875","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641666907495,"pid":48,"hostname":"d1aa014df5cf","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641666907502,"pid":48,"hostname":"d1aa014df5cf","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641666907825,"pid":48,"hostname":"d1aa014df5cf","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641666907825,"pid":48,"hostname":"d1aa014df5cf","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":40,"time":1641676771854,"pid":48,"hostname":"9d57899d49f6","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641676771860,"pid":48,"hostname":"9d57899d49f6","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641676772204,"pid":48,"hostname":"9d57899d49f6","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641676772205,"pid":48,"hostname":"9d57899d49f6","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":30,"time":1641676888833,"pid":48,"hostname":"9d57899d49f6","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.20.0.1","remotePort":54584},"msg":"incoming request"}
+{"level":30,"time":1641676888864,"pid":48,"hostname":"9d57899d49f6","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641676888906,"pid":48,"hostname":"9d57899d49f6","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641676888907,"pid":48,"hostname":"9d57899d49f6","reqId":"req-1","res":{"statusCode":200},"responseTime":71.15992300026119,"msg":"request completed"}
+{"level":30,"time":1641676896092,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.20.0.1","remotePort":54588},"msg":"incoming request"}
+{"level":30,"time":1641676896098,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641676896130,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
+{"level":30,"time":1641676896144,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1641676896144,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","res":{"statusCode":201},"responseTime":51.450744001194835,"msg":"request completed"}
