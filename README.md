@@ -10,7 +10,7 @@ Self check:
 
 -----------
 
-[summaru report](#summary-report)
+[summary report](#summary-report)
 
 ------------
 
@@ -113,7 +113,7 @@ docker-compose up --build
 
 ```
 
-Now, you can test server by Postam
+Now, you can test server by Postman
 
 # Reports and Screenshots 
 
@@ -121,7 +121,7 @@ Now, you can test server by Postam
 
 ## Server Logs
 
-You can find server logs in __logs_ directory. 
+You can find server logs in __logs__ directory. 
 
 ## Database Data
 
