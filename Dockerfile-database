@@ -2,4 +2,4 @@ FROM postgres:13.5-alpine
 
 # Fix vulnerability in libxml2
 #RUN apk upgrade libxml2
-EXPOSE 5432
+EXPOSE ${POSTGRES_PORT}

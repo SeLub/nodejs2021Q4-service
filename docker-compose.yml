@@ -1,5 +1,21 @@
 version: "3.3"
 services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+    networks:
+      - rsschool-network
+    ports:
+      - ${PORT-4000}:${PORT-4000}
+    volumes:
+      - ./logs:/app/logs
+      - ./src:/app/src
+    restart: unless-stopped
+    environment:
+      PORT: ${PORT}
+    depends_on:
+      - db
   db:
     build:
       context: .
