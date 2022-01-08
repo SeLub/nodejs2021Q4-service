@@ -9,6 +9,8 @@
   "description": "REST service starter for RS School",
   "main": "dist/server.js",
   "scripts": {
+    "build": "tsc-watch --project . --outDir ./dist",
+    "start-nodemon":"nodemon ./dist/server.js",
     "start": "tsc-watch --project . --outDir ./dist --onSuccess \"nodemon ./dist/server.js\"",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",

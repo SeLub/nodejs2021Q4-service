@@ -6,16 +6,25 @@
 /doc
 /docs
 /test
+/logs/*
 
  project settings
  .git
  .github
  .vscode
+ .gitignore
 # .eslintignore
 # .eslintrc.json
-# .gitignore
+
 # .prettierrc
 
 # documentation files
 README.md 
 checkout.gif
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
