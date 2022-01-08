@@ -33,6 +33,8 @@ services:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
 volumes:
   db_data:
+  src:
+  logs:
 networks:
   rsschool-network:
     driver: bridge
