@@ -150,4 +150,8 @@ docker_rsschool-network creat
 
 ## Docker hub
 
+Check images __server__ and __db__ in Dockerhub
+
+https://hub.docker.com/r/selub/rsschool/tags
+
 ![Docker hub](dockerhub.png)
