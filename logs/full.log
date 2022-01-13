@@ -116,3 +116,29 @@
 {"level":30,"time":1641676896130,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
 {"level":30,"time":1641676896144,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
 {"level":30,"time":1641676896144,"pid":48,"hostname":"9d57899d49f6","reqId":"req-2","res":{"statusCode":201},"responseTime":51.450744001194835,"msg":"request completed"}
+{"level":40,"time":1641752164292,"pid":49,"hostname":"3e0d3d1599c4","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641752164295,"pid":49,"hostname":"3e0d3d1599c4","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641752164465,"pid":49,"hostname":"3e0d3d1599c4","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641752164465,"pid":49,"hostname":"3e0d3d1599c4","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
+{"level":30,"time":1641752310940,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-1","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.21.0.1","remotePort":60350},"msg":"incoming request"}
+{"level":30,"time":1641752310950,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-1","url":"/users","id":"req-1","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641752310978,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-1","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641752310979,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-1","res":{"statusCode":200},"responseTime":37.92944899946451,"msg":"request completed"}
+{"level":30,"time":1641752330812,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-2","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.21.0.1","remotePort":60354},"msg":"incoming request"}
+{"level":30,"time":1641752330815,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-2","url":"/users","id":"req-2","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641752330822,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-2","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
+{"level":30,"time":1641752330825,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-2","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1641752330825,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-2","res":{"statusCode":201},"responseTime":12.720309999771416,"msg":"request completed"}
+{"level":30,"time":1641752332066,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-3","req":{"method":"POST","url":"/users","hostname":"localhost:4000","remoteAddress":"172.21.0.1","remotePort":60354},"msg":"incoming request"}
+{"level":30,"time":1641752332068,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-3","url":"/users","id":"req-3","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641752332072,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-3","body":{"name":"INSERTED One User","login":"Bill Gates 3","password":"1234"},"msg":"parsed body"}
+{"level":30,"time":1641752332072,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-3","url":"/users","statusCode":201,"msg":"request completed"}
+{"level":30,"time":1641752332072,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-3","res":{"statusCode":201},"responseTime":5.953614000231028,"msg":"request completed"}
+{"level":30,"time":1641752335480,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-4","req":{"method":"GET","url":"/users","hostname":"localhost:4000","remoteAddress":"172.21.0.1","remotePort":60354},"msg":"incoming request"}
+{"level":30,"time":1641752335481,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-4","url":"/users","id":"req-4","params":{},"query":{},"msg":"received request"}
+{"level":30,"time":1641752335484,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-4","url":"/users","statusCode":200,"msg":"request completed"}
+{"level":30,"time":1641752335484,"pid":49,"hostname":"3e0d3d1599c4","reqId":"req-4","res":{"statusCode":200},"responseTime":3.86971400026232,"msg":"request completed"}
+{"level":40,"time":1641752529079,"pid":50,"hostname":"e23be6d54ebf","msg":"\"root\" path \"/app/doc\" must exist"}
+{"level":40,"time":1641752529082,"pid":50,"hostname":"e23be6d54ebf","msg":"\"root\" path \"/app/docs\" must exist"}
+{"level":30,"time":1641752529243,"pid":50,"hostname":"e23be6d54ebf","msg":"Server listening at http://0.0.0.0:4000"}
+{"level":30,"time":1641752529243,"pid":50,"hostname":"e23be6d54ebf","msg":"🚀  Fastify server running on http://0.0.0.0:4000"}
