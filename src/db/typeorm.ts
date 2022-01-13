@@ -1,0 +1,30 @@
+import pkg, { Connection } from 'typeorm';
+
+import { 
+      POSTGRES_HOST, 
+      POSTGRES_PORT, 
+      POSTGRES_USER, 
+      POSTGRES_PASSWORD, 
+      POSTGRES_DB } from '../common/config.js'
+
+import { User } from './entities/User.js';
+
+const { createConnection } = pkg;
+/* import { Board } from './entities/Board';
+import { Task } from './entities/Task';
+ */
+export default async function connectDB(): Promise<Connection> {
+    return createConnection({
+      type: 'postgres',
+      host: POSTGRES_HOST,
+      port: +POSTGRES_PORT,
+      username: POSTGRES_USER,
+      password: POSTGRES_PASSWORD,
+      database: POSTGRES_DB,
+      entities: [User],
+      synchronize: true,
+    }).then((connection) => {
+        console.log(' 🧲✨ Database connected✨🧲');
+        return connection;
+    });
+}

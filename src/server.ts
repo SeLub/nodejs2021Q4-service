@@ -10,6 +10,7 @@
  import SwaggerPlugin from 'fastify-swagger'
  import { PORT } from './common/config.js'
  import MainRouter from './router.js'
+ import db from './plugins/db.js'
  import { handleExit, handleUncaughtErrors } from './common/fatal.js';
  import {logger} from './logger.js'
 
@@ -74,10 +75,12 @@ server.register(SwaggerPlugin, SwaggerOpt)
  * @param MainRouter - main Server`s Router
  */
 
-server.register(MainRouter)
+ server.register(db)
+ server.register(MainRouter)
 
 const start = async () => {
       try{
+
         handleExit();
         handleUncaughtErrors();
  
