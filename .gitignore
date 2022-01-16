@@ -1,5 +1,7 @@
-/node_modules
-/build
-/dist
-/db_data
-/logs
+node_modules
+build
+dist
+db_data
+# Logs
+logs
+*.log
