@@ -8,6 +8,8 @@ import {
       POSTGRES_DB } from '../common/config.js'
 
 import { User } from './entities/User.js';
+import { Task } from './entities/Task.js';
+import { Board } from './entities/Board.js';
 
 const { createConnection } = pkg;
 /* import { Board } from './entities/Board';
@@ -21,7 +23,7 @@ export default async function connectDB(): Promise<Connection> {
       username: POSTGRES_USER,
       password: POSTGRES_PASSWORD,
       database: POSTGRES_DB,
-      entities: [User],
+      entities: [User, Task, Board],
       synchronize: true,
     }).then((connection) => {
         console.log(' 🧲✨ Database connected✨🧲');
