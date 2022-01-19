@@ -18,7 +18,7 @@ const getTasks = (boardId: string): Promise<Task[]> => taskService.getAll(boardI
 
 /**
 * Creates and returns one task, beloning to exact board.
-* @param task -  instance of class Board
+* @param task -  instance of class Task
 * @returns One just created task.
 * @category Task
 */

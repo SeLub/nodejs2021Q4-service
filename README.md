@@ -1,12 +1,14 @@
-# __Task 7. Docker basics__
+# __Task 8. PostgreSQL & Typeorm__
 
-Task [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/docker-basics.md)
+Task Description [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/postgresql-typeorm.md)
 
-Task due date / deadline date - 09.01.22 / 09.01.22 23:59(GMT+3)
+Task Creteria [creteria here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/postgresql-typeorm.md)
+
+Task due date / deadline date - 16.01.22 / 16.01.22 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - **130**
+ TOTAL POINTS - **170**
 
 -----------
 
@@ -17,15 +19,14 @@ Self check:
 # __Summary Report__
 
 
-## Базовая реализация (максимум **110 баллов**)
+## Базовая реализация (максимум **120 баллов**)
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | Наличие в Readme.md секции с инструкцией как запустить приложение | +20 | +20
-2 | Используется user-defined bridge | +30 | +30
-3 | При возникновении ошибки контейнер должен перезапускается автоматически | +30 | +30
-4 | Логи и файлы базы данных хранятся в volumes, а не в контейнере | +30 | +30
-5 | **TOTAL POINTS** |   | **+110**
+1 | В качестве источника данных для __users__ используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
+2 | В качестве источника данных для __tasks__ используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
+4 | В качестве источника данных для boards используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
+5 | **TOTAL POINTS** |   | **+120**
 
 -----
 
@@ -33,8 +34,11 @@ Self check:
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | Итоговый docker-образ с приложением имеет размер меньше 300 мб |   +20  |   +20
-2 | **TOTAL POINTS** |   | **+20**
+1 | Для создания таблиц с сущностями используются миграции |   +50  |   0
+2 | Переменные, используемые для подключения к базе данных, хранятся в __.env__ |   +10  |   +10
+3 | Для установления отношений между сущностями используются соответствующие декораторы typeorm |   +10  |   +10
+4 | Для проверки задания не требуется локальная установка PostgreSQL, подключение осуществляется к базе данных, работающей в docker контейнере (на основе созданной в предыдущем задании) |   +30  |   +30
+5 | **TOTAL POINTS** |   | **+50**
 
 -----
 
@@ -42,20 +46,49 @@ Self check:
 
 № | Description | Points | Penalty 
 --|-------------|--------|--------
-1 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в Readme.md | -39 | 0
-2 | За отсутствие отдельной ветки для разработки | -20 | 0
-3 | За отсутствие `Pull Request` | -20 | 0
-4 | За неполную информацию в описании `Pull Request` | -10 | 0
-5 | Используется default bridge network driver | -20 | 0
-6 | Конфигурация приложения жестко прописана в docker-compose.yml и Dockerfile | -20 | 0
-7 | При изменении файлов в папке src приложение не перезапускается | -20 | 0
-8 | Должен использоваться специфичный образ. (Например postgres и node, а не ububtu с установкой node или postgres) | -20 | 0
-9 | Postgress image не указана как зависимость для node image | -20 | 0
+1 | Наличие изменений в тестах либо в workflow | -150 | 0
+2 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в Readme.md | -66 | 0
+3 | За __каждую ошибку__ линтера при запуске npm run lint на основе локального конфига минус 20 баллов | -20 | 0
+4 | За __каждую ошибку__ компилятора | -20 | 0
+5 | За __каждый непроходящий тест__ при запуске npm run test | -20 | 0
+6 | Имеются явно указанный __тип any__ | -20 | 0
+7 | За отсутствие отдельной ветки для разработки | -20 | 0
+8 | За отсутствие Pull Request | -20 | 0
+9 | За неполную информацию в описании Pull Request (отсутствует либо некорректен один из 3 обязательных пунктов) | -10 | 0
+9 | Меньше 3 коммитов в ветке разработки, не считая коммиты, вносящие изменения только в Readme.md | -20 |
 = | **TOTAL PENALTY** |   | **0**
 
 -----
 
 # Install, run and test
+
+1. Скачиваем репозиторий и запускаем контейнер с базой данных. Скопируйте команды ниже и вствьте в терминал:
+
+```
+git clone https://github.com/SeLub/nodejs2021Q4-service.git
+
+cd nodejs2021Q4-service
+
+git checkout task-8
+
+npm install
+
+docker-compose up db
+
+```
+2. Откроте дополнительное окно терминала в папке с приложение и запустите сервер командой:
+
+```
+npm run start
+
+```
+3. Проверьте работу линтера командой:
+
+```
+npm run start
+
+```
+
 
 ## Docker resources
 
@@ -105,11 +138,11 @@ git clone https://github.com/SeLub/nodejs2021Q4-service.git
 
 cd nodejs2021Q4-service
 
-git checkout task-7
+git checkout task-8
 
 npm install
 
-docker-compose up --build
+docker-compose up db
 
 ```
 
@@ -149,5 +182,9 @@ docker_rsschool-network creat
 ![Docker scan](d_dockerscan.png)
 
 ## Docker hub
+
+Check images __server__ and __db__ in Dockerhub
+
+https://hub.docker.com/r/selub/rsschool/tags
 
 ![Docker hub](dockerhub.png)

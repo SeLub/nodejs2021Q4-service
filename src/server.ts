@@ -10,6 +10,7 @@
  import SwaggerPlugin from 'fastify-swagger'
  import { PORT } from './common/config.js'
  import MainRouter from './router.js'
+ import db from './plugins/db.js'
  import { handleExit, handleUncaughtErrors } from './common/fatal.js';
  import {logger} from './logger.js'
 
@@ -31,7 +32,7 @@ const server = fastify({
 })
 
 server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) => {
-  console.log(reply)
+  process.stdout.write(JSON.stringify(reply.request.params))
   if (req.body) {
     req.log.info({ body: req.body }, 'parsed body')
   }
@@ -40,8 +41,7 @@ server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) =>
 
 
 server.addHook("onRequest", (req:FastifyRequest, reply:FastifyReply, done) => {
-  console.log(reply)
-  
+  process.stdout.write(JSON.stringify(reply.request.params))
   req.log.info({  url: req.raw.url,
                   id: req.id,
                   params: req.params,
@@ -74,10 +74,12 @@ server.register(SwaggerPlugin, SwaggerOpt)
  * @param MainRouter - main Server`s Router
  */
 
-server.register(MainRouter)
+ server.register(db)
+ server.register(MainRouter)
 
 const start = async () => {
       try{
+
         handleExit();
         handleUncaughtErrors();
  

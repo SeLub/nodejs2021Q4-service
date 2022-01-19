@@ -15,6 +15,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify"
 import * as TaskService from './task.service.js'
 import * as TaskOptions from './task.options.js'
+import  Task from './task.model.js'
 import {paramsInRequest, fullRequestTask} from '../../common/interfaces.js'
 // import * as fs from 'fs';
 
@@ -70,7 +71,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     // POST boards/:boardId/tasks - create task
     fastify.post("/boards/:boardId/tasks",  TaskOptions.createTaskOpts, async (
           _request: FastifyRequest<fullRequestTask>, reply: FastifyReply ) => {
-          const newTask = {..._request.body, boardId: _request.params.boardId, id:null}
+          const newTask: Task = {..._request.body, boardId: _request.params.boardId, id:null}
           const task = await TaskService.addTask(newTask)
           await reply.code(201).header('Content-Type', 'application/json charset=utf-8').send(task)
         })

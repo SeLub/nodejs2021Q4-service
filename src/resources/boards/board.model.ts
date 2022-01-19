@@ -28,7 +28,7 @@ export class Board {
   title: string
 
   /** The array of Columns. */
-  columns: ColumnsType[]
+  columns: object[] // ColumnsType[]
 
   /**
    * Create a Board.
