@@ -1,17 +1,17 @@
-import pkg from 'typeorm';
+import pkg from 'typeorm'
 
-const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg;
+const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg
 
 @Entity('user')
 
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: number
+    id: string | null
 
     @Column()
     name: string    
 
-    @Column({ unique: true })
+    @Column()
     login: string
 
     @Column()

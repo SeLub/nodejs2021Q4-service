@@ -32,7 +32,7 @@ const server = fastify({
 })
 
 server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) => {
-  console.log(reply)
+  process.stdout.write(JSON.stringify(reply.request.params))
   if (req.body) {
     req.log.info({ body: req.body }, 'parsed body')
   }
@@ -41,8 +41,7 @@ server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) =>
 
 
 server.addHook("onRequest", (req:FastifyRequest, reply:FastifyReply, done) => {
-  console.log(reply)
-  
+  process.stdout.write(JSON.stringify(reply.request.params))
   req.log.info({  url: req.raw.url,
                   id: req.id,
                   params: req.params,

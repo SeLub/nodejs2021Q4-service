@@ -1,19 +1,19 @@
-import pkg from 'typeorm';
+import pkg from 'typeorm'
 
-const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg;
+const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg
 
-@Entity('boards')
+@Entity('board')
 export class Board extends BaseEntity {
 @PrimaryGeneratedColumn('uuid')
-id: number;
+id: string | null
 
 @Column()
-  title: string;
+  title: string
 
 /* @Column("int", { array: true })
-columns: ColumnsType[]; */
+columns: ColumnsType[] */
 
 @Column('jsonb', {nullable: true})
-columns: object[];
-// columns: ColumnsType[];
+columns: object[]
+// columns: ColumnsType[]
 }

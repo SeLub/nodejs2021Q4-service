@@ -1,27 +1,27 @@
-import pkg from 'typeorm';
+import pkg from 'typeorm'
 
-const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg;
+const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, } = pkg
 
-  @Entity('tasks')
+  @Entity('task')
   export class Task extends BaseEntity{
       @PrimaryGeneratedColumn('uuid')
-      id: string;
+      id: string | null
 
       @Column()
-      title: string;
+      title: string
 
       @Column("integer")
-      order: number;
+      order: number
 
       @Column()
-      description: string;
+      description: string
 
       @Column({type: "uuid", nullable: true})
-      userId: string;
+      userId: string | null
 
       @Column({type: "uuid", nullable: true})
-      boardId: string;
+      boardId: string | null
 
       @Column({type: "uuid", nullable: true})
-      columnId: string;
+      columnId: string | null
   }

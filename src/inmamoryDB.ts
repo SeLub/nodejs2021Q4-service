@@ -4,16 +4,15 @@
  * @module InMamory DB
  * @category Database
  */
-import usersDatabase from './resources/users/Users.js'
-import boardsDatabase from './resources/boards/Boards.js'
-import tasksDatabase from './resources/tasks/Tasks.js'
-import {Board } from './resources/boards/board.model.js'
+import pkg from 'typeorm'
+import { Board } from './resources/boards/board.model.js'
 import User from './resources/users/user.model.js'
 import Task from './resources/tasks/task.model.js'
+import { User as UserEntity } from "./db/entities/User.js"
+import { Board as BoardEntity } from "./db/entities/Board.js"
+import { Task as TaskEntity } from "./db/entities/Task.js"
 
-let userDB = usersDatabase
-let boardDB = boardsDatabase
-let  taskDB = tasksDatabase
+const { getRepository } = pkg
 
 /* ------------------ Users -----------------------------------*/
 
@@ -24,7 +23,9 @@ let  taskDB = tasksDatabase
 * @category User
 */
 
-const getAllUsers = (): Array<User> => userDB
+const getAllUsers = async (): Promise<Array<User>> => getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .getMany()
 
 /**
 * Returns one User by userId.
@@ -33,10 +34,10 @@ const getAllUsers = (): Array<User> => userDB
 * @category User
 */
 
-const getUserById = (userId: string): User | undefined => {
-    const user = userDB.find(el => el.id === userId)
-    return user
-  }
+const getUserById = async (userId: string): Promise<User|undefined> => getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .where("user.id = :id", { id: userId })
+    .getOne()
 
 /**
 * Creates and returns one User.
@@ -45,10 +46,16 @@ const getUserById = (userId: string): User | undefined => {
 * @category User
 */
 
-const createUser = (user: User): User =>{
-    const newUser = new User(user)
-    userDB.push(newUser)
-    return newUser
+const createUser = async (user: User): Promise<User> =>{
+  
+  const newUser = new User(user)
+  await getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .insert()
+    .into(UserEntity)
+    .values(newUser)
+    .execute()
+  return newUser
 }
 
 /**
@@ -58,10 +65,18 @@ const createUser = (user: User): User =>{
 * @category User
 */
 
-const updateUser = (user: User): User | undefined => {
-  userDB = userDB.map(el => el.id === user.id ? { ...el,...user } : el)
-  const updatedUser = userDB.find(el => el.id === user.id)
-  return updatedUser
+const updateUser = async (userIn: User): Promise<User|undefined> => {
+
+  await getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .update(UserEntity)
+    .set({ name: userIn.name, login: userIn.login, password: userIn.password })
+    .where("id = :id", { id: userIn.id })
+    .execute()
+  return getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .where("user.id = :id", { id: userIn.id })
+    .getOne()
 }
 
 /**
@@ -71,11 +86,15 @@ const updateUser = (user: User): User | undefined => {
 * @category User
 */
 
-const removeUser = (userId: string): boolean => {
-  if (!userDB.some((el) => el.id === userId)) { return false } 
-  userDB = userDB.filter(user => user.id !== userId)
-  taskDB.forEach(task => { const currentTask = task ; if (currentTask.userId === userId) { currentTask.userId = null }})
-  return true
+const removeUser = async (userId: string): Promise<boolean> => {
+  const resault = await getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .delete()
+    .from(UserEntity)
+    .where("id = :id", { id: userId })
+    .execute()
+
+ return resault.affected !== 0
 }
 
 /* ------------------ Boards -----------------------------------*/
@@ -87,7 +106,9 @@ const removeUser = (userId: string): boolean => {
 * @category Board
 */
 
-const getAllBoards = (): Array<Board> => boardDB
+const getAllBoards = async (): Promise<Array<Board>> => getRepository(BoardEntity)
+  .createQueryBuilder("board")
+  .getMany()
 
 /**
 * Returns one Board by boardId.
@@ -96,11 +117,10 @@ const getAllBoards = (): Array<Board> => boardDB
 * @category Board
 */
 
-const getBoardById = (boardId: string): Board | undefined  => {
-  const resault = boardDB.find(board => board.id === boardId)
-  return resault
-}
-
+const getBoardById = async (boardId: string): Promise<Board|undefined> => getRepository(BoardEntity)
+  .createQueryBuilder("board")
+  .where("board.id = :id", { id: boardId })
+  .getOne()
 /**
 * Creates and returns one Board.
 * @param board -  instance of class Board.
@@ -108,10 +128,16 @@ const getBoardById = (boardId: string): Board | undefined  => {
 * @category Board
 */
 
-const createBoard = (board: Board): Board =>{
-    const newBoard: Board = new Board(board)
-    boardDB.push(newBoard)
-    return newBoard
+const createBoard = async (board: Board): Promise<Board> =>{
+    
+  const newBoard: Board = new Board(board)
+  await getRepository(BoardEntity)
+      .createQueryBuilder("board")
+      .insert()
+      .into(BoardEntity)
+      .values(newBoard)
+      .execute()
+  return newBoard
 }
 
 /**
@@ -121,13 +147,19 @@ const createBoard = (board: Board): Board =>{
 * @category Board
 */
 
-const updateBoard = (boardIn: Board): Board | undefined => {
-  const oldBoard = boardDB.find((board) => board.id === boardIn.id)
-  if (!oldBoard) {return undefined}
-  const index = boardDB.indexOf(oldBoard)
-  const newBoard = {...oldBoard, ...boardIn}
-  boardDB[index] = newBoard
-  return newBoard
+const updateBoard = async (boardIn: Board): Promise<Board|undefined> => {
+
+  await getRepository(BoardEntity)
+    .createQueryBuilder("board")
+    .update(BoardEntity)
+    .set({ title: boardIn.title, columns: boardIn.columns })
+    .where("id = :id", { id: boardIn.id })
+    .execute()
+  return getRepository(BoardEntity)
+    .createQueryBuilder("board")
+    .where("board.id = :id", { id: boardIn.id })
+    .getOne()
+
 }
 
 /**
@@ -137,11 +169,15 @@ const updateBoard = (boardIn: Board): Board | undefined => {
 * @category Board
 */
 
-const removeBoard = (id: string): boolean =>{
-  if (!boardDB.some(board => board.id === id)) { return false }
-  boardDB = boardDB.filter(board => board.id !== id)
-  taskDB = taskDB.filter(el => el.boardId !== id)
-  return true
+const removeBoard = async (boardId: string): Promise<boolean> =>{
+
+  const resault = await getRepository(BoardEntity)
+    .createQueryBuilder("board")
+    .delete()
+    .from(BoardEntity)
+    .where("id = :id", { id: boardId })
+    .execute()
+    return resault.affected !== 0
 
 }
 
@@ -154,10 +190,10 @@ const removeBoard = (id: string): boolean =>{
 * @category Task
 */
 
-const getAllTasks = (boardId: string): Array<Task> => {
-    const tasks = taskDB.filter(task => task.boardId === boardId)
-  return tasks
-}
+const getAllTasks = async (boardId: string): Promise<Task[]> => getRepository(TaskEntity)
+  .createQueryBuilder("task")
+  .where("task.boardId = :boardId", { boardId })
+  .getMany()
 
 /**
 * Returns one task, belongs to exact board.
@@ -167,10 +203,10 @@ const getAllTasks = (boardId: string): Array<Task> => {
 * @category Task
 */
 
-const getTaskById = (boardId: string, taskId: string): Task|undefined => {
-    const result = taskDB.find( task => task.boardId === boardId && task.id ===taskId)
-  return result
-} 
+const getTaskById = async (boardId: string, taskId: string): Promise<Task|undefined> => getRepository(TaskEntity)
+  .createQueryBuilder("task")
+  .where("task.boardId = :boardId", { boardId, id: taskId })
+  .getOne() 
 
 /**
 * Creates and returns one task, beloning to exact board.
@@ -179,9 +215,15 @@ const getTaskById = (boardId: string, taskId: string): Task|undefined => {
 * @category Task
 */
 
-const createTask = (task: Task): Task => {
+const createTask = async (task: Task):Promise<Task> => {
+
   const newTask = new Task(task)
-  taskDB.push(newTask)
+  await getRepository(TaskEntity)
+      .createQueryBuilder("task")
+      .insert()
+      .into(TaskEntity)
+      .values(newTask)
+      .execute()
   return newTask
 }
 
@@ -192,13 +234,32 @@ const createTask = (task: Task): Task => {
 * @category Task
 */
 
-const updateTask = (taskIn: Task): Task|undefined => {
-  const oldTask = taskDB.find( task => task.boardId === taskIn.boardId && task.id ===taskIn.id)
-  if (!oldTask) {return undefined}
-  const index = taskDB.indexOf(oldTask)
-  const newTask = {...oldTask, ...taskIn}
-  taskDB[index] = newTask
-  return newTask
+const updateTask = async (taskIn: Task): Promise<Task|undefined> => {
+
+  const oldTask: Task | undefined = await getRepository(TaskEntity)
+  .createQueryBuilder("task")
+  .where("task.boardId = :boardId", { boardId: taskIn.boardId, id: taskIn.id })
+  .getOne()
+
+  if (oldTask !== undefined) {
+
+    const newTask: Task = {...oldTask, ...taskIn}
+    await getRepository(TaskEntity)
+    .createQueryBuilder("task")
+    .update(TaskEntity)
+    .set(newTask)
+    .where("task.id = :id", { id: taskIn.id })
+    .execute()
+    
+    const updatedTask: Task | undefined = await getRepository(TaskEntity)
+    .createQueryBuilder("task")
+    .where("task.id = :id", { id: taskIn.id })
+    .getOne()
+
+    return updatedTask
+
+  }  return undefined
+
 }
 
 /**
@@ -209,10 +270,16 @@ const updateTask = (taskIn: Task): Task|undefined => {
 * @category Task
 */
 
-const removeTask = (boardId: string, taskId: string): boolean => {
-  if (!taskDB.some(task => task.boardId === boardId && task.id ===taskId)) { return false }
-  taskDB = taskDB.filter( task => task.id !==taskId)
-  return true
+const removeTask = async (boardId: string, taskId: string): Promise<boolean> => {
+
+  const resault = await getRepository(TaskEntity)
+    .createQueryBuilder("task")
+    .delete()
+    .from(TaskEntity)
+    .where("id = :id", { id: taskId, boardId })
+    .execute()
+
+    return resault.affected !== 0
 }
 
 export { getAllUsers, getUserById, createUser, updateUser, removeUser,

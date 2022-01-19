@@ -12,9 +12,7 @@ import { Task } from './entities/Task.js';
 import { Board } from './entities/Board.js';
 
 const { createConnection } = pkg;
-/* import { Board } from './entities/Board';
-import { Task } from './entities/Task';
- */
+
 export default async function connectDB(): Promise<Connection> {
     return createConnection({
       type: 'postgres',
@@ -26,7 +24,7 @@ export default async function connectDB(): Promise<Connection> {
       entities: [User, Task, Board],
       synchronize: true,
     }).then((connection) => {
-        console.log(' 🧲✨ Database connected✨🧲');
+        process.stdout.write(' 🧲✨ Database connected✨🧲\n');
         return connection;
     });
 }
