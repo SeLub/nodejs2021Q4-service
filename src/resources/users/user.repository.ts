@@ -1,4 +1,5 @@
 import pkg from 'typeorm';
+import { getHash } from "../logins/login.service.js";
 import { User } from "./user.model.js";
 
 const { getRepository } = pkg;
@@ -15,10 +16,19 @@ const findAll = async () => {
   return repository.find();
 }
 
-const createUser = async (user: Omit<User, 'id'>) => {
-  const repository = getRepository(User);
+const findByLogin = async (loginUser: string) => {
+  const repository = await getRepository(User);
 
-  return repository.save(user);
+  return repository.findOne({where: {login: loginUser}});
+}
+
+const createUser = async (user: Omit<User, 'id'>) => {
+  const repository = await getRepository(User);
+
+  const password = await getHash(user.password);
+  const newUser = {...user, password};
+
+  return repository.save(newUser);
 }
 
 const editUser = async (id: string, user: User) => {
@@ -28,7 +38,8 @@ const editUser = async (id: string, user: User) => {
 
     return false;
   }
-  const _user = {...userToEdit, ...user};
+  const password = await getHash(user.password);
+  const _user = {...userToEdit, ...user, password};
   await repository.save(_user);
 
   return _user;
@@ -51,5 +62,6 @@ export default {
   findAll,
   createUser,
   editUser,
-  deleteUser
+  deleteUser,
+  findByLogin
 }

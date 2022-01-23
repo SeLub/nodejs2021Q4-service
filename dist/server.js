@@ -5,6 +5,7 @@ import MainRouter from './router.js';
 import db from './plugins/db.js';
 import { handleExit, handleUncaughtErrors } from './common/fatal.js';
 import { logger } from './logger.js';
+import { checkAuth } from './resources/logins/login.service.js';
 const FASTIFY_PORT = Number(PORT) || 3000;
 const SwaggerOpt = { exposeRoute: true,
     routePrefix: '/api-docs',
@@ -19,6 +20,7 @@ const server = fastify({
     ignoreTrailingSlash: true,
     logger
 });
+server.addHook('preValidation', checkAuth);
 server.addHook('preHandler', (req, reply, done) => {
     process.stdout.write(JSON.stringify(reply.request.params));
     if (req.body) {

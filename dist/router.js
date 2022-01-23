@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import UserRouter from "./resources/users/user.router.js";
 import BoardRouter from "./resources/boards/board.router.js";
 import TaskRouter from "./resources/tasks/task.router.js";
+import { loginRoutes } from "./resources/logins/login.router.js";
 export default async function MainRouter(fastify) {
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
     fastify.register(fastifyStatic, {
@@ -15,6 +16,7 @@ export default async function MainRouter(fastify) {
         prefix: '/docs',
         decorateReply: false
     });
+    fastify.register(loginRoutes, { prefix: "/login" });
     fastify.register(TaskRouter);
     fastify.register(UserRouter, { prefix: "/users" });
     fastify.register(BoardRouter, { prefix: "/boards" });
