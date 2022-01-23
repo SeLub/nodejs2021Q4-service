@@ -5,12 +5,12 @@
  * @category Database
  */
 import pkg from 'typeorm'
-import { Board } from './resources/boards/board.model.js'
-import User from './resources/users/user.model.js'
-import Task from './resources/tasks/task.model.js'
-import { User as UserEntity } from "./db/entities/User.js"
-import { Board as BoardEntity } from "./db/entities/Board.js"
-import { Task as TaskEntity } from "./db/entities/Task.js"
+import { Board as BoardEntity  } from './resources/boards/board.model.js'
+import {User as UserEntity} from './resources/users/user.model.js'
+import { Task as TaskEntity } from './resources/tasks/task.model.js'
+//import { User as UserEntity } from "./db/entities/User.js"
+//import { Board as BoardEntity } from "./db/entities/Board.js"
+//import { Task as TaskEntity } from "./db/entities/Task.js"
 
 const { getRepository } = pkg
 
@@ -23,7 +23,7 @@ const { getRepository } = pkg
 * @category User
 */
 
-const getAllUsers = async (): Promise<Array<User>> => getRepository(UserEntity)
+const getAllUsers = async (): Promise<Array<UserEntity>> => getRepository(UserEntity)
     .createQueryBuilder("user")
     .getMany()
 
@@ -34,7 +34,7 @@ const getAllUsers = async (): Promise<Array<User>> => getRepository(UserEntity)
 * @category User
 */
 
-const getUserById = async (userId: string): Promise<User|undefined> => getRepository(UserEntity)
+const getUserById = async (userId: string): Promise<UserEntity|undefined> => getRepository(UserEntity)
     .createQueryBuilder("user")
     .where("user.id = :id", { id: userId })
     .getOne()
@@ -46,7 +46,7 @@ const getUserById = async (userId: string): Promise<User|undefined> => getReposi
 * @category User
 */
 
-const createUser = async (user: User): Promise<User> =>{
+const createUser = async (user: UserEntity): Promise<UserEntity> =>{
   
   const newUser = new User(user)
   await getRepository(UserEntity)
@@ -65,7 +65,7 @@ const createUser = async (user: User): Promise<User> =>{
 * @category User
 */
 
-const updateUser = async (userIn: User): Promise<User|undefined> => {
+const updateUser = async (userIn: UserEntity): Promise<UserEntity|undefined> => {
 
   await getRepository(UserEntity)
     .createQueryBuilder("user")
@@ -106,8 +106,8 @@ const removeUser = async (userId: string): Promise<boolean> => {
 * @category Board
 */
 
-const getAllBoards = async (): Promise<Array<Board>> => getRepository(BoardEntity)
-  .createQueryBuilder("board")
+const getAllBoards = async (): Promise<Array<BoardEntity>> => getRepository(BoardEntity)
+  .createQueryBuilder('board')
   .getMany()
 
 /**
@@ -117,7 +117,7 @@ const getAllBoards = async (): Promise<Array<Board>> => getRepository(BoardEntit
 * @category Board
 */
 
-const getBoardById = async (boardId: string): Promise<Board|undefined> => getRepository(BoardEntity)
+const getBoardById = async (boardId: string): Promise<BoardEntity|undefined> => getRepository(BoardEntity)
   .createQueryBuilder("board")
   .where("board.id = :id", { id: boardId })
   .getOne()
@@ -128,7 +128,7 @@ const getBoardById = async (boardId: string): Promise<Board|undefined> => getRep
 * @category Board
 */
 
-const createBoard = async (board: Board): Promise<Board> =>{
+const createBoard = async (board: BoardEntity): Promise<BoardEntity> =>{
     
   const newBoard: Board = new Board(board)
   await getRepository(BoardEntity)
@@ -147,7 +147,7 @@ const createBoard = async (board: Board): Promise<Board> =>{
 * @category Board
 */
 
-const updateBoard = async (boardIn: Board): Promise<Board|undefined> => {
+const updateBoard = async (boardIn: BoardEntity): Promise<BoardEntity|undefined> => {
 
   await getRepository(BoardEntity)
     .createQueryBuilder("board")
@@ -190,7 +190,7 @@ const removeBoard = async (boardId: string): Promise<boolean> =>{
 * @category Task
 */
 
-const getAllTasks = async (boardId: string): Promise<Task[]> => getRepository(TaskEntity)
+const getAllTasks = async (boardId: string): Promise<TaskEntity[]> => getRepository(TaskEntity)
   .createQueryBuilder("task")
   .where("task.boardId = :boardId", { boardId })
   .getMany()
@@ -203,7 +203,7 @@ const getAllTasks = async (boardId: string): Promise<Task[]> => getRepository(Ta
 * @category Task
 */
 
-const getTaskById = async (boardId: string, taskId: string): Promise<Task|undefined> => getRepository(TaskEntity)
+const getTaskById = async (boardId: string, taskId: string): Promise<TaskEntity|undefined> => getRepository(TaskEntity)
   .createQueryBuilder("task")
   .where("task.boardId = :boardId", { boardId, id: taskId })
   .getOne() 
@@ -215,7 +215,7 @@ const getTaskById = async (boardId: string, taskId: string): Promise<Task|undefi
 * @category Task
 */
 
-const createTask = async (task: Task):Promise<Task> => {
+const createTask = async (task: TaskEntity):Promise<TaskEntity> => {
 
   const newTask = new Task(task)
   await getRepository(TaskEntity)
@@ -234,16 +234,16 @@ const createTask = async (task: Task):Promise<Task> => {
 * @category Task
 */
 
-const updateTask = async (taskIn: Task): Promise<Task|undefined> => {
+const updateTask = async (taskIn: TaskEntity): Promise<TaskEntity|undefined> => {
 
-  const oldTask: Task | undefined = await getRepository(TaskEntity)
+  const oldTask: TaskEntity | undefined = await getRepository(TaskEntity)
   .createQueryBuilder("task")
   .where("task.boardId = :boardId", { boardId: taskIn.boardId, id: taskIn.id })
   .getOne()
 
   if (oldTask !== undefined) {
 
-    const newTask: Task = {...oldTask, ...taskIn}
+    const newTask: TaskEntity = {...oldTask, ...taskIn}
     await getRepository(TaskEntity)
     .createQueryBuilder("task")
     .update(TaskEntity)
@@ -251,7 +251,7 @@ const updateTask = async (taskIn: Task): Promise<Task|undefined> => {
     .where("task.id = :id", { id: taskIn.id })
     .execute()
     
-    const updatedTask: Task | undefined = await getRepository(TaskEntity)
+    const updatedTask: TaskEntity | undefined = await getRepository(TaskEntity)
     .createQueryBuilder("task")
     .where("task.id = :id", { id: taskIn.id })
     .getOne()

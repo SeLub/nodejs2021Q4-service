@@ -1,8 +1,8 @@
-import * as boardService from './board.memory.repository.js';
-const getAll = () => boardService.getAll();
-const create = (board) => boardService.create(board);
-const getById = (id) => boardService.getById(id);
-const update = (board) => boardService.update(board);
-const remove = (id) => boardService.remove(id);
-export { getAll, create, getById, update, remove };
+import * as boardController from './board.repository.js';
+const findById = (id) => boardController.findById(id);
+const findAll = () => boardController.findAll();
+const createBoard = (board) => boardController.createBoard(board);
+const editBoard = (id, board) => boardController.editBoard(id, board);
+const deleteBoard = (id) => boardController.deleteBoard(id);
+export { findById, findAll, createBoard, editBoard, deleteBoard };
 //# sourceMappingURL=board.service.js.map

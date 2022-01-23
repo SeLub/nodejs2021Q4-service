@@ -46,6 +46,7 @@
     ]
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "fastify": "^3.24.1",
     "fastify-plugin": "^3.0.0",
@@ -56,9 +57,11 @@
     "pino": "^7.6.1",
     "pino-pretty": "^7.3.0",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.2.41",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/node": "^16.11.19",
     "@types/uuid": "^8.3.3",
     "@types/yamljs": "^0.2.31",

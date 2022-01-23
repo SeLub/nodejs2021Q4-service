@@ -1,8 +1,8 @@
-import * as UserRepository from './user.memory.repository.js';
-const getUsers = () => UserRepository.getAll();
-const getById = (userId) => UserRepository.getById(userId);
-const create = (user) => UserRepository.create(user);
-const update = (user) => UserRepository.update(user);
-const remove = (userId) => UserRepository.remove(userId);
-export { getUsers, create, getById, update, remove };
+import userController from './user.repository.js';
+const findById = (id) => userController.findById(id);
+const findAll = () => userController.findAll();
+const createUser = (user) => userController.createUser(user);
+const editUser = (id, user) => userController.editUser(id, user);
+const deleteUser = (id) => userController.deleteUser(id);
+export { findById, findAll, createUser, editUser, deleteUser };
 //# sourceMappingURL=user.service.js.map

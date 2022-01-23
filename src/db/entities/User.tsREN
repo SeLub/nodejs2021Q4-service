@@ -1,0 +1,41 @@
+import pkg from 'typeorm'
+import bcryptjs from 'bcryptjs'
+import { Task as TaskEntity} from './Task.js'
+import Task from '../../resources/tasks/task.model.js'
+import { IUserData, IUserDataToResponse } from '../../resources/helpers/interfaces.js'
+
+const { Entity, PrimaryGeneratedColumn, Column, BaseEntity, BeforeInsert, OneToMany } = pkg
+
+@Entity('user')
+export class User extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
+
+  @Column()
+  name!: string;
+
+  @Column()
+  login!: string;
+
+  @Column()
+  password!: string;
+
+  @OneToMany(() => TaskEntity, (task) => task.user)
+  tasks?: Task[];
+
+    @BeforeInsert()
+    async hashPassword() {
+      this.password = await bcryptjs.hash(this.password, 10);
+    }
+
+  /**
+   * Creates a copy of the user object, but without the password field
+   * @param user user object
+   * @returns user object without password field
+   */
+   static toResponse(user: IUserData): IUserDataToResponse {
+    const { id, name, login } = user;
+    return { id, name, login };
+  }
+
+}
