@@ -13,6 +13,7 @@
  import db from './plugins/db.js'
  import { handleExit, handleUncaughtErrors } from './common/fatal.js';
  import {logger} from './logger.js'
+ import { checkAuth } from './resources/logins/login.service.js';
 
  const FASTIFY_PORT = Number(PORT) || 3000
 
@@ -30,6 +31,8 @@ const server = fastify({
   ignoreTrailingSlash: true,
   logger
 })
+
+server.addHook('preValidation', checkAuth);
 
 server.addHook('preHandler', (req: FastifyRequest, reply: FastifyReply, done) => {
   process.stdout.write(JSON.stringify(reply.request.params))

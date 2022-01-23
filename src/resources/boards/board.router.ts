@@ -15,7 +15,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply} from "fastify";
 import * as BoardService from './board.service.js'
 import * as BoardOptions from './board.options.js'
-import {paramsInRequest, boardBodyRequest, fullRequestBoard} from '../../common/interfaces.js'
+import {paramsInRequest, boardBodyRequest, fullRequestBoard} from '../../common/interfaces'
 
 export default async function BoardRouter(fastify: FastifyInstance) {
 
@@ -24,7 +24,7 @@ export default async function BoardRouter(fastify: FastifyInstance) {
   // GET /boards - get all boards
   fastify.get("/",  BoardOptions.getBoardsOpts, async (
     _request: FastifyRequest, reply: FastifyReply ) => {
-    const boards = await BoardService.getAll()
+    const boards = await BoardService.findAll()
     await reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(boards)
   });
     
@@ -32,7 +32,7 @@ export default async function BoardRouter(fastify: FastifyInstance) {
   fastify.get('/:boardId', BoardOptions.getBoardOpts, async (
       _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
-      const item = await BoardService.getById(boardId)
+      const item = await BoardService.findById(boardId)
       if (item) {
       await reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(item)
       } else {
@@ -43,16 +43,16 @@ export default async function BoardRouter(fastify: FastifyInstance) {
   // POST /boards - create board
   fastify.post('/',  BoardOptions.createBoardOpts,  async (
     _request: FastifyRequest<boardBodyRequest>, reply: FastifyReply ) => {
-      const { title, columns } = _request.body
-      const newBoard = await BoardService.create({ id:null, title, columns })
+      const boardReq = {..._request.body}
+      const newBoard = await BoardService.createBoard(boardReq)
       await reply.code(201).header('Content-Type', 'application/json; charset=utf-8').send(newBoard)
   })
   // PUT /boards/:boardId - update board
   fastify.put('/:boardId', BoardOptions.updateBoardOpts,  async (
     _request: FastifyRequest<fullRequestBoard>, reply: FastifyReply ) => {
-      const {boardId} = _request.params
-      const { title, columns } = _request.body
-      const updatedBoard = await BoardService.update({id:boardId, title, columns})
+      const { boardId } = _request.params;
+      const boardReq = {..._request.body, id: boardId};
+      const updatedBoard = await BoardService.editBoard( boardId, boardReq)
       if (updatedBoard){
         await reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(updatedBoard)
       } else {
@@ -64,7 +64,7 @@ export default async function BoardRouter(fastify: FastifyInstance) {
   fastify.delete('/:boardId', BoardOptions.deleteBoardOpts,  async (
     _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
-      const resault: boolean = await BoardService.remove(boardId)
+      const resault: boolean = await BoardService.deleteBoard(boardId)
       const statusCode = resault ? 200 : 404
       const message = resault ? {message: 'Board has been deleted'} : message404
       reply.code(statusCode).send(message)

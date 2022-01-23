@@ -1,4 +1,4 @@
-import pkg, { Connection } from 'typeorm';
+import pkg, { Connection } from 'typeorm'
 
 import { 
       POSTGRES_HOST, 
@@ -7,11 +7,12 @@ import {
       POSTGRES_PASSWORD, 
       POSTGRES_DB } from '../common/config.js'
 
-import { User } from './entities/User.js';
-import { Task } from './entities/Task.js';
-import { Board } from './entities/Board.js';
+import { User } from '../resources/users/user.model.js'
+import { Task } from '../resources/tasks/task.model.js'
+import { Board } from '../resources/boards/board.model.js'
+// import { Columns } from './entities/Column.js'
 
-const { createConnection } = pkg;
+const { createConnection } = pkg
 
 export default async function connectDB(): Promise<Connection> {
     return createConnection({
@@ -24,7 +25,7 @@ export default async function connectDB(): Promise<Connection> {
       entities: [User, Task, Board],
       synchronize: true,
     }).then((connection) => {
-        process.stdout.write(' 🧲✨ Database connected✨🧲\n');
-        return connection;
-    });
+        process.stdout.write(' 🧲✨ Database connected✨🧲\n')
+        return connection
+    })
 }

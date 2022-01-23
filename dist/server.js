@@ -2,8 +2,10 @@ import fastify from 'fastify';
 import SwaggerPlugin from 'fastify-swagger';
 import { PORT } from './common/config.js';
 import MainRouter from './router.js';
+import db from './plugins/db.js';
 import { handleExit, handleUncaughtErrors } from './common/fatal.js';
 import { logger } from './logger.js';
+import { checkAuth } from './resources/logins/login.service.js';
 const FASTIFY_PORT = Number(PORT) || 3000;
 const SwaggerOpt = { exposeRoute: true,
     routePrefix: '/api-docs',
@@ -18,15 +20,16 @@ const server = fastify({
     ignoreTrailingSlash: true,
     logger
 });
+server.addHook('preValidation', checkAuth);
 server.addHook('preHandler', (req, reply, done) => {
-    console.log(reply);
+    process.stdout.write(JSON.stringify(reply.request.params));
     if (req.body) {
         req.log.info({ body: req.body }, 'parsed body');
     }
     done();
 });
 server.addHook("onRequest", (req, reply, done) => {
-    console.log(reply);
+    process.stdout.write(JSON.stringify(reply.request.params));
     req.log.info({ url: req.raw.url,
         id: req.id,
         params: req.params,
@@ -41,6 +44,7 @@ server.addHook("onResponse", (req, reply, done) => {
     done();
 });
 server.register(SwaggerPlugin, SwaggerOpt);
+server.register(db);
 server.register(MainRouter);
 const start = async () => {
     try {

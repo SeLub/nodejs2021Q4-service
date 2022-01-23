@@ -1,94 +1,131 @@
-import usersDatabase from './resources/users/Users.js';
-import boardsDatabase from './resources/boards/Boards.js';
-import tasksDatabase from './resources/tasks/Tasks.js';
-import { Board } from './resources/boards/board.model.js';
-import User from './resources/users/user.model.js';
-import Task from './resources/tasks/task.model.js';
-let userDB = usersDatabase;
-let boardDB = boardsDatabase;
-let taskDB = tasksDatabase;
-const getAllUsers = () => userDB;
-const getUserById = (userId) => {
-    const user = userDB.find(el => el.id === userId);
-    return user;
-};
-const createUser = (user) => {
+import pkg from 'typeorm';
+import { Board as BoardEntity } from './resources/boards/board.model.js';
+import { User as UserEntity } from './resources/users/user.model.js';
+import { Task as TaskEntity } from './resources/tasks/task.model.js';
+const { getRepository } = pkg;
+const getAllUsers = async () => getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .getMany();
+const getUserById = async (userId) => getRepository(UserEntity)
+    .createQueryBuilder("user")
+    .where("user.id = :id", { id: userId })
+    .getOne();
+const createUser = async (user) => {
     const newUser = new User(user);
-    userDB.push(newUser);
+    await getRepository(UserEntity)
+        .createQueryBuilder("user")
+        .insert()
+        .into(UserEntity)
+        .values(newUser)
+        .execute();
     return newUser;
 };
-const updateUser = (user) => {
-    userDB = userDB.map(el => el.id === user.id ? { ...el, ...user } : el);
-    const updatedUser = userDB.find(el => el.id === user.id);
-    return updatedUser;
+const updateUser = async (userIn) => {
+    await getRepository(UserEntity)
+        .createQueryBuilder("user")
+        .update(UserEntity)
+        .set({ name: userIn.name, login: userIn.login, password: userIn.password })
+        .where("id = :id", { id: userIn.id })
+        .execute();
+    return getRepository(UserEntity)
+        .createQueryBuilder("user")
+        .where("user.id = :id", { id: userIn.id })
+        .getOne();
 };
-const removeUser = (userId) => {
-    if (!userDB.some((el) => el.id === userId)) {
-        return false;
-    }
-    userDB = userDB.filter(user => user.id !== userId);
-    taskDB.forEach(task => { const currentTask = task; if (currentTask.userId === userId) {
-        currentTask.userId = null;
-    } });
-    return true;
+const removeUser = async (userId) => {
+    const resault = await getRepository(UserEntity)
+        .createQueryBuilder("user")
+        .delete()
+        .from(UserEntity)
+        .where("id = :id", { id: userId })
+        .execute();
+    return resault.affected !== 0;
 };
-const getAllBoards = () => boardDB;
-const getBoardById = (boardId) => {
-    const resault = boardDB.find(board => board.id === boardId);
-    return resault;
-};
-const createBoard = (board) => {
+const getAllBoards = async () => getRepository(BoardEntity)
+    .createQueryBuilder('board')
+    .getMany();
+const getBoardById = async (boardId) => getRepository(BoardEntity)
+    .createQueryBuilder("board")
+    .where("board.id = :id", { id: boardId })
+    .getOne();
+const createBoard = async (board) => {
     const newBoard = new Board(board);
-    boardDB.push(newBoard);
+    await getRepository(BoardEntity)
+        .createQueryBuilder("board")
+        .insert()
+        .into(BoardEntity)
+        .values(newBoard)
+        .execute();
     return newBoard;
 };
-const updateBoard = (boardIn) => {
-    const oldBoard = boardDB.find((board) => board.id === boardIn.id);
-    if (!oldBoard) {
-        return undefined;
-    }
-    const index = boardDB.indexOf(oldBoard);
-    const newBoard = { ...oldBoard, ...boardIn };
-    boardDB[index] = newBoard;
-    return newBoard;
+const updateBoard = async (boardIn) => {
+    await getRepository(BoardEntity)
+        .createQueryBuilder("board")
+        .update(BoardEntity)
+        .set({ title: boardIn.title, columns: boardIn.columns })
+        .where("id = :id", { id: boardIn.id })
+        .execute();
+    return getRepository(BoardEntity)
+        .createQueryBuilder("board")
+        .where("board.id = :id", { id: boardIn.id })
+        .getOne();
 };
-const removeBoard = (id) => {
-    if (!boardDB.some(board => board.id === id)) {
-        return false;
-    }
-    boardDB = boardDB.filter(board => board.id !== id);
-    taskDB = taskDB.filter(el => el.boardId !== id);
-    return true;
+const removeBoard = async (boardId) => {
+    const resault = await getRepository(BoardEntity)
+        .createQueryBuilder("board")
+        .delete()
+        .from(BoardEntity)
+        .where("id = :id", { id: boardId })
+        .execute();
+    return resault.affected !== 0;
 };
-const getAllTasks = (boardId) => {
-    const tasks = taskDB.filter(task => task.boardId === boardId);
-    return tasks;
-};
-const getTaskById = (boardId, taskId) => {
-    const result = taskDB.find(task => task.boardId === boardId && task.id === taskId);
-    return result;
-};
-const createTask = (task) => {
+const getAllTasks = async (boardId) => getRepository(TaskEntity)
+    .createQueryBuilder("task")
+    .where("task.boardId = :boardId", { boardId })
+    .getMany();
+const getTaskById = async (boardId, taskId) => getRepository(TaskEntity)
+    .createQueryBuilder("task")
+    .where("task.boardId = :boardId", { boardId, id: taskId })
+    .getOne();
+const createTask = async (task) => {
     const newTask = new Task(task);
-    taskDB.push(newTask);
+    await getRepository(TaskEntity)
+        .createQueryBuilder("task")
+        .insert()
+        .into(TaskEntity)
+        .values(newTask)
+        .execute();
     return newTask;
 };
-const updateTask = (taskIn) => {
-    const oldTask = taskDB.find(task => task.boardId === taskIn.boardId && task.id === taskIn.id);
-    if (!oldTask) {
-        return undefined;
+const updateTask = async (taskIn) => {
+    const oldTask = await getRepository(TaskEntity)
+        .createQueryBuilder("task")
+        .where("task.boardId = :boardId", { boardId: taskIn.boardId, id: taskIn.id })
+        .getOne();
+    if (oldTask !== undefined) {
+        const newTask = { ...oldTask, ...taskIn };
+        await getRepository(TaskEntity)
+            .createQueryBuilder("task")
+            .update(TaskEntity)
+            .set(newTask)
+            .where("task.id = :id", { id: taskIn.id })
+            .execute();
+        const updatedTask = await getRepository(TaskEntity)
+            .createQueryBuilder("task")
+            .where("task.id = :id", { id: taskIn.id })
+            .getOne();
+        return updatedTask;
     }
-    const index = taskDB.indexOf(oldTask);
-    const newTask = { ...oldTask, ...taskIn };
-    taskDB[index] = newTask;
-    return newTask;
+    return undefined;
 };
-const removeTask = (boardId, taskId) => {
-    if (!taskDB.some(task => task.boardId === boardId && task.id === taskId)) {
-        return false;
-    }
-    taskDB = taskDB.filter(task => task.id !== taskId);
-    return true;
+const removeTask = async (boardId, taskId) => {
+    const resault = await getRepository(TaskEntity)
+        .createQueryBuilder("task")
+        .delete()
+        .from(TaskEntity)
+        .where("id = :id", { id: taskId, boardId })
+        .execute();
+    return resault.affected !== 0;
 };
 export { getAllUsers, getUserById, createUser, updateUser, removeUser, getAllBoards, getBoardById, createBoard, updateBoard, removeBoard, getAllTasks, getTaskById, createTask, updateTask, removeTask };
 //# sourceMappingURL=inmamoryDB.js.map

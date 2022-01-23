@@ -15,10 +15,9 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify"
 import * as TaskService from './task.service.js'
 import * as TaskOptions from './task.options.js'
-import  Task from './task.model.js'
+// import  {Task} from './task.model.js'
 import {paramsInRequest, fullRequestTask} from '../../common/interfaces.js'
-// import * as fs from 'fs';
-
+import { Task } from "./task.model.js"
 
 /**
 * Router for tasks.
@@ -52,7 +51,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     fastify.get("/boards/:boardId/tasks",  TaskOptions.getTasksOpts, async (
       _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
       const {boardId} = _request.params
-      const tasks = await TaskService.getTasks(boardId)
+      const tasks = await TaskService.findAll(boardId)
       await reply.code(200).header('Content-Type', 'application/json charset=utf-8').send(tasks)
     })
 
@@ -60,7 +59,7 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     fastify.get("/boards/:boardId/tasks/:taskId",  TaskOptions.getTaskOpts, async (
           _request: FastifyRequest<paramsInRequest>, reply: FastifyReply ) => {
           const { boardId, taskId } =  _request.params
-          const tasks = await TaskService.getTask(boardId, taskId)
+          const tasks = await TaskService.findById(boardId, taskId)
           if (tasks) {
             await reply.code(200).header('Content-Type', 'application/json charset=utf-8').send(tasks)
           } else {
@@ -71,8 +70,10 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     // POST boards/:boardId/tasks - create task
     fastify.post("/boards/:boardId/tasks",  TaskOptions.createTaskOpts, async (
           _request: FastifyRequest<fullRequestTask>, reply: FastifyReply ) => {
-          const newTask: Task = {..._request.body, boardId: _request.params.boardId, id:null}
-          const task = await TaskService.addTask(newTask)
+            const { boardId } = _request.params;
+            const taskReq = {..._request.body, boardId, board:undefined};           
+
+          const task = await TaskService.createTask(boardId, taskReq)
           await reply.code(201).header('Content-Type', 'application/json charset=utf-8').send(task)
         })
 
@@ -80,8 +81,11 @@ export default async function TaskRouter(fastify: FastifyInstance) {
     fastify.put("/boards/:boardId/tasks/:taskId",  TaskOptions.updateTaskOpts, async (
       _request: FastifyRequest<fullRequestTask>, reply: FastifyReply ) => {
       const { boardId, taskId } =  _request.params
-      const newTask = {..._request.body, boardId, id:taskId}
-      const updatedTask = await TaskService.updateTask(newTask)
+      const newTask:  Omit<Task, 'id, board'> = {
+        ..._request.body, boardId, id: taskId,
+        board: undefined
+      }
+      const updatedTask = await TaskService.editTask(boardId, taskId, newTask)
       if (updatedTask) {
         await reply.code(200).header('Content-Type', 'application/json charset=utf-8').send(updatedTask)
       } else {

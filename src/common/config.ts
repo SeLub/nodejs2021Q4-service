@@ -17,6 +17,9 @@ export const {
       POSTGRES_PORT = 5432,
       POSTGRES_USER = "postgres",
       POSTGRES_PASSWORD = "123456",
-      POSTGRES_DB = "postgres"
+      POSTGRES_DB = "postgres",
+      NODE_ENV,
+      JWT_SECRET_KEY,
+      AUTH_MODE,
+      SALT
 } = process.env
-
