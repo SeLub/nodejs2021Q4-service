@@ -1,14 +1,14 @@
-# __Task 8. PostgreSQL & Typeorm__
+# __Task 9. Authentication & JWT__
 
-Task Description [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/postgresql-typeorm.md)
+Task Description [description here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/descriptions/auth-jwt.md)
 
-Task Creteria [creteria here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/postgresql-typeorm.md)
+Task Creteria [creteria here](https://github.com/rolling-scopes-school/basic-nodejs-course/blob/master/cross-check/auth-jwt.md)
 
-Task due date / deadline date - 16.01.22 / 16.01.22 23:59(GMT+3)
+Task due date / deadline date - 23.01.22 / 23.01.22 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - **170**
+ TOTAL POINTS - **100**
 
 -----------
 
@@ -23,22 +23,12 @@ Self check:
 
 № | Description | Points | Status 
 --|-------------|--------|-------
-1 | В качестве источника данных для __users__ используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
-2 | В качестве источника данных для __tasks__ используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
-4 | В качестве источника данных для boards используется PostgreSQL база данных, работа с которой происходит при помощи typeorm | +40 | +40
-5 | **TOTAL POINTS** |   | **+120**
-
------
-
-## Продвинутая реализация (максимум **20 баллов**)
-
-№ | Description | Points | Status 
---|-------------|--------|-------
-1 | Для создания таблиц с сущностями используются миграции |   +50  |   0
-2 | Переменные, используемые для подключения к базе данных, хранятся в __.env__ |   +10  |   +10
-3 | Для установления отношений между сущностями используются соответствующие декораторы typeorm |   +10  |   +10
-4 | Для проверки задания не требуется локальная установка PostgreSQL, подключение осуществляется к базе данных, работающей в docker контейнере (на основе созданной в предыдущем задании) |   +30  |   +30
-5 | **TOTAL POINTS** |   | **+50**
+1 | Пароли пользователей сохраняются в базу в виде хэша с использованием bcrypt | +20 | +20
+2 | Добавлен роут /login, связанная с ним логика разделена между контроллером и соответствующим сервисом. В случае отсутствия юзера в БД, возвращается 403 (Forbidden) HTTP статус | +20 | +20
+3 | JWT токен содержит userId и login, секретный ключ хранится в .env | +20 | +20
+4 | Доступ ко всем роутам, за исключением /login, /doc и /, требует аутентификации | +20 | +20
+5 | Проверка на наличие токена в реквесте реализована в отдельном модуле на уровне приложения. В случае если токен не валидный, или отсутствует, возвращается 401 (Unauthorized) HTTP статус. | +20 | +20
+6 | **TOTAL POINTS** |   | **+100**
 
 -----
 
@@ -46,11 +36,11 @@ Self check:
 
 № | Description | Points | Penalty 
 --|-------------|--------|--------
-1 | Наличие изменений в тестах либо в workflow | -150 | 0
-2 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в Readme.md | -66 | 0
+1 | Наличие изменений в тестах либо в workflow | -100 | 0
+2 | Внесение изменений в репозиторий после дедлайна не считая коммиты, вносящие изменения только в Readme.md | -30 | 0
 3 | За __каждую ошибку__ линтера при запуске npm run lint на основе локального конфига минус 20 баллов | -20 | 0
 4 | За __каждую ошибку__ компилятора | -20 | 0
-5 | За __каждый непроходящий тест__ при запуске npm run test | -20 | 0
+5 | Все тесты npm run test:auth должны проходить успешно, каждый не пройденный тест | -20 | 0
 6 | Имеются явно указанный __тип any__ | -20 | 0
 7 | За отсутствие отдельной ветки для разработки | -20 | 0
 8 | За отсутствие Pull Request | -20 | 0
@@ -69,7 +59,7 @@ git clone https://github.com/SeLub/nodejs2021Q4-service.git
 
 cd nodejs2021Q4-service
 
-git checkout task-8
+git checkout task-9
 
 npm install
 
@@ -85,7 +75,13 @@ npm run start
 3. Проверьте работу линтера командой:
 
 ```
-npm run start
+npm run lint
+
+```
+4. Запустите тесты командой:
+
+```
+npm run test
 
 ```
 
@@ -164,27 +160,3 @@ To access database data use __db_data__ directory.
 
 You can modify server`s code and rebuild server in container on the fly.
 Source code of the server you can find in __src__ directory. 
-
-![Src modification](Error.gif)
-
-## Docker Network
-
-docker_rsschool-network creat
-
-![Network](d_network.png)
-
-## Size of images and Dockerhub push
-
-![Size of images and Dockerhub push](d_size_hub.png)
-
-## Docker scan
-
-![Docker scan](d_dockerscan.png)
-
-## Docker hub
-
-Check images __server__ and __db__ in Dockerhub
-
-https://hub.docker.com/r/selub/rsschool/tags
-
-![Docker hub](dockerhub.png)
