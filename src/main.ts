@@ -12,7 +12,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
   await app.listen(serverSettings.serverPort);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }

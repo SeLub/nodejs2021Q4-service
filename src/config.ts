@@ -22,7 +22,9 @@ const serverSettings = {
       "authMode": AUTH_MODE,
       "salt": SALT }
 
-//import { Board } from './resources/boards/board.model.js'
+import { Board } from './boards/entities/board.entity.js'
+import { Task } from './tasks/entities/task.entity.js'
+import { User } from './users/entities/user.entity.js'
 
 const ormSettings = {
             "type": "postgres" as "postgres",
@@ -31,7 +33,7 @@ const ormSettings = {
             "username": POSTGRES_USER,
             "password": POSTGRES_PASSWORD,
             "database": POSTGRES_DB,
-            "entities": [Board],
+            "entities": [Board, Task, User],
             "synchronize": true
           }
 
