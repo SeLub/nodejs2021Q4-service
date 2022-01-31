@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe, NotFoundException } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
@@ -23,10 +23,13 @@ export class TasksController {
   }
 
   @Get(':taskId')
-  async findOne(
-    @Param('taskId', ParseUUIDPipe) taskId: string) {
-      const task = this.tasksService.findOne(taskId);
+  async findOne(@Param('taskId', ParseUUIDPipe) taskId: string) {
+    const task = await this.tasksService.findOne(taskId);
+    if (!task) {
+      throw new NotFoundException('Not Found');
+    } else {
       return task;
+    }
   }
 
   @Put(':taskId')
