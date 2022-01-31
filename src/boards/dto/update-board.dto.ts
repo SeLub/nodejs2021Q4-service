@@ -1,32 +1,9 @@
-import { Type } from 'class-transformer';
-import {
-  IsArray,
-  IsInt,
-  IsNotEmpty,
-  IsOptional,
-  IsString,
-  IsUUID,
-  ValidateNested,
-} from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
+import { IsOptional,  IsUUID } from 'class-validator';
+import { CreateBoardDto } from './create-board.dto';
 
-class Column {
-  @IsString()
-  title: string;
-
-  @IsInt()
-  order: number;
-}
-export class UpdateBoardDto {
+export class UpdateBoardDto extends PartialType(CreateBoardDto) {
   @IsUUID()
   @IsOptional()
   id?: string;
-
-  @IsString()
-  @IsNotEmpty()
-  title: string;
-
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => Column)
-  columns: Column[];
 }

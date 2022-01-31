@@ -5,35 +5,35 @@ import { User } from '../../users/entities/user.entity';
 @Entity()
 export class Task {
   @PrimaryGeneratedColumn('uuid')
-  id!: string;
+  id: string;
 
   @Column()
   title!: string;
 
   @Column()
-  order!: number;
+  order: number;
 
   @Column()
-  description!: string;
+  description: string;
 
   @Column({ type: 'uuid', nullable: true })
-  userId!: string | null;
+  userId: string | null;
 
   @Column({ type: 'uuid', nullable: true })
-  boardId!: string | null;
+  boardId: string | null;
 
   @Column({ type: 'uuid', nullable: true })
-  columnId!: string | null;
+  columnId: string | null;
 
   @ManyToOne(() => User, (user) => user.tasks, {
     eager: false,
     onDelete: 'SET NULL',
   })
-  user!: User;
+  user: User;
 
   @ManyToOne(() => Board, (board) => board.tasks, {
     eager: false,
     onDelete: 'CASCADE',
   })
-  board!: Board;
+  board: Board;
 }

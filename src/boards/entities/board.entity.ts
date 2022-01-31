@@ -4,16 +4,16 @@ import { Task } from '../../tasks/entities/task.entity';
 @Entity()
 export class Board {
   @PrimaryGeneratedColumn('uuid')
-  id!: string;
+  id: string;
 
   @Column()
-  title!: string;
+  title: string;
 
   @Column('jsonb')
-  columns!: { id: string; title: string; order: number }[];
+  columns: { id: string; title: string; order: number }[];
 
   @OneToMany(() => Task, (task) => task.board, {
     eager: false,
   })
-  tasks!: Task[];
+  tasks: Task[];
 }

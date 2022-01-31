@@ -39,7 +39,7 @@ export class BoardsService {
     return board;
   }
 
-  async  remove(id: string) {
+  remove(id: string) {
     return this.boardsRepository.delete(id);
   }
 }
