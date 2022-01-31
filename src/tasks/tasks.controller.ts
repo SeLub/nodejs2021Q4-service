@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
@@ -9,7 +9,7 @@ export class TasksController {
 
   @Post()
   create(
-    @Param('boardId') boardId: string,
+    @Param('boardId', ParseUUIDPipe) boardId: string,
     @Body() createTaskDto: CreateTaskDto)
   {
     return this.tasksService.create(boardId, createTaskDto);
@@ -17,28 +17,28 @@ export class TasksController {
 
   @Get()
   findAll(
-    @Param('boardId') boardId: string)
+    @Param('boardId', ParseUUIDPipe) boardId: string)
   {
     return this.tasksService.findAll(boardId);
   }
 
   @Get(':taskId')
   async findOne(
-    @Param('taskId') taskId: string) {
+    @Param('taskId', ParseUUIDPipe) taskId: string) {
       const task = this.tasksService.findOne(taskId);
       return task;
   }
 
   @Put(':taskId')
   update(
-    @Param('taskId') taskId: string,
+    @Param('taskId', ParseUUIDPipe) taskId: string,
     @Body() updateTaskDto: UpdateTaskDto,
   ) {
     return this.tasksService.update(taskId, updateTaskDto);
   }
 
   @Delete(':taskId')
-  remove(@Param('taskId') taskId: string) {
+  remove(@Param('taskId', ParseUUIDPipe) taskId: string) {
     return this.tasksService.remove(taskId);
   }
 }
