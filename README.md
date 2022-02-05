@@ -18,6 +18,11 @@ Self check:
 
 # __Summary Report__
 
+# Express
+![Express](Express.png)
+
+# Fastify
+![Fastify](Fastify.png)
 
 ## Новый функционал (максимум **90 баллов**)
 
