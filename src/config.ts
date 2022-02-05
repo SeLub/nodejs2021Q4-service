@@ -1,7 +1,8 @@
 import 'dotenv/config';
 
 const { 
-      SERVER_PORT = 4000, 
+      SERVER_PORT = 4000,
+      FASTIFY,
       LOG_LEVEL,
       POSTGRES_HOST = "db",
       POSTGRES_PORT = 5432,
@@ -16,6 +17,7 @@ const {
 
 const serverSettings = { 
       "serverPort": SERVER_PORT,
+      "framework": FASTIFY,
       "logLevel": LOG_LEVEL,
       "NODE_ENV": NODE_ENV,
       "jwtKey": JWT_SECRET_KEY,
