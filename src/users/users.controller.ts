@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe, UseInterceptors,  ClassSerializerInterceptor, NotFoundException } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { Controller, Get, Post, Body, Put, Param, Delete, ParseUUIDPipe, UseInterceptors,  ClassSerializerInterceptor, NotFoundException, UseGuards } from '@nestjs/common';
+import { UsersService } from './users.service.js';
+import { CreateUserDto } from './dto/create-user.dto.js';
+import { UpdateUserDto } from './dto/update-user.dto.js';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard.js';
 
 @Controller('users')
 export class UsersController {
@@ -9,11 +10,13 @@ export class UsersController {
 
   @Post()
   @UseInterceptors(ClassSerializerInterceptor)
+  @UseGuards(JwtAuthGuard)
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
   }
 
   @Get()
+  @UseGuards(JwtAuthGuard)
   @UseInterceptors(ClassSerializerInterceptor)
   findAll() {
     return this.usersService.findAll();
@@ -21,6 +24,7 @@ export class UsersController {
 
  
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
   @UseInterceptors(ClassSerializerInterceptor)
   async findOne(@Param('id', ParseUUIDPipe) id: string) {
     const user = await this.usersService.findOne(id);
@@ -32,6 +36,7 @@ export class UsersController {
   }
 
   @Put(':id')
+  @UseGuards(JwtAuthGuard)
   @UseInterceptors(ClassSerializerInterceptor)
   update(
     @Param('id', ParseUUIDPipe) id: string,
@@ -41,6 +46,7 @@ export class UsersController {
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.usersService.remove(id);
   }

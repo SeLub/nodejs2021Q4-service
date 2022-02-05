@@ -16,7 +16,7 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto): Promise<User> {
-    const hash = bcryptjs.hashSync(createUserDto.password, serverSettings.salt );
+    const hash = bcryptjs.hashSync(createUserDto.password, parseInt(serverSettings.salt) );
 
     const newUser = this.usersRepository.create({
       ...createUserDto,

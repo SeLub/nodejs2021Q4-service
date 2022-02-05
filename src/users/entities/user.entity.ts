@@ -1,6 +1,6 @@
 import { Exclude } from 'class-transformer';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Task } from '../../tasks/entities/task.entity';
+import { Task } from '../../tasks/entities/task.entity.js';
 
 @Entity()
 export class User {
@@ -10,7 +10,7 @@ export class User {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ unique: true, type: 'text' })
   login: string;
 
   @Column()
