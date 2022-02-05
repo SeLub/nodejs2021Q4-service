@@ -34,7 +34,7 @@ const ormSettings = {
             "password": POSTGRES_PASSWORD,
             "database": POSTGRES_DB,
             "entities": [Board, Task, User],
-            "synchronize": true
+            "synchronize": false
           }
 
 export { ormSettings, serverSettings }

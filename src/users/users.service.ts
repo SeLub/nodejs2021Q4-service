@@ -5,6 +5,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { randomUUID } from 'crypto';
+import * as bcryptjs from 'bcryptjs';
+import { serverSettings } from '../config.js';
 
 @Injectable()
 export class UsersService {
@@ -14,9 +16,12 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto): Promise<User> {
+    const hash = bcryptjs.hashSync(createUserDto.password, serverSettings.salt );
+
     const newUser = this.usersRepository.create({
       ...createUserDto,
-      id: randomUUID(),
+      //id: randomUUID(),
+      password: hash,
     });
 
     return this.usersRepository.save(newUser);
@@ -28,6 +33,10 @@ export class UsersService {
 
   findOne(id: string) {
     return this.usersRepository.findOne(id);
+  }
+
+  findByLogin(login: string) {
+    return this.usersRepository.findOne({ login });
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
