@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto.js';
-import { UpdateUserDto } from './dto/update-user.dto.js';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
-import { randomUUID } from 'crypto';
 import * as bcryptjs from 'bcryptjs';
+import { User } from './entities/user.entity';
+import { UpdateUserDto } from './dto/update-user.dto.js';
+import { CreateUserDto } from './dto/create-user.dto.js';
 import { serverSettings } from '../config.js';
 
 @Injectable()
@@ -20,7 +19,7 @@ export class UsersService {
 
     const newUser = this.usersRepository.create({
       ...createUserDto,
-      //id: randomUUID(),
+      // id: randomUUID(),
       password: hash,
     });
 

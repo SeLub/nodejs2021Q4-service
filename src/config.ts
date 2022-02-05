@@ -1,5 +1,9 @@
 import 'dotenv/config';
 
+import { Board } from './boards/entities/board.entity.js'
+import { Task } from './tasks/entities/task.entity.js'
+import { User } from './users/entities/user.entity.js'
+
 const { 
       SERVER_PORT = 4000,
       FASTIFY,
@@ -24,12 +28,8 @@ const serverSettings = {
       "authMode": AUTH_MODE,
       "salt": SALT }
 
-import { Board } from './boards/entities/board.entity.js'
-import { Task } from './tasks/entities/task.entity.js'
-import { User } from './users/entities/user.entity.js'
-
 const ormSettings = {
-            "type": "postgres" as "postgres",
+            "type": "postgres" as const,
             "host": POSTGRES_HOST,
             "port": +POSTGRES_PORT,
             "username": POSTGRES_USER,

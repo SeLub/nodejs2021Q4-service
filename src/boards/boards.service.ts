@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateBoardDto } from './dto/create-board.dto.js';
-import { UpdateBoardDto } from './dto/update-board.dto.js';
 import { Repository } from 'typeorm';
 import { randomUUID } from 'crypto';
+import { CreateBoardDto } from './dto/create-board.dto.js';
+import { UpdateBoardDto } from './dto/update-board.dto.js';
 
 import { Board } from './entities/board.entity';
 

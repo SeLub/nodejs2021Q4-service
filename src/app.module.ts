@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { BoardsModule } from './boards/boards.module.js';
 import { UsersModule } from './users/users.module.js';
 import { TasksModule } from './tasks/tasks.module.js';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ormSettings } from './config.js';
 import { AuthModule } from './auth/auth.module.js';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { sqlQueries } from './migration/sqlQueries.js';
 
 @Module({

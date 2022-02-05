@@ -1,6 +1,6 @@
 import * as bcryptjs from 'bcryptjs';
-import {serverSettings} from '../config.js';
 import { MigrationInterface, QueryRunner } from 'typeorm';
+import {serverSettings} from '../config.js';
 
 export class sqlQueries implements MigrationInterface {
   name = 'Tables1643722609592';

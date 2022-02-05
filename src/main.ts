@@ -15,6 +15,6 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
   await app.listen(serverSettings.serverPort);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  process.stdout.write(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
